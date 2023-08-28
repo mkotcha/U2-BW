@@ -9855,6 +9855,12 @@ textarea.form-control-lg {
   --bs-list-group-active-border-color: var(--bs-dark-text-emphasis);
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 h5, .h5 {
   font-size: 1em;
 }
@@ -9948,6 +9954,22 @@ ul {
   width: 48px;
   height: 48px;
   border-radius: 6px;
+}
+
+.home-hero {
+  height: 30vh;
+  max-height: 400px;
+  min-height: 340px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to #121212);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6) 0, #121212 100%);
+  background-color: #535353;
+}
+
+.home-hero-nav img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50vh;
+  border: 3px solid #121212;
 }
 
 #artist-body {
