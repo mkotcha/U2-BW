@@ -23,7 +23,7 @@
   display: none;
 }
 
-div::-webkit-scrollbar-thumb:hover {
+*::-webkit-scrollbar-thumb:hover {
   display: block;
   background-color: $secondary;
 }
