@@ -3,26 +3,11 @@
 
 //------------TAG
 
-body {
-  background-color: black;
-  color: white;
-  font-family: "light";
-}
-header {
-  background-color: #121212;
-}
-main {
-  background-color: #121212;
-}
 h5 {
   font-size: 1em;
 }
 ul {
   list-style: none;
-}
-a {
-  text-decoration: none;
-  color: #838383;
 }
 
 //-----------------CLASSI
@@ -81,15 +66,9 @@ a {
   position: relative;
 }
 
-a {
-}
-
 .home-sidebar {
   min-width: 300px;
   width: 300px;
-}
-
-.home-sidebar {
 }
 
 .home-sidebar-buttons {
@@ -116,10 +95,6 @@ a {
   width: 48px;
   height: 48px;
   border-radius: 6px;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }
 
 main {
