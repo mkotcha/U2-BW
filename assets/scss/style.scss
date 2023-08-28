@@ -1,6 +1,29 @@
 @import "overrides";
 @import "../css/circular-font.css";
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: $primary;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $primary;
+}
+
+div::-webkit-scrollbar-thumb:hover {
+  background-color: $secondary;
+}
+
 //------------TAG
 
 h5 {
@@ -94,6 +117,40 @@ ul {
   width: 48px;
   height: 48px;
   border-radius: 6px;
+}
+
+.home-hero {
+  height: 30vh;
+
+  // background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.5)));
+  // background: linear-gradient(transparent 0, rgba(0, 0, 0, 0.5) 100%);
+
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to $primary);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6) 0, $primary 100%);
+  background-color: #535353;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.home-hero-nav-container {
+}
+
+.home-hero-nav {
+  padding: 20px;
+}
+
+.home-hero-nav img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50vh;
+  border: 3px solid $primary;
+}
+
+#home-container {
+  height: calc(100vh - 90px);
 }
 
 #artist-body {
