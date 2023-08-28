@@ -9864,26 +9864,32 @@ textarea.form-control-lg {
 /* Works on Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
   width: 12px;
-}
-
-*::-webkit-scrollbar-track {
-  background: #121212;
+  background-color: transparent;
 }
 
 *::-webkit-scrollbar-thumb {
   background-color: #121212;
+  display: none;
 }
 
 div::-webkit-scrollbar-thumb:hover {
+  display: block;
   background-color: #6c757d;
+}
+
+.home-hero-container {
+  background-color: #535353;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6) 0, #121212 30%);
 }
 
 h5, .h5 {
   font-size: 1em;
+  padding-left: 20px;
 }
 
 ul {
   list-style: none;
+  padding-left: 0px;
 }
 
 .img-album {

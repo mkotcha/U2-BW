@@ -10,20 +10,46 @@
 /* Works on Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
   width: 12px;
+  background-color: transparent;
 }
 
 *::-webkit-scrollbar-track {
-  background: $primary;
+  // -webkit-box-shadow: none !important;
+  // background-color: transparent !important;
 }
 
 *::-webkit-scrollbar-thumb {
   background-color: $primary;
+  display: none;
 }
 
 div::-webkit-scrollbar-thumb:hover {
+  display: block;
   background-color: $secondary;
 }
 
+.home-hero-container {
+  background-color: #535353;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6) 0, #121212 30%);
+}
+
+// .home-hero-container {
+//   transition: opacity 0.3s, visibility 0.3s, top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
+// }
+
+// .home-hero-container::-webkit-scrollbar {
+//   width: 14px;
+// }
+
+// .home-hero-container::-webkit-scrollbar-track {
+//   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to $primary);
+//   background-image: linear-gradient(rgba(0, 0, 0, 0.6) 0, $primary 100%);
+//   background: transparent;
+// }
+
+// .home-hero-container::-webkit-scrollbar-thumb {
+//   background-color: hsla(0, 0%, 100%, 0.3);
+// }
 //------------TAG
 
 h5 {
