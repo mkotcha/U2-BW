@@ -9970,31 +9970,12 @@ textarea.form-control-lg {
   --bs-list-group-active-border-color: var(--bs-dark-text-emphasis);
 }
 
-body {
-  background-color: black;
-  color: white;
-  font-family: "light";
-}
-
-header {
-  background-color: #121212;
-}
-
-main {
-  background-color: #121212;
-}
-
 h5, .h5 {
   font-size: 1em;
 }
 
 ul {
   list-style: none;
-}
-
-a {
-  text-decoration: none;
-  color: #838383;
 }
 
 .img-album {
@@ -10034,7 +10015,6 @@ a {
   width: 35px;
   height: 35px;
   border-radius: 60%;
-  background-color: black;
   position: relative;
 }
 
@@ -10084,17 +10064,12 @@ a {
   width: 48px;
   height: 48px;
   border-radius: 6px;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }
 
 #artist-body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
 #artist-main {
@@ -10102,22 +10077,16 @@ a {
   display: flex;
 }
 
-#main-content {
+#main-content-container {
   flex: 1;
-  transition: overflow 0.3s;
-  overflow: auto;
-  max-height: calc(100vh - 88px);
-  overflow: hidden;
-}
-
-#main-content:hover {
+  max-height: 100vh;
   overflow-y: scroll;
 }
 
-#music-player {
-  height: 72px;
+#main-content {
+  min-height: 500px;
 }
 
-#artist-left-buttons {
-  right: 0;
+#artist-image-container {
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */
