@@ -10086,6 +10086,90 @@ textarea.form-control.is-invalid {
   --bs-list-group-active-border-color: var(--bs-dark-text-emphasis);
 }
 
+body {
+  background-color: black;
+  color: white;
+  font-family: "light";
+}
+
+header {
+  background-color: #121212;
+}
+
+main {
+  background-color: #121212;
+}
+
+h5, .h5 {
+  font-size: 1em;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #838383;
+}
+
+.img-album {
+  width: 20%;
+}
+
+.thumbnail {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.cerchio {
+  font-size: 20px;
+  position: relative;
+  right: -7px;
+  top: 2px;
+}
+
+.cerchio-uno {
+  font-size: 20px;
+  position: relative;
+  left: 9px;
+  top: 2px;
+}
+
+.cerchio-play {
+  font-size: 30px;
+  position: relative;
+  left: 20px;
+  top: 10px;
+}
+
+.box {
+  width: 35px;
+  height: 35px;
+  border-radius: 60%;
+  background-color: black;
+  position: relative;
+}
+
+.btn-head {
+  padding-block: 0;
+  padding-inline: 2rem;
+  background-color: black;
+  color: white;
+  border-radius: 25px;
+  height: 25px;
+}
+
+.play {
+  width: 65px;
+  height: 65px;
+  border-radius: 60%;
+  background-color: #2edf64;
+  position: relative;
+}
+
 .home-sidebar {
   min-width: 300px;
   width: 300px;
