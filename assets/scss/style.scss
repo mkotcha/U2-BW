@@ -2,5 +2,31 @@
 @import "../css/circular-font.css";
 
 body {
-  background-color: rgb(46, 7, 241);
+}
+
+a {
+}
+
+.home-sidebar {
+  min-width: 300px;
+  width: 300px;
+}
+
+.home-sidebar {
+}
+
+.home-sidebar-buttons {
+  position: relative;
+}
+
+.home-sidebar-buttons-faded {
+  -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 120px), transparent);
+  mask-image: linear-gradient(90deg, #000 calc(100% - 120px), transparent);
+}
+
+.home-sidebar-buttons-next {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
 }
