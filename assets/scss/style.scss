@@ -1,7 +1,96 @@
 @import "overrides";
 @import "../css/circular-font.css";
+@font-face {
+  font-family: "black";
+  src: url("/assets/fonts/CircularStd-Black.otf") format("opentype");
+}
+@font-face {
+  font-family: "light";
+  src: url("/assets/fonts/CircularStd-Light.otf") format("opentype");
+}
+@font-face {
+  font-family: "medium";
+  src: url("/assets/fonts/CircularStd-Medium.otf") format("opentype");
+}
+
+//------------TAG
 
 body {
+  background-color: black;
+  color: white;
+  font-family: "light";
+}
+header {
+  background-color: #121212;
+}
+main {
+  background-color: #121212;
+}
+h5 {
+  font-size: 1em;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #838383;
+}
+
+//-----------------CLASSI
+
+.img-album {
+  width: 20%;
+}
+.thumbnail {
+  width: 100px;
+
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.cerchio {
+  font-size: 20px;
+  position: relative;
+  right: -7px;
+  top: 2px;
+}
+.cerchio-uno {
+  font-size: 20px;
+  position: relative;
+  left: 9px;
+  top: 2px;
+}
+
+.cerchio-play {
+  font-size: 30px;
+  position: relative;
+  left: 20px;
+  top: 10px;
+}
+.box {
+  width: 35px;
+  height: 35px;
+  border-radius: 60%;
+  background-color: black;
+  position: relative;
+}
+
+.btn-head {
+  padding-block: 0;
+  padding-inline: 2rem;
+  background-color: black;
+  color: white;
+  border-radius: 25px;
+  height: 25px;
+}
+.play {
+  width: 65px;
+  height: 65px;
+  border-radius: 60%;
+  background-color: #2edf64;
+  position: relative;
 }
 
 a {
