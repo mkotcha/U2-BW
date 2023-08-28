@@ -1,23 +1,226 @@
 <!DOCTYPE html>
-<html
-  lang="en"
-  data-bs-theme="dark">
+<html lang="en" data-bs-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spotify</title>
-    <link
-      rel="stylesheet"
-      href="node_modules/bootstrap-icons/font/bootstrap-icons.min.css" />
-    <link
-      rel="stylesheet"
-      href="assets/css/style.css" />
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <main>
-      <header>
+    <div class="container-flex bg-black vh-100 overflow-hidden">
+      <div class="d-flex h-100">
+        <div class="home-sidebar p-2">
+          <div class="home-sidebar-box bg-primary rounded-4 px-4 py-2 fs-4 mb-2">
+            <div class="home-sidebar-link mb-3">
+              <a href="index.html" class="text-reset text-decoration-none d-flex align-items-center"
+                ><i class="bi bi-house-door-fill me-3"></i><span class="fw-bold fs-6">Home</span></a
+              >
+            </div>
+            <div class="home-sidebar-link">
+              <a href="index.html" class="text-decoration-none d-flex align-items-center"
+                ><i class="bi bi-search me-3"></i><span class="fw-bold fs-6">Cerca</span></a
+              >
+            </div>
+          </div>
+
+          <div class="home-sidebar-box bg-primary rounded-4 px-4 py-2 fs-4 overflow-hidden h-100">
+            <div class="home-sidebar-link d-flex">
+              <a href="index.html" class="text-decoration-none d-flex align-items-center me-auto"
+                ><i class="bi bi-collection me-3"></i><span class="fw-bold fs-6">La tua libreria</span></a
+              >
+              <a href="index.html" class="text-decoration-none d-flex align-items-center"
+                ><i class="bi bi-plus fs-3"></i
+              ></a>
+            </div>
+
+            <div class="home-sidebar-buttons my-3">
+              <div class="home-sidebar-buttons-faded d-flex overflow-x-hidden gap-2 position-relative">
+                <a href="#" class="btn btn-sm btn-dark">Playlist</a>
+                <a href="#" class="btn btn-sm btn-dark">Artist</a>
+                <a href="#" class="btn btn-sm btn-dark">Albums</a>
+                <a href="#" class="flex-shrink-0 btn btn-sm btn-dark">Podcasts & Shows</a>
+                <a href="#" class="btn btn-sm btn-dark">Playlist</a>
+              </div>
+              <div>
+                <a href="#" class="btn btn-sm btn-dark home-sidebar-buttons-next"
+                  ><i class="bi bi-chevron-right"></i
+                ></a>
+              </div>
+            </div>
+            <div class="home-sidebar-list overflow-y-auto h-75">
+              <div class="d-flex fs-6 fw-bold mb-4">
+                <i class="bi bi-search me-auto"></i>
+                <ul class="navbar-nav">
+                  <li class="dropdown">
+                    <span class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> Recents </span>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                      <span>ordina per</span>
+                      <li><a class="dropdown-item" href="#">Recents</a></li>
+                      <li><a class="dropdown-item" href="#">Recently Added</a></li>
+                      <li><a class="dropdown-item" href="#">Alphabetical</a></li>
+                      <li><a class="dropdown-item" href="#">Creator</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div class="d-flex flex-column">
+                <div class="d-flex mb-3">
+                  <img class="me-3" src="assets/imgs/search/image-1.jpeg" alt="" />
+                  <div class="fs-6">
+                    <p class="fw-bold m-0">Liked Songs</p>
+                    <p class="text-body-secondary m-0">
+                      <i class="bi bi-pin-angle text-success"></i> <span class="category">Playlist</span
+                      ><span class="detail">2.567 brani</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="d-flex mb-3">
+                  <img class="me-3" src="assets/imgs/search/image-1.jpeg" alt="" />
+                  <div class="fs-6">
+                    <p class="fw-bold m-0">Liked Songs</p>
+                    <p class="text-body-secondary m-0">
+                      <i class="bi bi-pin-angle text-success"></i> <span class="category">Playlist</span
+                      ><span class="detail">2.567 brani</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="d-flex mb-3">
+                  <img class="me-3" src="assets/imgs/search/image-1.jpeg" alt="" />
+                  <div class="fs-6">
+                    <p class="fw-bold m-0">Liked Songs</p>
+                    <p class="text-body-secondary m-0">
+                      <i class="bi bi-pin-angle text-success"></i> <span class="category">Playlist</span
+                      ><span class="detail">2.567 brani</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="d-flex mb-3">
+                  <img class="me-3" src="assets/imgs/search/image-1.jpeg" alt="" />
+                  <div class="fs-6">
+                    <p class="fw-bold m-0">Liked Songs</p>
+                    <p class="text-body-secondary m-0">
+                      <i class="bi bi-pin-angle text-success"></i> <span class="category">Playlist</span
+                      ><span class="detail">2.567 brani</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="d-flex mb-3">
+                  <img class="me-3" src="assets/imgs/search/image-1.jpeg" alt="" />
+                  <div class="fs-6">
+                    <p class="fw-bold m-0">Liked Songs</p>
+                    <p class="text-body-secondary m-0">
+                      <i class="bi bi-pin-angle text-success"></i> <span class="category">Playlist</span
+                      ><span class="detail">2.567 brani</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="d-flex mb-3">
+                  <img class="me-3" src="assets/imgs/search/image-1.jpeg" alt="" />
+                  <div class="fs-6">
+                    <p class="fw-bold m-0">Liked Songs</p>
+                    <p class="text-body-secondary m-0">
+                      <i class="bi bi-pin-angle text-success"></i> <span class="category">Playlist</span
+                      ><span class="detail">2.567 brani</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="d-flex mb-3">
+                  <img class="me-3" src="assets/imgs/search/image-1.jpeg" alt="" />
+                  <div class="fs-6">
+                    <p class="fw-bold m-0">Liked Songs</p>
+                    <p class="text-body-secondary m-0">
+                      <i class="bi bi-pin-angle text-success"></i> <span class="category">Playlist</span
+                      ><span class="detail">2.567 brani</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="d-flex mb-3">
+                  <img class="me-3" src="assets/imgs/search/image-1.jpeg" alt="" />
+                  <div class="fs-6">
+                    <p class="fw-bold m-0">Liked Songs</p>
+                    <p class="text-body-secondary m-0">
+                      <i class="bi bi-pin-angle text-success"></i> <span class="category">Playlist</span
+                      ><span class="detail">2.567 brani</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="d-flex mb-3">
+                  <img class="me-3" src="assets/imgs/search/image-1.jpeg" alt="" />
+                  <div class="fs-6">
+                    <p class="fw-bold m-0">Liked Songs</p>
+                    <p class="text-body-secondary m-0">
+                      <i class="bi bi-pin-angle text-success"></i> <span class="category">Playlist</span
+                      ><span class="detail">2.567 brani</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="d-flex mb-3">
+                  <img class="me-3" src="assets/imgs/search/image-1.jpeg" alt="" />
+                  <div class="fs-6">
+                    <p class="fw-bold m-0">Liked Songs</p>
+                    <p class="text-body-secondary m-0">
+                      <i class="bi bi-pin-angle text-success"></i> <span class="category">Playlist</span
+                      ><span class="detail">2.567 brani</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="d-flex mb-3">
+                  <img class="me-3" src="assets/imgs/search/image-1.jpeg" alt="" />
+                  <div class="fs-6">
+                    <p class="fw-bold m-0">Liked Songs</p>
+                    <p class="text-body-secondary m-0">
+                      <i class="bi bi-pin-angle text-success"></i> <span class="category">Playlist</span
+                      ><span class="detail">2.567 brani</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="d-flex mb-3">
+                  <img class="me-3" src="assets/imgs/search/image-1.jpeg" alt="" />
+                  <div class="fs-6">
+                    <p class="fw-bold m-0">Liked Songs</p>
+                    <p class="text-body-secondary m-0">
+                      <i class="bi bi-pin-angle text-success"></i> <span class="category">Playlist</span
+                      ><span class="detail">2.567 brani</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="d-flex mb-3">
+                  <img class="me-3" src="assets/imgs/search/image-1.jpeg" alt="" />
+                  <div class="fs-6">
+                    <p class="fw-bold m-0">Liked Songs</p>
+                    <p class="text-body-secondary m-0">
+                      <i class="bi bi-pin-angle text-success"></i> <span class="category">Playlist</span
+                      ><span class="detail">2.567 brani</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="d-flex mb-3">
+                  <img class="me-3" src="assets/imgs/search/image-1.jpeg" alt="" />
+                  <div class="fs-6">
+                    <p class="fw-bold m-0">Liked Songs</p>
+                    <p class="text-body-secondary m-0">
+                      <i class="bi bi-pin-angle text-success"></i> <span class="category">Playlist</span
+                      ><span class="detail">2.567 brani</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="d-flex mb-3">
+                  <img class="me-3" src="assets/imgs/search/image-1.jpeg" alt="" />
+                  <div class="fs-6">
+                    <p class="fw-bold m-0">Liked Songs</p>
+                    <p class="text-body-secondary m-0">
+                      <i class="bi bi-pin-angle text-success"></i> <span class="category">Playlist</span
+                      ><span class="detail">2.567 brani</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <main>    <main>
+      <div>
         <div class="d-flex align-items-center justify-content-between p-3 mb-3">
           <div class="d-flex gap-3">
             <div class="box">
@@ -40,7 +243,7 @@
             >
           </div>
         </div>
-      </header>
+      </div>
       <div class="d-flex align-items-end sfondo">
         <img
           src="https://www.ad010.com/wp-content/uploads/2015/11/AD010_ARTICOLO-BLOG_CARLO_901x704.jpg"
@@ -69,16 +272,16 @@
           <i class="bi bi-three-dots fs-4"></i>
         </div>
         <!--- per playlist
-				<div class="box-thumbnail">
-					<img
-						src="https://loghi-famosi.com/wp-content/uploads/2021/01/Pink-Floyd-Logo-1973-1978.png"
-						alt=""
-						class="thumbnail" />
-					<div class="d-inline-block">
-						<span>artista </span>
-						<span>nome artista</span>
-					</div>
-				</div>
+        <div class="box-thumbnail">
+          <img
+            src="https://loghi-famosi.com/wp-content/uploads/2021/01/Pink-Floyd-Logo-1973-1978.png"
+            alt=""
+            class="thumbnail" />
+          <div class="d-inline-block">
+            <span>artista </span>
+            <span>nome artista</span>
+          </div>
+        </div>
                 -->
         <div class="d-flex flex-column">
           <div class="d-flex flex-grow-1 gap-3 mx-3 border-bottom">
@@ -142,6 +345,9 @@
         </div>
       </footer>
     </main>
+      </div>
+    </div>
+
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
@@ -153,3 +359,4 @@
     <script src="assets/js/script.js"></script>
   </body>
 </html>
+
