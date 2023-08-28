@@ -9855,20 +9855,6 @@ textarea.form-control-lg {
   --bs-list-group-active-border-color: var(--bs-dark-text-emphasis);
 }
 
-body {
-  background-color: black;
-  color: white;
-  font-family: "light";
-}
-
-header {
-  background-color: #121212;
-}
-
-main {
-  background-color: #121212;
-}
-
 h5, .h5 {
   font-size: 1em;
 }
@@ -9968,6 +9954,7 @@ ul {
   margin: 0;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 #artist-main {
@@ -9975,16 +9962,26 @@ ul {
   display: flex;
 }
 
-#main-content-container {
-  flex: 1;
-  max-height: 100vh;
-  overflow-y: scroll;
+#side-bar {
+  width: 30%;
 }
 
 #main-content {
-  min-height: 500px;
+  flex: 1;
+  transition: overflow 0.3s;
+  overflow: auto;
+  max-height: calc(100vh - 88px);
+  overflow: hidden;
 }
 
-#artist-image-container {
-  width: 100%;
+#main-content:hover {
+  overflow-y: scroll;
+}
+
+#music-player {
+  height: 72px;
+}
+
+#artist-left-buttons {
+  right: 0;
 }/*# sourceMappingURL=style.css.map */
