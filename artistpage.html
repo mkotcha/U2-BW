@@ -7,49 +7,47 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>Artistpage</title>
   </head>
-  <body id="artist-body" class="bg-black text-white">
-    <main id="artist-main" class="d-flex">
-      <div class="container-flex bg-black vh-100 overflow-hidden">
-        <div class="d-flex h-100">
-          <div class="home-sidebar p-2">
-            <div class="home-sidebar-box bg-primary rounded-4 px-4 py-2 fs-4 mb-2">
-              <div class="home-sidebar-link mb-3">
-                <a href="index.html" class="text-reset text-decoration-none d-flex align-items-center"
-                  ><i class="bi bi-house-door-fill me-3"></i><span class="fw-bold fs-6">Home</span></a
-                >
-              </div>
-              <div class="home-sidebar-link">
-                <a href="index.html" class="text-decoration-none d-flex align-items-center"
-                  ><i class="bi bi-search me-3"></i><span class="fw-bold fs-6">Cerca</span></a
-                >
-              </div>
+  <body>
+    <div id="home-container" class="p-2">
+      <div class="d-flex h-100">
+        <div class="d-flex flex-column home-sidebar pe-2 h-100">
+          <div class="home-sidebar-box bg-primary rounded-4 px-4 py-2 fs-4 mb-2">
+            <div class="home-sidebar-link mb-3">
+              <a href="index.html" class="text-reset text-decoration-none d-flex align-items-center"
+                ><i class="bi bi-house-door-fill me-3"></i><span class="fw-bold fs-6">Home</span></a
+              >
             </div>
-
-            <div class="home-sidebar-box bg-primary rounded-4 px-4 py-2 fs-4 overflow-hidden h-100">
-              <div class="home-sidebar-link d-flex">
-                <a href="index.html" class="text-decoration-none d-flex align-items-center me-auto"
-                  ><i class="bi bi-collection me-3"></i><span class="fw-bold fs-6">La tua libreria</span></a
-                >
-                <a href="index.html" class="text-decoration-none d-flex align-items-center"
-                  ><i class="bi bi-plus fs-3"></i
+            <div class="home-sidebar-link">
+              <a href="index.html" class="text-decoration-none d-flex align-items-center"
+                ><i class="bi bi-search me-3"></i><span class="fw-bold fs-6">Cerca</span></a
+              >
+            </div>
+          </div>
+          <div class="d-flex flex-column home-sidebar-box bg-primary overflow-hidden rounded-4 px-4 py-2 fs-4">
+            <div class="home-sidebar-link d-flex">
+              <a href="index.html" class="text-decoration-none d-flex align-items-center me-auto"
+                ><i class="bi bi-collection me-3"></i><span class="fw-bold fs-6">La tua libreria</span></a
+              >
+              <a href="index.html" class="text-decoration-none d-flex align-items-center"
+                ><i class="bi bi-plus fs-3"></i
+              ></a>
+            </div>
+            <div class="home-sidebar-buttons my-3">
+              <div class="home-sidebar-buttons-faded d-flex gap-2 position-relative">
+                <a href="#" class="btn btn-sm btn-dark">Playlist</a>
+                <a href="#" class="btn btn-sm btn-dark">Artist</a>
+                <a href="#" class="btn btn-sm btn-dark">Albums</a>
+                <a href="#" class="flex-shrink-0 btn btn-sm btn-dark">Podcasts & Shows</a>
+                <a href="#" class="btn btn-sm btn-dark">Playlist</a>
+              </div>
+              <div>
+                <a href="#" class="btn btn-sm btn-dark home-sidebar-buttons-next"
+                  ><i class="bi bi-chevron-right"></i
                 ></a>
               </div>
-
-              <div class="home-sidebar-buttons my-3">
-                <div class="home-sidebar-buttons-faded d-flex overflow-x-hidden gap-2 position-relative">
-                  <a href="#" class="btn btn-sm btn-dark">Playlist</a>
-                  <a href="#" class="btn btn-sm btn-dark">Artist</a>
-                  <a href="#" class="btn btn-sm btn-dark">Albums</a>
-                  <a href="#" class="flex-shrink-0 btn btn-sm btn-dark">Podcasts & Shows</a>
-                  <a href="#" class="btn btn-sm btn-dark">Playlist</a>
-                </div>
-                <div>
-                  <a href="#" class="btn btn-sm btn-dark home-sidebar-buttons-next"
-                    ><i class="bi bi-chevron-right"></i
-                  ></a>
-                </div>
-              </div>
-              <div class="home-sidebar-list overflow-y-auto h-75">
+            </div>
+            <div class="overflow-y-auto h100">
+              <div class="home-sidebar-list">
                 <div class="d-flex fs-6 fw-bold mb-4">
                   <i class="bi bi-search me-auto"></i>
                   <ul class="navbar-nav">
@@ -221,64 +219,226 @@
             </div>
           </div>
         </div>
-      </div>
-      <div id="main-content-container" class="pt-2 pe-2">
-        <div id="main-content" class="rounded-4 bg-primary">
-          <div id="artist-image-container" class="p-3 rounded d-flex row m-0">
-            <div id="artist-btn-container" class="d-flex justify-content-between position-fixed" width="100%">
-              <div id="artist-left-buttons">
-                <button id="back-btn" class="bg-black rounded-circle box border border-0 me-2">
-                  <i class="bi bi-chevron-left"></i>
-                </button>
-                <button id="forward-btn" class="bg-black rounded-circle box border border-0">
-                  <i class="bi bi-chevron-right"></i>
-                </button>
-              </div>
-              <div id="artist-right-buttons" class="align-middle d-flex">
-                <button class="btn text-black bg-white">Esplora Premium</button>
-                <button class="btn bg-black ms-2">
-                  <i class="bi bi-arrow-down-circle"></i>
-                  Installa app
-                </button>
-                <button class="box border-0 bg-black rounded rounded-circle ms-2">
-                  <i class="bi bi-person"></i>
-                </button>
+        <main class="flex-grow-1">
+          <div class="home-hero-container overflow-y-scroll h-100 rounded-4 position-relative">
+            <div class="home-hero-nav sticky-top">
+              <div class="d-flex gap-2">
+                <button class="btn btn-primary btn-sm"><i class="bi bi-chevron-left"></i></button>
+                <button class="btn btn-primary btn-sm me-auto"><i class="bi bi-chevron-right"></i></button>
+                <div class="flex-grow-1"></div>
+                <button class="btn btn-light btn-sm">Esplora Premium</button>
+                <button class="btn btn-primary btn-sm"><i class="bi bi-box-arrow-down me-2"></i>Installa App</button>
+                <a href="#" class="">
+                  <img src="assets/imgs/user.jpg" alt="" />
+                </a>
               </div>
             </div>
-
-            <div class="d-flex align-items-end">
-              <div>
-                <div id="artist-verified" class="d-flex">
-                  <span><i class="bi bi-patch-check-fill"></i></span>
-                  <span class="ms-1">Artista verificato</span>
+            <div class="artist-hero p-4 d-flex text-white">
+              <div class="d-flex align-items-end">
+                <div>
+                  <div id="artist-verified" class="d-flex align-items-center">
+                    <span><i class="bi bi-patch-check-fill fs-4" style="color: #3d91f4"></i></span>
+                    <span class="ms-1">Artista verificato</span>
+                  </div>
+                  <h1 id="artist-name" class="fw-bold mb-3 lh-1">Artist name</h1>
+                  <p class="mb-0">ascoltatori mensili</p>
                 </div>
-                <h1>Artist name</h1>
-                <p>Ascoltatori mensili</p>
+              </div>
+            </div>
+            <div id="artist-main-content">
+              <div id="artist-main-buttons" class="d-flex align-items-center p-4">
+                <div class="play">
+                  <i class="bi bi-play-fill cerchio-play text-black"></i>
+                </div>
+                <div>
+                  <button
+                    class="btn btn-outline-primary text-white fw-bold flex-shrink-1 ms-4 btn-sm px-3 border-secondary"
+                  >
+                    Segui
+                  </button>
+                </div>
+                <div>
+                  <button class="btn fs-3 ms-3"><i class="bi bi-three-dots"></i></button>
+                </div>
+              </div>
+              <div class="p-4 py-0">
+                <h2 class="fs-4 fw-bold text-white">Popolari</h2>
+                <ol id="artist-list" class="p-0 ps-3">
+                  <div class="artist-list-items-container p-2 px-3 rounded-2">
+                    <li id="artist-list-items" class="d-flex align-items-center justify-content-between gap-3">
+                      <div id="artist-song-title" class="d-flex">
+                        <img src="./assets/imgs/main/image-1.jpg" class="me-3" width="40" alt="" />
+                        <div>
+                          <div class="text-white">Titolo canzone</div>
+                          <i class="bi bi-explicit-fill text-secondary"></i>
+                        </div>
+                      </div>
+                      <div id="artist-song-plays">111.111.111</div>
+                      <div id="artist-song-minutes" class="d-flex justify-content-between align-items-center">
+                        <div><i class="bi bi-heart"></i></div>
+                        <div>4:00</div>
+                        <div class="dropdown">
+                          <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i
+                              class="bi bi-three-dots"
+                              data-toggle="tooltip"
+                              data-placement="top"
+                              title="Altre opzioni per"
+                            ></i>
+                          </a>
+
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><hr class="dropdown-divider" /></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                  </div>
+                  <div class="artist-list-items-container p-2 px-3 rounded-2">
+                    <li id="artist-list-items" class="d-flex align-items-center justify-content-between gap-3">
+                      <div id="artist-song-title" class="d-flex">
+                        <img src="./assets/imgs/main/image-1.jpg" class="me-3" width="40" alt="" />
+                        <div>
+                          <div class="text-white">Titolo canzone</div>
+                          <i class="bi bi-explicit-fill text-secondary"></i>
+                        </div>
+                      </div>
+                      <div id="artist-song-plays">111.111.111</div>
+                      <div id="artist-song-minutes" class="d-flex justify-content-between align-items-center">
+                        <div><i class="bi bi-heart"></i></div>
+                        <div>4:00</div>
+                        <div class="dropdown">
+                          <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i
+                              class="bi bi-three-dots"
+                              data-toggle="tooltip"
+                              data-placement="top"
+                              title="Altre opzioni per"
+                            ></i>
+                          </a>
+
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><hr class="dropdown-divider" /></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                  </div>
+                  <div class="artist-list-items-container p-2 px-3 rounded-2">
+                    <li id="artist-list-items" class="d-flex align-items-center justify-content-between gap-3">
+                      <div id="artist-song-title" class="d-flex">
+                        <img src="./assets/imgs/main/image-1.jpg" class="me-3" width="40" alt="" />
+                        <div>
+                          <div class="text-white">Titolo canzone</div>
+                          <i class="bi bi-explicit-fill text-secondary"></i>
+                        </div>
+                      </div>
+                      <div id="artist-song-plays">111.111.111</div>
+                      <div id="artist-song-minutes" class="d-flex justify-content-between align-items-center">
+                        <div><i class="bi bi-heart"></i></div>
+                        <div>4:00</div>
+                        <div class="dropdown">
+                          <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i
+                              class="bi bi-three-dots"
+                              data-toggle="tooltip"
+                              data-placement="top"
+                              title="Altre opzioni per"
+                            ></i>
+                          </a>
+
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><hr class="dropdown-divider" /></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                  </div>
+                  <div class="artist-list-items-container p-2 px-3 rounded-2">
+                    <li id="artist-list-items" class="d-flex align-items-center justify-content-between gap-3">
+                      <div id="artist-song-title" class="d-flex">
+                        <img src="./assets/imgs/main/image-1.jpg" class="me-3" width="40" alt="" />
+                        <div>
+                          <div class="text-white">Titolo canzone</div>
+                          <i class="bi bi-explicit-fill text-secondary"></i>
+                        </div>
+                      </div>
+                      <div id="artist-song-plays">111.111.111</div>
+                      <div id="artist-song-minutes" class="d-flex justify-content-between align-items-center">
+                        <div><i class="bi bi-heart"></i></div>
+                        <div>4:00</div>
+                        <div class="dropdown">
+                          <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i
+                              class="bi bi-three-dots"
+                              data-toggle="tooltip"
+                              data-placement="top"
+                              title="Altre opzioni per"
+                            ></i>
+                          </a>
+
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><hr class="dropdown-divider" /></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                  </div>
+                  <div class="artist-list-items-container p-2 px-3 rounded-2">
+                    <li id="artist-list-items" class="d-flex align-items-center justify-content-between gap-3">
+                      <div id="artist-song-title" class="d-flex">
+                        <img src="./assets/imgs/main/image-1.jpg" class="me-3" width="40" alt="" />
+                        <div>
+                          <div class="text-white">Titolo canzone</div>
+                          <i class="bi bi-explicit-fill text-secondary"></i>
+                        </div>
+                      </div>
+                      <div id="artist-song-plays">111.111.111</div>
+                      <div id="artist-song-minutes" class="d-flex justify-content-between align-items-center">
+                        <div><i class="bi bi-heart"></i></div>
+                        <div>4:00</div>
+                        <div class="dropdown">
+                          <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i
+                              class="bi bi-three-dots"
+                              data-toggle="tooltip"
+                              data-placement="left"
+                              title="Altre opzioni per"
+                            ></i>
+                          </a>
+
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><hr class="dropdown-divider" /></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                  </div>
+                  <div class="p-3">Visualizza altro</div>
+                </ol>
+                <h2 class="fs-4 fw-bold text-white">Selezione dell'artista</h2>
               </div>
             </div>
           </div>
-          <div id="artist-main-buttons" class="d-flex align-items-center p-3">
-            <div class="play">
-              <i class="bi bi-play-fill cerchio-play"></i>
-            </div>
-            <div><button class="btn btn-outline-light flex-shrink-1 ms-4">Following</button></div>
-            <div>
-              <button class="btn fs-3 ms-3"><i class="bi bi-three-dots"></i></button>
-            </div>
-          </div>
-          <div class="p-3">
-            <h2 class="fs-4">Popolari</h2>
-            <ol>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ol>
-          </div>
-        </div>
+        </main>
       </div>
-    </main>
+    </div>
+    <section class=""><div class="home-player">player</div></section>
 
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
