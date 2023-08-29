@@ -10159,6 +10159,10 @@ textarea.form-control-lg {
   border: 3px solid #121212;
 }
 
+.home-card img {
+  width: 100%;
+}
+
 #home-container {
   height: calc(100vh - 90px);
 }
