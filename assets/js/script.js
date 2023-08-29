@@ -30,7 +30,7 @@ window.onload = async () => {
     const albumLink = document.createElement("a");
     albumLink.href = "album.html?id=" + recent.tracks.data[i].album.id;
     const img = document.createElement("img");
-    img.classList = "rounded-2 mb-3";
+    img.classList = "rounded-2 mb-3 w-100";
     img.src = recent.tracks.data[i].album.cover_medium;
     img.alt = recent.tracks.data[i].album.title + " cover";
     const title = document.createElement("p");
