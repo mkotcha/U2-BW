@@ -333,274 +333,293 @@
             </div>
           </div>
         </div>
-        <main class="container overflow-y-scroll vh-100 position-relative bg-primary rounded-5">
-          <div class="container-fluid p-3">
-            <div class="position-fixed w-50 d-flex">
-              <div class="me-3 d-flex">
+        <main class="flex-grow-1">
+          <div class="home-hero-container overflow-y-scroll h-100 rounded-4 position-relative">
+            <!-- BARRA STICKY -->
+            <div class="home-hero-nav sticky-top">
+              <div class="d-flex gap-2">
                 <div class="box bg-dark d-flex justify-content-center align-items-center">
                   <i class="bi bi-chevron-left"></i>
                 </div>
                 <div class="box bg-dark d-flex justify-content-center align-items-center mx-3">
                   <i class="bi bi-chevron-right"></i>
                 </div>
-              </div>
-              <div class="position-relative start-100">
+                <div class="flex-grow-1"></div>
                 <button class="btn btn-dark">Iscriviti</button>
                 <button class="btn btn-dark">Accedi</button>
               </div>
             </div>
-          </div>
-          <div class="space-for-fixed"></div>
-          <div class="d-flex align-items-end">
-            <img
-              src="https://www.ad010.com/wp-content/uploads/2015/11/AD010_ARTICOLO-BLOG_CARLO_901x704.jpg"
-              class="img-album"
-              alt="" />
-            <div class="d-inline-block mx-3">
-              <span>tipo album/playlist/brano</span>
-              <h1>Nome album/playlist/brano</h1>
-              <div class="d-flex align-items-center gap-2">
-                <img
-                  src="https://loghi-famosi.com/wp-content/uploads/2021/01/Pink-Floyd-Logo-1973-1978.png"
-                  alt=""
-                  class="thumbnail" />
+            <!-- fine barrasticky -->
+            <!-- Inizio dettaglio Album -->
+            <div class="d-flex align-items-end px-3">
+              <!-- classe img-album per largh. image 200px -->
+              <img
+                src="https://www.ad010.com/wp-content/uploads/2015/11/AD010_ARTICOLO-BLOG_CARLO_901x704.jpg"
+                class="img-album"
+                alt="" />
+              <div class="d-inline-block m-4">
+                <span>Album</span>
+                <h1>Nome Album</h1>
+                <div class="d-flex align-items-center gap-2">
+                  <!-- classe per mini thumbnail -->
+                  <img
+                    src="https://loghi-famosi.com/wp-content/uploads/2021/01/Pink-Floyd-Logo-1973-1978.png"
+                    alt=""
+                    class="thumbnail" />
 
-                <span>nome artista/</span> <span>nome brano/</span><span>data/</span>
-                <span>durata</span>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="d-flex align-items-center gap-3 p-3">
-              <div class="play">
-                <i class="bi bi-play-fill cerchio-play"></i>
-              </div>
-              <i class="bi bi-heart fs-4"></i>
-              <i class="bi bi-three-dots fs-4"></i>
-            </div>
-            <!--- per playlist
-        <div class="box-thumbnail">
-          <img
-            src="https://loghi-famosi.com/wp-content/uploads/2021/01/Pink-Floyd-Logo-1973-1978.png"
-            alt=""
-            class="thumbnail" />
-          <div class="d-inline-block">
-            <span>artista </span>
-            <span>nome artista</span>
-          </div>
-        </div>
-                -->
-            <div class="d-flex flex-column">
-              <div class="d-flex flex-grow-1 gap-3 mx-3 border-bottom">
-                <i class="bi bi-hash"></i>
-                <p>Title</p>
-                <i class="bi bi-clock flex-grow-1 text-end"></i>
-              </div>
-              <div class="row mx-3 g-3">
-                <div class="col">traccia</div>
-                <div class="col">titolo</div>
-                <div class="col text-end">durata</div>
-              </div>
-              <div class="row mx-3 g-3">
-                <div class="col">traccia</div>
-                <div class="col">titolo</div>
-                <div class="col text-end">durata</div>
-              </div>
-              <div class="row mx-3 g-3">
-                <div class="col">traccia</div>
-                <div class="col">titolo</div>
-                <div class="col text-end">durata</div>
-              </div>
-              <div class="row mx-3 g-3">
-                <div class="col">traccia</div>
-                <div class="col">titolo</div>
-                <div class="col text-end">durata</div>
-              </div>
-              <div class="row mx-3 g-3">
-                <div class="col">traccia</div>
-                <div class="col">titolo</div>
-                <div class="col text-end">durata</div>
-              </div>
-              <div class="row mx-3 g-3">
-                <div class="col">traccia</div>
-                <div class="col">titolo</div>
-                <div class="col text-end">durata</div>
-              </div>
-              <div class="row mx-3 g-3">
-                <div class="col">traccia</div>
-                <div class="col">titolo</div>
-                <div class="col text-end">durata</div>
-              </div>
-              <div class="row mx-3 g-3">
-                <div class="col">traccia</div>
-                <div class="col">titolo</div>
-                <div class="col text-end">durata</div>
-              </div>
-              <div class="row mx-3 g-3">
-                <div class="col">traccia</div>
-                <div class="col">titolo</div>
-                <div class="col text-end">durata</div>
-              </div>
-            </div>
-          </div>
-          <footer class="mt-5">
-            <div class="d-flex">
-              <div class="d-flex border-bottom flex-grow-1">
-                <div class="">
-                  <h5 class="fs-6">Azienda</h5>
-                  <ul class="p-0 list-unstyled mx-3">
-                    <li class="mt-2">
-                      <a
-                        href=""
-                        class="text-decoration-none"
-                        >Chi siamo</a
-                      >
-                    </li>
-                    <li class="mt-2">
-                      <a
-                        href=""
-                        class="text-decoration-none"
-                        >Opportunità di lavoro</a
-                      >
-                    </li>
-                    <li class="mt-2">
-                      <a
-                        href=""
-                        class="text-decoration-none"
-                        >For the record</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h5 class="fs-6">Community</h5>
-                  <ul class="p-0 list-unstyled mx-5">
-                    <li class="mt-2">
-                      <a
-                        href=""
-                        class="text-decoration-none"
-                        >Per artisti</a
-                      >
-                    </li>
-                    <li class="mt-2">
-                      <a
-                        href=""
-                        class="text-decoration-none"
-                        >Sviluppatori</a
-                      >
-                    </li>
-                    <li class="mt-2">
-                      <a
-                        href=""
-                        class="text-decoration-none"
-                        >Pubblicità</a
-                      >
-                    </li>
-                    <li class="mt-2">
-                      <a
-                        href=""
-                        class="text-decoration-none"
-                        >Invertitori</a
-                      >
-                    </li>
-                    <li class="mt-2">
-                      <a
-                        href=""
-                        class="text-decoration-none"
-                        >Venditori</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <h5 class="fs-6">Link utili</h5>
-                  <ul class="p-0 list-unstyled ms-5">
-                    <li class="mt-2">
-                      <a
-                        href=""
-                        class="text-decoration-none"
-                        >Assistenza</a
-                      >
-                    </li>
-                    <li class="mt-2">
-                      <a
-                        href=""
-                        class="text-decoration-none"
-                        >App per cellulare gratuita</a
-                      >
-                    </li>
-                    <li class="mt-2">
-                      <a
-                        href=""
-                        class="text-decoration-none"
-                        >Diritti del consumatore</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-                <div class="flex-grow-1 text-end me-3 d-flex justify-content-end">
-                  <div class="box bg-dark d-flex justify-content-center align-items-center">
-                    <i class="bi bi-instagram d-block"></i>
-                  </div>
-                  <div class="box bg-dark d-flex justify-content-center align-items-center mx-3">
-                    <i class="bi bi-twitter d-block"></i>
-                  </div>
-                  <div class="box bg-dark d-flex justify-content-center align-items-center">
-                    <i class="bi bi-facebook d-block"></i>
-                  </div>
+                  <span>artista/</span> <span>n brani/</span><span>data/</span>
+                  <span>durata</span>
                 </div>
               </div>
             </div>
+            <!-- fine dettaglio album -->
             <div>
-              <div class="d-flex flex-grow-1">
-                <a
-                  href=""
-                  class="text-decoration-none"
-                  >Informazioni legali</a
-                >
-                <a
-                  href=""
-                  class="text-decoration-none mx-2"
-                  >Centro sulla privacy</a
-                >
-                <a
-                  href=""
-                  class="text-decoration-none mx-2"
-                  >Informativa sulla privacy</a
-                >
-                <a
-                  href=""
-                  class="text-decoration-none mx-2"
-                  >Impostazioni cookie</a
-                >
-                <a
-                  href=""
-                  class="text-decoration-none mx-2"
-                  >Info annunci</a
-                >
-                <a
-                  href=""
-                  class="text-decoration-none"
-                  >Accessibilità</a
-                >
-                <a
-                  href=""
-                  class="flex-grow-1 text-end text-decoration-none"
-                  >©Spotify AB</a
-                >
+              <div class="d-flex align-items-center gap-3 px-3 my-4">
+                <!-- bottoni -->
+                <div class="play-backgroun d-flex justify-content-center align-items-center">
+                  <i class="bi bi-play-fill text-black fs-3"></i>
+                </div>
+                <i class="bi bi-heart fs-4"></i>
+                <i class="bi bi-three-dots fs-4"></i>
+              </div>
+              <!-- Creazione elementi traccia xjs il pirmo è quello di riferimento-->
+              <div class="d-flex flex-column px-3">
+                <div class="row g-3 border-bottom mb-3">
+                  <div class="col-1"><i class="bi bi-hash"></i></div>
+                  <div class="col"><p>Titolo</p></div>
+                  <div class="col text-end"><i class="bi bi-clock flex-grow-1 text-end"></i></div>
+                </div>
+                <!-- fine rif -->
+                <div class="row g-3">
+                  <div class="col-1">traccia</div>
+                  <div class="col">titolo</div>
+                  <div class="col text-end">durata</div>
+                </div>
+                <div class="row g-3">
+                  <div class="col-1">traccia</div>
+                  <div class="col">titolo</div>
+                  <div class="col text-end">durata</div>
+                </div>
+                <div class="row g-3">
+                  <div class="col-1">traccia</div>
+                  <div class="col">titolo</div>
+                  <div class="col text-end">durata</div>
+                </div>
+                <div class="row g-3">
+                  <div class="col-1">traccia</div>
+                  <div class="col">titolo</div>
+                  <div class="col text-end">durata</div>
+                </div>
+                <div class="row g-3">
+                  <div class="col-1">traccia</div>
+                  <div class="col">titolo</div>
+                  <div class="col text-end">durata</div>
+                </div>
+                <div class="row g-3">
+                  <div class="col-1">traccia</div>
+                  <div class="col">titolo</div>
+                  <div class="col text-end">durata</div>
+                </div>
+                <div class="row g-3">
+                  <div class="col-1">traccia</div>
+                  <div class="col">titolo</div>
+                  <div class="col text-end">durata</div>
+                </div>
+                <div class="row g-3">
+                  <div class="col-1">traccia</div>
+                  <div class="col">titolo</div>
+                  <div class="col text-end">durata</div>
+                </div>
+                <div class="row g-3">
+                  <div class="col-1">traccia</div>
+                  <div class="col">titolo</div>
+                  <div class="col text-end">durata</div>
+                </div>
+              </div>
+              <!-- copyright infondo tracce -->
+              <div class="row pt-4 px-3">
+                <div class="col-12"><span>uscita album</span></div>
+                <div class="col-12"><span>copyright</span></div>
+                <div class="col-12"><span>altri copyright</span></div>
+              </div>
+              <div class="pt-4 px-3">
+                <div class="d-flex justify-content-between">
+                  <h3>Altro dell'Artista</h3>
+                  <a
+                    href=""
+                    class="text-decoration-none">
+                    VEDI DISCOGRAFIA</a
+                  >
+                </div>
+                <div class="row px-3 pb-4">
+                  <div class="col-3">CARD</div>
+                  <div class="col-3">CARD</div>
+                  <div class="col-3">CARD</div>
+                  <div class="col-3">CARD</div>
+                </div>
               </div>
             </div>
-          </footer>
+            <!-- Fine dettagli album -->
+            <footer>
+              <div class="d-flex mt-5">
+                <div class="d-flex border-bottom flex-grow-1">
+                  <div class="px-5">
+                    <h5 class="fs-6">Azienda</h5>
+                    <ul class="p-0 list-unstyled">
+                      <li class="mt-2">
+                        <a
+                          href=""
+                          class="text-decoration-none"
+                          >Chi siamo</a
+                        >
+                      </li>
+                      <li class="mt-2">
+                        <a
+                          href=""
+                          class="text-decoration-none"
+                          >Opportunità di lavoro</a
+                        >
+                      </li>
+                      <li class="mt-2">
+                        <a
+                          href=""
+                          class="text-decoration-none"
+                          >For the record</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="ms-3 pe-5 me-5">
+                    <h5 class="fs-6">Community</h5>
+                    <ul class="p-0 list-unstyled">
+                      <li class="mt-2">
+                        <a
+                          href=""
+                          class="text-decoration-none"
+                          >Per artisti</a
+                        >
+                      </li>
+                      <li class="mt-2">
+                        <a
+                          href=""
+                          class="text-decoration-none"
+                          >Sviluppatori</a
+                        >
+                      </li>
+                      <li class="mt-2">
+                        <a
+                          href=""
+                          class="text-decoration-none"
+                          >Pubblicità</a
+                        >
+                      </li>
+                      <li class="mt-2">
+                        <a
+                          href=""
+                          class="text-decoration-none"
+                          >Invertitori</a
+                        >
+                      </li>
+                      <li class="mt-2">
+                        <a
+                          href=""
+                          class="text-decoration-none"
+                          >Venditori</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="px-5 ms-5">
+                    <h5 class="fs-6">Link utili</h5>
+                    <ul class="p-0 list-unstyled">
+                      <li class="mt-2">
+                        <a
+                          href=""
+                          class="text-decoration-none"
+                          >Assistenza</a
+                        >
+                      </li>
+                      <li class="mt-2">
+                        <a
+                          href=""
+                          class="text-decoration-none"
+                          >App per cellulare gratuita</a
+                        >
+                      </li>
+                      <li class="mt-2">
+                        <a
+                          href=""
+                          class="text-decoration-none"
+                          >Diritti del consumatore</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="flex-grow-1 text-end me-3 d-flex justify-content-end">
+                    <div class="box bg-dark d-flex justify-content-center align-items-center">
+                      <i class="bi bi-instagram d-block"></i>
+                    </div>
+                    <div class="box bg-dark d-flex justify-content-center align-items-center mx-3">
+                      <i class="bi bi-twitter d-block"></i>
+                    </div>
+                    <div class="box bg-dark d-flex justify-content-center align-items-center">
+                      <i class="bi bi-facebook d-block"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex justify-content-between mt-5">
+                <div class="d-flex flex-wrap w-75">
+                  <a
+                    href=""
+                    class="text-decoration-none"
+                    >Informazioni legali</a
+                  >
+                  <a
+                    href=""
+                    class="text-decoration-none mx-2"
+                    >Centro sulla privacy</a
+                  >
+                  <a
+                    href=""
+                    class="text-decoration-none mx-2"
+                    >Informativa sulla privacy</a
+                  >
+                  <a
+                    href=""
+                    class="text-decoration-none mx-2"
+                    >Impostazioni cookie</a
+                  >
+                  <a
+                    href=""
+                    class="text-decoration-none mx-2"
+                    >Info annunci</a
+                  >
+                  <a
+                    href=""
+                    class="text-decoration-none"
+                    >Accessibilità</a
+                  >
+                </div>
+                <a
+                  href=""
+                  class="text-decoration-none text-white"
+                  >© 2023 Spotify AB</a
+                >
+              </div>
+            </footer>
+          </div>
         </main>
       </div>
     </div>
-    <div class="position-fixed w-100 bg-black height-for-fixed-bottom z-3 bottom-0 d-flex">
+    <div class="sticky-bottom w-100 bg-black height-for-fixed-bottom d-flex">
       <div class="ms-3 d-flex">
         <!-- mettere info album -->
         <div class="d-flex align-items-center mb-3">
           <img
-            class="me-3 img-album"
+            class="me-3"
+            style="width: 60px"
             src="assets/imgs/search/image-1.jpeg"
             alt="" />
           <div class="fs-6">
@@ -621,10 +640,7 @@
         <div class="progress-bar w-75"></div>
       </div>
 
-      <div class="posizione-pulsanti-fixed-bottom">
-        <button class="btn btn-dark">Iscriviti</button>
-        <button class="btn btn-dark">Accedi</button>
-      </div>
+      <div class=""></div>
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
