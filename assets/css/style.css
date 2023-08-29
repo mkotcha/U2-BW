@@ -9960,13 +9960,11 @@ textarea.form-control-lg {
 }
 
 .height-for-fixed-bottom {
-  height: 70px;
-  width: 100%;
+  height: 90px;
 }
 
 .posizione-pulsanti-fixed-bottom {
   position: relative;
-  left: 75%;
 }
 
 .cerchio-play {

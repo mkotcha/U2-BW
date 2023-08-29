@@ -16,30 +16,6 @@
       href="assets/css/style.css" />
   </head>
   <body>
-    <div class="position-fixed bg-black height-for-fixed-bottom z-3 bottom-0 d-flex album-height">
-      <div class="ms-3 d-flex">
-        <div class="box bg-dark d-flex justify-content-center align-items-center">
-          <i class="bi bi-chevron-left"></i>
-        </div>
-        <div class="box bg-dark d-flex justify-content-center align-items-center mx-3">
-          <i class="bi bi-chevron-right"></i>
-        </div>
-      </div>
-      <div
-        class="progress"
-        role="progressbar"
-        aria-label="Basic example"
-        aria-valuenow="75"
-        aria-valuemin="0"
-        aria-valuemax="100">
-        <div class="progress-bar w-75"></div>
-      </div>
-
-      <div class="posizione-pulsanti-fixed-bottom">
-        <button class="btn btn-dark">Iscriviti</button>
-        <button class="btn btn-dark">Accedi</button>
-      </div>
-    </div>
     <div class="container-flex bg-black vh-100 overflow-hidden">
       <div class="d-flex h-100">
         <div class="home-sidebar p-2">
@@ -615,6 +591,37 @@
             </div>
           </footer>
         </main>
+      </div>
+    </div>
+    <div class="position-fixed w-100 bg-black height-for-fixed-bottom z-3 bottom-0 d-flex">
+      <div class="ms-3 d-flex">
+        <!-- mettere info album -->
+        <div class="d-flex align-items-center mb-3">
+          <img
+            class="me-3 img-album"
+            src="assets/imgs/search/image-1.jpeg"
+            alt="" />
+          <div class="fs-6">
+            <p class="fw-bold m-0">Canzone</p>
+            <p class="text-body-secondary m-0">artista</p>
+          </div>
+          <i class="bi bi-heart mx-2 fs-5"></i>
+        </div>
+        <!-- mettere cuore -->
+      </div>
+      <div
+        class="progress w-50 mt-4"
+        role="progressbar"
+        aria-label="Basic example"
+        aria-valuenow="75"
+        aria-valuemin="0"
+        aria-valuemax="100">
+        <div class="progress-bar w-75"></div>
+      </div>
+
+      <div class="posizione-pulsanti-fixed-bottom">
+        <button class="btn btn-dark">Iscriviti</button>
+        <button class="btn btn-dark">Accedi</button>
       </div>
     </div>
     <script
