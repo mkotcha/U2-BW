@@ -50,17 +50,6 @@
 // .home-hero-container::-webkit-scrollbar-thumb {
 //   background-color: hsla(0, 0%, 100%, 0.3);
 // }
-//------------TAG
-
-h5 {
-  font-size: 1em;
-  padding-left: 20px;
-}
-ul {
-  list-style: none;
-  padding-left: 0px;
-}
-
 //-----------------CLASSI
 
 .img-album {
@@ -74,8 +63,16 @@ ul {
   object-fit: cover;
 }
 
-.album-height{
+.space-for-fixed{
   height: 38px;
+}
+.height-for-fixed-bottom{
+  height: 70px;
+  width:100%;
+}
+.posizione-pulsanti-fixed-bottom{
+  position:relative;
+  left: 75%;
 }
 
 .cerchio-play {

@@ -9882,16 +9882,6 @@ textarea.form-control-lg {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6) 0, #121212 30%);
 }
 
-h5, .h5 {
-  font-size: 1em;
-  padding-left: 20px;
-}
-
-ul {
-  list-style: none;
-  padding-left: 0px;
-}
-
 .img-album {
   width: 20%;
 }
@@ -9903,8 +9893,18 @@ ul {
   object-fit: cover;
 }
 
-.album-height {
+.space-for-fixed {
   height: 38px;
+}
+
+.height-for-fixed-bottom {
+  height: 70px;
+  width: 100%;
+}
+
+.posizione-pulsanti-fixed-bottom {
+  position: relative;
+  left: 75%;
 }
 
 .cerchio-play {
