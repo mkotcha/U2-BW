@@ -724,13 +724,14 @@
     <script>
       window.onload = async event => {
         event.preventDefault();
-        //const idAlbum = new URLSearchParams(windows.location.search).get("idAlbum");
+        const idAlbum = new URLSearchParams(window.location.search).get("idAlbum");
         const prova = 129573; //METTERE ID ALBUM PROVENIENTE DAL CLICK SU LINK AD ALBUM DA QUESTA O ALTRE PAGINE
         const url = "https://striveschool-api.herokuapp.com/api/deezer/album/" + `${prova}`;
         await fetch(url)
           .then(risp => risp.json())
           .then(dato => {
-            console.log(dato);
+            console.log(dato); //console.log
+            console.log(dato.tracks.data); //console.log
             const img = document.getElementsByClassName("img-album");
             const titoloAlbum = document.getElementsByClassName("titolo-album");
             const artist = document.getElementsByClassName("artist");
@@ -746,9 +747,7 @@
             anno[0].innerHTML = `${dato.release_date} ◦`;
             dtracce[0].innerHTML = `${Math.round((dato.duration / 60) * 100) / 100}`;
             const tracce = document.getElementsByClassName("tracce");
-            console.log(dato.tracks.data);
             for (let i = 0; i < dato.tracks.data.length; i++) {
-              console.log("for");
               const titolo = dato.tracks.data[i].title;
               const durata = dato.tracks.data[i].duration;
               const row = document.createElement("div");
