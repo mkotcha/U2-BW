@@ -10224,6 +10224,13 @@ textarea.form-control-lg {
   flex-grow: 1;
 }
 
-#artist-radio-btn {
-  background-color: #2a2a2a;
+.dropend:hover > .dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
+
+.dropend:hover > .dropdown-menu {
+  position: absolute;
+  top: 0;
+  left: 100%;
 }/*# sourceMappingURL=style.css.map */

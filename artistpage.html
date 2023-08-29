@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
-    <title>Artistpage</title>
+    <title>Spotify</title>
   </head>
   <body>
     <div id="home-container" class="p-2">
@@ -258,7 +258,41 @@
                   </button>
                 </div>
                 <div>
-                  <button class="btn fs-3 ms-3"><i class="bi bi-three-dots"></i></button>
+                  <div class="nav-item dropdown ms-4">
+                    <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="bi bi-three-dots fs-3"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Segui</a></li>
+                      <li><a class="dropdown-item" href="#">Vai a Radio dall'artista</a></li>
+                      <div>
+                        <li>
+                          <a class="dropdown-item d-flex justify-content-between" href="#"
+                            >Segnala <i class="bi bi-box-arrow-up-right"></i
+                          ></a>
+                        </li>
+                      </div>
+
+                      <li class="nav-item dropend">
+                        <a
+                          class="dropdown-item d-flex justify-content-between"
+                          href="#"
+                          role="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          Condividi
+                          <div class="dropdown-toggle pe-2"></div>
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Copia link all'artista</a></li>
+                          <li><a class="dropdown-item" href="#">Incorpora artista</a></li>
+                        </ul>
+                      </li>
+                      <li><hr class="dropdown-divider" /></li>
+                      <li><a class="dropdown-item" href="#">Apri con l'app per desktop</a></li>
+                    </ul>
+                  </div>
                 </div>
               </div>
               <div class="p-4 py-0">
@@ -429,7 +463,7 @@
                       </div>
                     </li>
                   </div>
-                  <div class="p-3">Visualizza altro</div>
+                  <div class="fw-bold fs-6 p-3"><a href="#" class="text-decoration-none">Visualizza altro</a></div>
                 </ol>
                 <div>
                   <h3 class="fw-bold text-white">Selezione dell'artista</h3>
@@ -440,7 +474,7 @@
                         <img src="./assets/imgs/main/image-1.jpg" class="rounded-circle me-2" width="24" />
                         <span>Pubblicato da Artista</span>
                       </div>
-                      <div class="fs-5 text-white fw-bold">Nome Album</div>
+                      <div><a href="#" class="fs-5 text-white fw-bold text-decoration-none">Nome Album</a></div>
                       <div>Playlist</div>
                     </div>
                   </div>
@@ -450,7 +484,7 @@
                     <h3 class="fw-bold text-white">Discografia</h3>
                     <div class="fw-bold fs-6"><a href="#" class="text-decoration-none">Mostra tutto</a></div>
                   </div>
-                  <div>
+                  <div class="mb-2">
                     <input
                       type="radio"
                       class="btn-check"
@@ -459,12 +493,16 @@
                       autocomplete="off"
                       checked
                     />
-                    <label id="artist-radio-btn" class="btn btn-artist-radio-button border-0" for="uscite-popolari"
-                      >Checked success radio</label
-                    >
+                    <label class="btn btn-secondary border-0" for="uscite-popolari">Uscite popolari</label>
 
-                    <input type="radio" class="btn-check" name="options-outlined" id="album" autocomplete="off" />
-                    <label id="artist-radio-btn" class="btn btn-secondary border-0" for="album">Danger radio</label>
+                    <input
+                      type="radio"
+                      class="btn-check"
+                      name="options-outlined"
+                      id="artist-album"
+                      autocomplete="off"
+                    />
+                    <label class="btn btn-secondary border-0" for="artist-album">Album</label>
                     <input
                       type="radio"
                       class="btn-check"
@@ -472,9 +510,7 @@
                       id="singoli-ed-ep"
                       autocomplete="off"
                     />
-                    <label id="artist-radio-btn" class="btn btn-secondary border-0" for="singoli-ed-ep"
-                      >Danger radio</label
-                    >
+                    <label class="btn btn-secondary border-0" for="singoli-ed-ep">Singoli ed EP</label>
                   </div>
                   <div class="row row-cols-4 g-4">
                     <div class="col">
@@ -516,7 +552,11 @@
                   </div>
                 </div>
                 <div class="hero-test px-4">
-                  <h3 class="mt-5 mb-4 fw-bold">Creato per EPICODER</h3>
+                  <div class="d-flex mt-5 mb-4 align-items-center justify-content-between">
+                    <h3 class="fw-bold text-white">Con Nome Artista</h3>
+                    <div class="fw-bold fs-6"><a href="#" class="text-decoration-none">Mostra tutto</a></div>
+                  </div>
+
                   <div class="row row-cols-4 g-4">
                     <div class="col">
                       <div class="home-card rounded-2 d-flex flex-column p-3">
@@ -556,6 +596,264 @@
                     </div>
                   </div>
                 </div>
+                <div class="hero-test px-4">
+                  <div class="d-flex mt-5 mb-4 align-items-center justify-content-between">
+                    <h3 class="fw-bold text-white">I fan apprezzano anche</h3>
+                    <div class="fw-bold fs-6"><a href="#" class="text-decoration-none">Mostra tutto</a></div>
+                  </div>
+
+                  <div class="row row-cols-4 g-4">
+                    <div class="col">
+                      <div class="home-card rounded-2 d-flex flex-column p-3">
+                        <div class="mb-3"><img src="assets/imgs/main/image-8.jpg" class="rounded-2" alt="" /></div>
+                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
+                          <a href="" class="text-reset text-decoration-none">Title</a>
+                        </p>
+                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="home-card rounded-2 d-flex flex-column p-3">
+                        <div class="mb-3"><img src="assets/imgs/main/image-9.jpg" class="rounded-2" alt="" /></div>
+                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
+                          <a href="" class="text-reset text-decoration-none">Title</a>
+                        </p>
+                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="home-card rounded-2 d-flex flex-column p-3">
+                        <div class="mb-3"><img src="assets/imgs/main/image-7.jpg" class="rounded-2" alt="" /></div>
+                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
+                          <a href="" class="text-reset text-decoration-none">Title</a>
+                        </p>
+                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="home-card rounded-2 d-flex flex-column p-3">
+                        <div class="mb-3"><img src="assets/imgs/main/image-8.jpg" class="rounded-2" alt="" /></div>
+                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
+                          <a href="" class="text-reset text-decoration-none">Title</a>
+                        </p>
+                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="hero-test px-4">
+                  <div class="d-flex mt-5 mb-4 align-items-center justify-content-between">
+                    <h3 class="fw-bold text-white">Compare in</h3>
+                    <div class="fw-bold fs-6"><a href="#" class="text-decoration-none">Mostra tutto</a></div>
+                  </div>
+
+                  <div class="row row-cols-4 g-4">
+                    <div class="col">
+                      <div class="home-card rounded-2 d-flex flex-column p-3">
+                        <div class="mb-3"><img src="assets/imgs/main/image-8.jpg" class="rounded-2" alt="" /></div>
+                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
+                          <a href="" class="text-reset text-decoration-none">Title</a>
+                        </p>
+                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="home-card rounded-2 d-flex flex-column p-3">
+                        <div class="mb-3"><img src="assets/imgs/main/image-9.jpg" class="rounded-2" alt="" /></div>
+                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
+                          <a href="" class="text-reset text-decoration-none">Title</a>
+                        </p>
+                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="home-card rounded-2 d-flex flex-column p-3">
+                        <div class="mb-3"><img src="assets/imgs/main/image-7.jpg" class="rounded-2" alt="" /></div>
+                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
+                          <a href="" class="text-reset text-decoration-none">Title</a>
+                        </p>
+                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="home-card rounded-2 d-flex flex-column p-3">
+                        <div class="mb-3"><img src="assets/imgs/main/image-8.jpg" class="rounded-2" alt="" /></div>
+                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
+                          <a href="" class="text-reset text-decoration-none">Title</a>
+                        </p>
+                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="hero-test px-4">
+                  <div class="d-flex mt-5 mb-4 align-items-center justify-content-between">
+                    <h3 class="fw-bold text-white">Playlist dell'artista</h3>
+                    <div class="fw-bold fs-6"><a href="#" class="text-decoration-none">Mostra tutto</a></div>
+                  </div>
+
+                  <div class="row row-cols-4 g-4">
+                    <div class="col">
+                      <div class="home-card rounded-2 d-flex flex-column p-3">
+                        <div class="mb-3"><img src="assets/imgs/main/image-8.jpg" class="rounded-2" alt="" /></div>
+                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
+                          <a href="" class="text-reset text-decoration-none">Title</a>
+                        </p>
+                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="home-card rounded-2 d-flex flex-column p-3">
+                        <div class="mb-3"><img src="assets/imgs/main/image-9.jpg" class="rounded-2" alt="" /></div>
+                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
+                          <a href="" class="text-reset text-decoration-none">Title</a>
+                        </p>
+                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="home-card rounded-2 d-flex flex-column p-3">
+                        <div class="mb-3"><img src="assets/imgs/main/image-7.jpg" class="rounded-2" alt="" /></div>
+                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
+                          <a href="" class="text-reset text-decoration-none">Title</a>
+                        </p>
+                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="home-card rounded-2 d-flex flex-column p-3">
+                        <div class="mb-3"><img src="assets/imgs/main/image-8.jpg" class="rounded-2" alt="" /></div>
+                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
+                          <a href="" class="text-reset text-decoration-none">Title</a>
+                        </p>
+                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="hero-test px-4">
+                  <div class="d-flex mt-5 mb-4 align-items-center justify-content-between">
+                    <h3 class="fw-bold text-white">Scoperto in</h3>
+                    <div class="fw-bold fs-6"><a href="#" class="text-decoration-none">Mostra tutto</a></div>
+                  </div>
+
+                  <div class="row row-cols-4 g-4">
+                    <div class="col">
+                      <div class="home-card rounded-2 d-flex flex-column p-3">
+                        <div class="mb-3"><img src="assets/imgs/main/image-8.jpg" class="rounded-2" alt="" /></div>
+                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
+                          <a href="" class="text-reset text-decoration-none">Title</a>
+                        </p>
+                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="home-card rounded-2 d-flex flex-column p-3">
+                        <div class="mb-3"><img src="assets/imgs/main/image-9.jpg" class="rounded-2" alt="" /></div>
+                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
+                          <a href="" class="text-reset text-decoration-none">Title</a>
+                        </p>
+                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="home-card rounded-2 d-flex flex-column p-3">
+                        <div class="mb-3"><img src="assets/imgs/main/image-7.jpg" class="rounded-2" alt="" /></div>
+                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
+                          <a href="" class="text-reset text-decoration-none">Title</a>
+                        </p>
+                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="home-card rounded-2 d-flex flex-column p-3">
+                        <div class="mb-3"><img src="assets/imgs/main/image-8.jpg" class="rounded-2" alt="" /></div>
+                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
+                          <a href="" class="text-reset text-decoration-none">Title</a>
+                        </p>
+                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <footer class="mt-5 p-3">
+                  <div class="d-flex border-bottom">
+                    <div class="d-flex flex-grow-1">
+                      <div class="me-4 mb-5">
+                        <h5 class="fs-6">Azienda</h5>
+                        <ul class="p-0 list-unstyled">
+                          <li class="mt-2">
+                            <a href="" class="text-decoration-none">Chi siamo</a>
+                          </li>
+                          <li class="mt-2">
+                            <a href="" class="text-decoration-none">Opportunità di lavoro</a>
+                          </li>
+                          <li class="mt-2">
+                            <a href="" class="text-decoration-none">For the record</a>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div class="me-4 mb-5">
+                        <h5 class="fs-6">Community</h5>
+                        <ul class="p-0 list-unstyled">
+                          <li class="mt-2">
+                            <a href="" class="text-decoration-none">Per artisti</a>
+                          </li>
+                          <li class="mt-2">
+                            <a href="" class="text-decoration-none">Sviluppatori</a>
+                          </li>
+                          <li class="mt-2">
+                            <a href="" class="text-decoration-none">Pubblicità</a>
+                          </li>
+                          <li class="mt-2">
+                            <a href="" class="text-decoration-none">Invertitori</a>
+                          </li>
+                          <li class="mt-2">
+                            <a href="" class="text-decoration-none">Venditori</a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="me-4 mb-5">
+                        <h5 class="fs-6">Link utili</h5>
+                        <ul class="p-0 list-unstyled">
+                          <li class="mt-2">
+                            <a href="" class="text-decoration-none">Assistenza</a>
+                          </li>
+                          <li class="mt-2">
+                            <a href="" class="text-decoration-none">App per cellulare gratuita</a>
+                          </li>
+                          <li class="mt-2">
+                            <a href="" class="text-decoration-none">Diritti del consumatore</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="text-end me-3 d-flex justify-content-end">
+                      <div class="box bg-dark d-flex justify-content-center align-items-center">
+                        <i class="bi bi-instagram d-block"></i>
+                      </div>
+                      <div class="box bg-dark d-flex justify-content-center align-items-center mx-3">
+                        <i class="bi bi-twitter d-block"></i>
+                      </div>
+                      <div class="box bg-dark d-flex justify-content-center align-items-center">
+                        <i class="bi bi-facebook d-block"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="d-flex flex-grow-1 mt-5 mb-5">
+                      <a href="" class="text-decoration-none">Informazioni legali</a>
+                      <a href="" class="text-decoration-none mx-2">Centro sulla privacy</a>
+                      <a href="" class="text-decoration-none mx-2">Informativa sulla privacy</a>
+                      <a href="" class="text-decoration-none mx-2">Impostazioni cookie</a>
+                      <a href="" class="text-decoration-none mx-2">Info annunci</a>
+                      <a href="" class="text-decoration-none">Accessibilità</a>
+                      <a href="" class="flex-grow-1 text-end text-decoration-none">©Spotify AB</a>
+                    </div>
+                  </div>
+                </footer>
               </div>
             </div>
           </div>
