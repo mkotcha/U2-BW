@@ -724,8 +724,9 @@
     <script>
       window.onload = async event => {
         event.preventDefault();
-        const idAlbum = 129573; //METTERE ID ALBUM PROVENIENTE DAL CLICK SU LINK AD ALBUM DA QUESTA O ALTRE PAGINE
-        const url = "https://striveschool-api.herokuapp.com/api/deezer/album/" + `${idAlbum}`;
+        const idAlbum = new URLSearchParams(windows.location.search).get("idAlbum");
+        const prova = 129573; //METTERE ID ALBUM PROVENIENTE DAL CLICK SU LINK AD ALBUM DA QUESTA O ALTRE PAGINE
+        const url = "https://striveschool-api.herokuapp.com/api/deezer/album/" + `${prova}`;
         await fetch(url)
           .then(risp => risp.json())
           .then(dato => {
