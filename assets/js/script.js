@@ -70,7 +70,18 @@ const printSideCard = data => {
   //     .then(data => console.log(data))
   //     .catch(error => console.log(error));
   const list = document.querySelector(".side-list");
-  list.innerHtml = "";
+  list.innerHTML = "";
+  console.log(data.tracks);
+  data.tracks.data.forEach(elm => {
+    list.innerHTML += `<div class="d-flex mb-3">
+  <img class="me-3" src="${elm.album.cover_medium}" alt="" />
+  <div class="fs-6">
+    <p class="fw-bold m-0 text-truncate">${elm.title}</p>
+    <p class="text-body-secondary m-0">
+      <i class="bi bi-pin-angle text-success d-none"></i> <span class="category">${elm.artist.name}</span>
+    </p>
+  </div>`;
+  });
 };
 
 const numCol = () => {
