@@ -118,7 +118,7 @@
 }
 
 .home-hero {
-  height: 30vh;
+  // height: 30vh;
 
   // background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.5)));
   // background: linear-gradient(transparent 0, rgba(0, 0, 0, 0.5) 100%);
@@ -132,6 +132,7 @@
   // left: 0;
   // right: 0;
   margin-top: -72px;
+  // padding-bottom: 72px;
 }
 
 .home-hero-nav-container {
@@ -150,6 +151,17 @@
 
 #home-container {
   height: calc(100vh - 90px);
+}
+
+.hero-test {
+}
+
+.home-card {
+  background-color: $tertiary;
+}
+
+.home-card img {
+  width: 100%;
 }
 
 #artist-body {
