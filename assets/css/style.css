@@ -5600,6 +5600,21 @@ progress {
   width: 16.6666666667%;
 }
 
+.row-cols-7 > * {
+  flex: 0 0 auto;
+  width: 14.2857142857%;
+}
+
+.row-cols-8 > * {
+  flex: 0 0 auto;
+  width: 12.5%;
+}
+
+.row-cols-9 > * {
+  flex: 0 0 auto;
+  width: 11.1111111111%;
+}
+
 .col-auto {
   flex: 0 0 auto;
   width: auto;
@@ -5801,6 +5816,18 @@ progress {
     flex: 0 0 auto;
     width: 16.6666666667%;
   }
+  .row-cols-sm-7 > * {
+    flex: 0 0 auto;
+    width: 14.2857142857%;
+  }
+  .row-cols-sm-8 > * {
+    flex: 0 0 auto;
+    width: 12.5%;
+  }
+  .row-cols-sm-9 > * {
+    flex: 0 0 auto;
+    width: 11.1111111111%;
+  }
   .col-sm-auto {
     flex: 0 0 auto;
     width: auto;
@@ -5969,6 +5996,18 @@ progress {
   .row-cols-md-6 > * {
     flex: 0 0 auto;
     width: 16.6666666667%;
+  }
+  .row-cols-md-7 > * {
+    flex: 0 0 auto;
+    width: 14.2857142857%;
+  }
+  .row-cols-md-8 > * {
+    flex: 0 0 auto;
+    width: 12.5%;
+  }
+  .row-cols-md-9 > * {
+    flex: 0 0 auto;
+    width: 11.1111111111%;
   }
   .col-md-auto {
     flex: 0 0 auto;
@@ -6139,6 +6178,18 @@ progress {
     flex: 0 0 auto;
     width: 16.6666666667%;
   }
+  .row-cols-lg-7 > * {
+    flex: 0 0 auto;
+    width: 14.2857142857%;
+  }
+  .row-cols-lg-8 > * {
+    flex: 0 0 auto;
+    width: 12.5%;
+  }
+  .row-cols-lg-9 > * {
+    flex: 0 0 auto;
+    width: 11.1111111111%;
+  }
   .col-lg-auto {
     flex: 0 0 auto;
     width: auto;
@@ -6308,6 +6359,18 @@ progress {
     flex: 0 0 auto;
     width: 16.6666666667%;
   }
+  .row-cols-xl-7 > * {
+    flex: 0 0 auto;
+    width: 14.2857142857%;
+  }
+  .row-cols-xl-8 > * {
+    flex: 0 0 auto;
+    width: 12.5%;
+  }
+  .row-cols-xl-9 > * {
+    flex: 0 0 auto;
+    width: 11.1111111111%;
+  }
   .col-xl-auto {
     flex: 0 0 auto;
     width: auto;
@@ -6476,6 +6539,18 @@ progress {
   .row-cols-xxl-6 > * {
     flex: 0 0 auto;
     width: 16.6666666667%;
+  }
+  .row-cols-xxl-7 > * {
+    flex: 0 0 auto;
+    width: 14.2857142857%;
+  }
+  .row-cols-xxl-8 > * {
+    flex: 0 0 auto;
+    width: 12.5%;
+  }
+  .row-cols-xxl-9 > * {
+    flex: 0 0 auto;
+    width: 11.1111111111%;
   }
   .col-xxl-auto {
     flex: 0 0 auto;
@@ -10157,6 +10232,10 @@ textarea.form-control-lg {
   height: 32px;
   border-radius: 50vh;
   border: 3px solid #121212;
+}
+
+.home-card {
+  height: 100%;
 }
 
 .home-card img {

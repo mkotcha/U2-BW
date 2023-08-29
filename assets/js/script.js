@@ -55,4 +55,26 @@ window.onload = async () => {
     col.appendChild(card);
     elm.appendChild(col);
   }
+  hideCard();
 };
+
+const numCol = () => {
+  const container = document.querySelector("main");
+  return container.offsetWidth / 200;
+};
+
+const hideCard = () => {
+  const num = parseInt(numCol());
+  const cards = document.querySelectorAll(".recent-list .col");
+  if (num < 10) cards[0].parentElement.classList = `row row-cols-${num} g-4 recent-list`;
+  else cards[0].parentElement.classList = `row row-cols-9 g-4 recent-list`;
+  cards.forEach((elm, index) => {
+    if (index >= num) {
+      elm.classList.add("d-none");
+    } else {
+      elm.classList.remove("d-none");
+    }
+  });
+};
+
+window.addEventListener("resize", hideCard);
