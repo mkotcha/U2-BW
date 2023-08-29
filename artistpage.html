@@ -223,9 +223,9 @@
         </div>
       </div>
       <div id="main-content-container" class="pt-2 pe-2">
-        <div id="main-content" class="d-flex rounded-4 bg-primary">
-          <div id="artist-image-container" class="p-3 rounded">
-            <div id="artist-btn-container" class="d-flex justify-content-between" width="100%">
+        <div id="main-content" class="rounded-4 bg-primary">
+          <div id="artist-image-container" class="p-3 rounded d-flex row m-0">
+            <div id="artist-btn-container" class="d-flex justify-content-between position-fixed" width="100%">
               <div id="artist-left-buttons">
                 <button id="back-btn" class="bg-black rounded-circle box border border-0 me-2">
                   <i class="bi bi-chevron-left"></i>
@@ -235,8 +235,8 @@
                 </button>
               </div>
               <div id="artist-right-buttons" class="align-middle d-flex">
-                <button class="btn btn-light">Esplora Premium</button>
-                <button class="btn btn-dark ms-2">
+                <button class="btn text-black bg-white">Esplora Premium</button>
+                <button class="btn bg-black ms-2">
                   <i class="bi bi-arrow-down-circle"></i>
                   Installa app
                 </button>
@@ -245,12 +245,36 @@
                 </button>
               </div>
             </div>
-            <div id="artist-name" class="">
-              <!-- <div id="artist-verified" class="d-flex align-middle">
-                <span><i class="bi bi-patch-check-fill"></i></span>
-                <span class="ms-1">Artista verificato</span>
-              </div> -->
+
+            <div class="d-flex align-items-end">
+              <div>
+                <div id="artist-verified" class="d-flex">
+                  <span><i class="bi bi-patch-check-fill"></i></span>
+                  <span class="ms-1">Artista verificato</span>
+                </div>
+                <h1>Artist name</h1>
+                <p>Ascoltatori mensili</p>
+              </div>
             </div>
+          </div>
+          <div id="artist-main-buttons" class="d-flex align-items-center p-3">
+            <div class="play">
+              <i class="bi bi-play-fill cerchio-play"></i>
+            </div>
+            <div><button class="btn btn-outline-light flex-shrink-1 ms-4">Following</button></div>
+            <div>
+              <button class="btn fs-3 ms-3"><i class="bi bi-three-dots"></i></button>
+            </div>
+          </div>
+          <div class="p-3">
+            <h2 class="fs-4">Popolari</h2>
+            <ol>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ol>
           </div>
         </div>
       </div>
