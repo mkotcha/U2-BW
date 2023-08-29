@@ -10094,18 +10094,9 @@ textarea.form-control-lg {
   position: relative;
 }
 
-.space-for-fixed {
-  height: 38px;
-}
-
 .height-for-fixed-bottom {
   height: 70px;
   width: 100%;
-}
-
-.posizione-pulsanti-fixed-bottom {
-  position: relative;
-  left: 75%;
 }
 
 .btn-head {
