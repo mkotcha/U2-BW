@@ -354,12 +354,12 @@
             <div class="d-flex align-items-end px-3">
               <!-- classe img-album per largh. image 200px -->
               <img
-                src="https://www.ad010.com/wp-content/uploads/2015/11/AD010_ARTICOLO-BLOG_CARLO_901x704.jpg"
+                src=""
                 class="img-album"
                 alt="" />
               <div class="d-inline-block m-4">
                 <span>Album</span>
-                <h1>Nome Album</h1>
+                <h1 class="titolo-album">Nome Album</h1>
                 <div class="d-flex align-items-center gap-2">
                   <!-- classe per mini thumbnail -->
                   <img
@@ -368,8 +368,9 @@
                     class="rounded-circle"
                     style="height: 20px; width: 20px" />
 
-                  <span>artista/</span> <span>n brani/</span><span>data/</span>
-                  <span>durata</span>
+                  <span class="artist">artista/</span><span class="year">data/</span>
+                  <span class="ntracks">n brani/</span>
+                  <span class="dtracks">durata</span>
                 </div>
               </div>
             </div>
@@ -384,58 +385,13 @@
                 <i class="bi bi-three-dots fs-4"></i>
               </div>
               <!-- Creazione elementi traccia xjs il pirmo è quello di riferimento-->
-              <div class="d-flex flex-column px-3">
+              <div class="d-flex flex-column px-3 tracce">
                 <div class="row g-3 border-bottom mb-3">
                   <div class="col-1"><i class="bi bi-hash"></i></div>
                   <div class="col"><p>Titolo</p></div>
                   <div class="col text-end"><i class="bi bi-clock flex-grow-1 text-end"></i></div>
                 </div>
-                <!-- fine rif -->
-                <div class="row g-3">
-                  <div class="col-1">traccia</div>
-                  <div class="col">titolo</div>
-                  <div class="col text-end">durata</div>
-                </div>
-                <div class="row g-3">
-                  <div class="col-1">traccia</div>
-                  <div class="col">titolo</div>
-                  <div class="col text-end">durata</div>
-                </div>
-                <div class="row g-3">
-                  <div class="col-1">traccia</div>
-                  <div class="col">titolo</div>
-                  <div class="col text-end">durata</div>
-                </div>
-                <div class="row g-3">
-                  <div class="col-1">traccia</div>
-                  <div class="col">titolo</div>
-                  <div class="col text-end">durata</div>
-                </div>
-                <div class="row g-3">
-                  <div class="col-1">traccia</div>
-                  <div class="col">titolo</div>
-                  <div class="col text-end">durata</div>
-                </div>
-                <div class="row g-3">
-                  <div class="col-1">traccia</div>
-                  <div class="col">titolo</div>
-                  <div class="col text-end">durata</div>
-                </div>
-                <div class="row g-3">
-                  <div class="col-1">traccia</div>
-                  <div class="col">titolo</div>
-                  <div class="col text-end">durata</div>
-                </div>
-                <div class="row g-3">
-                  <div class="col-1">traccia</div>
-                  <div class="col">titolo</div>
-                  <div class="col text-end">durata</div>
-                </div>
-                <div class="row g-3">
-                  <div class="col-1">traccia</div>
-                  <div class="col">titolo</div>
-                  <div class="col text-end">durata</div>
-                </div>
+                <!-- qui si creano le tracce dinamiche -->
               </div>
               <!-- copyright infondo tracce -->
               <div class="row pt-4 px-3">
@@ -673,5 +629,46 @@
       integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
       crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
+    <script>
+      window.onload = async event => {
+        event.preventDefault();
+        const idAlbum = 326876;
+        const url = "https://striveschool-api.herokuapp.com/api/deezer/album/" + `${idAlbum}`;
+        await fetch(url)
+          .then(risp => risp.json())
+          .then(dato => {
+            console.log(dato);
+            const img = document.getElementsByClassName("img-album");
+            const titoloAlbum = document.getElementsByClassName("titolo-album");
+            const artist = document.getElementsByClassName("artist");
+            const ntracce = document.getElementsByClassName("ntracks");
+            const dtracce = document.getElementsByClassName("dtracks");
+            const anno = document.getElementsByClassName("year");
+            img[0].src = `${dato.cover}`;
+            titoloAlbum[0].innerHTML = `${dato.title}`;
+            artist[0].innerHTML = `${dato.artist.name} ◦`;
+            ntracce[0].innerHTML = `${dato.tracks.data.length} brani ◦`;
+            anno[0].innerHTML = `${dato.release_date} ◦`;
+            dtracce[0].innerHTML = `${Math.round((dato.duration / 60) * 100) / 100}`;
+            const tracce = document.getElementsByClassName("tracce");
+            console.log(dato.tracks.data);
+            for (let i = 0; i < dato.tracks.data.length; i++) {
+              console.log("for");
+              const titolo = dato.tracks.data[i].title;
+              const durata = dato.tracks.data[i].duration;
+              const row = document.createElement("div");
+              row.classList.add("row", "g-3");
+              row.innerHTML = `
+
+                  <div class="col-1">${i + 1}</div>
+                  <div class="col">${titolo}</div>
+                  <div class="col text-end">${Math.round((durata / 60) * 100) / 100}</div>
+
+            `;
+              tracce[0].appendChild(row);
+            }
+          });
+      };
+    </script>
   </body>
 </html>
