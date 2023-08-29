@@ -10176,6 +10176,8 @@ textarea.form-control-lg {
 .artist-hero {
   height: 500px;
   background-image: url(../imgs/main/image-1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -10220,4 +10222,8 @@ textarea.form-control-lg {
 
 #artist-song-minutes {
   flex-grow: 1;
+}
+
+#artist-radio-btn {
+  background-color: #2a2a2a;
 }/*# sourceMappingURL=style.css.map */
