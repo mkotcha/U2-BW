@@ -333,12 +333,10 @@
             </div>
           </div>
         </div>
-        <main class="overflow-scroll position-relative">
-          <div
-            class="home-hero-container overflow-y-scroll h-100 rounded-4 position-relative"
-            id="prendimi">
+        <main class="">
+          <div class="home-hero-container overflow-y-scroll h-100 rounded-4 position-relative">
             <!-- BARRA STICKY -->
-            <div class="home-hero-nav sti sticky-top">
+            <div class="home-hero-nav sticky-top">
               <div class="d-flex gap-2">
                 <div class="box bg-dark d-flex justify-content-center align-items-center">
                   <i class="bi bi-chevron-left"></i>
@@ -346,11 +344,13 @@
                 <div class="box bg-dark d-flex justify-content-center align-items-center mx-3">
                   <i class="bi bi-chevron-right"></i>
                 </div>
+                <!-- bottone play da fare apparire -->
                 <div
                   class="play-background sticky-top d-flex justify-content-center align-items-center appare"
                   style="opacity: 0">
                   <i class="bi bi-play-fill text-black fs-3"></i>
                 </div>
+                <!--  -->
                 <div class="flex-grow-1"></div>
                 <button class="btn btn-dark btn-head">Iscriviti</button>
                 <button class="btn btn-dark btn-head">Accedi</button>
@@ -389,6 +389,7 @@
                   style="top: 50px">
                   <i class="bi bi-play-fill text-black fs-3"></i>
                 </div>
+                <!-- fine da fare scomparire -->
                 <i class="bi bi-heart fs-4"></i>
                 <i class="bi bi-three-dots fs-4"></i>
               </div>
@@ -733,18 +734,9 @@
     <script src="assets/js/script.js"></script>
     <script>
       const appare = document.getElementsByClassName("appare");
-      const prendimi = document.getElementsByTagName("main");
       const scompare = document.getElementsByClassName("scompare");
-      let i = 0;
-      prendimi[0].addEventListener("scroll", scroll => {
-        const sti = document.getElementsByClassName("sti");
-        i++;
-        console.log(prendimi[0]);
-      });
-      const hide = event => {
-        // if (window.pageYOffset === 100) {
-        // }
-      };
+      //.addEventListener("scroll", scroll => {
+      //});
       window.onload = async event => {
         //event.preventDefault();
         const idAlbum = new URLSearchParams(window.location.search).get("idAlbum");
