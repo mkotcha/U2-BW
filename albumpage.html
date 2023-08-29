@@ -16,20 +16,28 @@
       href="assets/css/style.css" />
   </head>
   <body>
-    <div class="container-fluid">
-      <div class="position-fixed bg-black z-3 bottom-0 d-flex">
-        <div class="me-3 d-flex">
-          <div class="box bg-dark d-flex justify-content-center align-items-center">
-            <i class="bi bi-chevron-left"></i>
-          </div>
-          <div class="box bg-dark d-flex justify-content-center align-items-center mx-3">
-            <i class="bi bi-chevron-right"></i>
-          </div>
+    <div class="position-fixed bg-black height-for-fixed-bottom z-3 bottom-0 d-flex album-height">
+      <div class="ms-3 d-flex">
+        <div class="box bg-dark d-flex justify-content-center align-items-center">
+          <i class="bi bi-chevron-left"></i>
         </div>
-        <div class="">
-          <button class="btn btn-dark">Iscriviti</button>
-          <button class="btn btn-dark">Accedi</button>
+        <div class="box bg-dark d-flex justify-content-center align-items-center mx-3">
+          <i class="bi bi-chevron-right"></i>
         </div>
+      </div>
+      <div
+        class="progress"
+        role="progressbar"
+        aria-label="Basic example"
+        aria-valuenow="75"
+        aria-valuemin="0"
+        aria-valuemax="100">
+        <div class="progress-bar w-75"></div>
+      </div>
+
+      <div class="posizione-pulsanti-fixed-bottom">
+        <button class="btn btn-dark">Iscriviti</button>
+        <button class="btn btn-dark">Accedi</button>
       </div>
     </div>
     <div class="container-flex bg-black vh-100 overflow-hidden">
@@ -347,7 +355,7 @@
             </div>
           </div>
         </div>
-        <main class="container overflow-hidden vh-100 position-relative bg-primary rounded-5">
+        <main class="container overflow-y-scroll vh-100 position-relative bg-primary rounded-5">
           <div class="container-fluid p-3">
             <div class="position-fixed w-50 d-flex">
               <div class="me-3 d-flex">
@@ -364,7 +372,7 @@
               </div>
             </div>
           </div>
-          <div class="album-height"></div>
+          <div class="space-for-fixed"></div>
           <div class="d-flex align-items-end">
             <img
               src="https://www.ad010.com/wp-content/uploads/2015/11/AD010_ARTICOLO-BLOG_CARLO_901x704.jpg"
@@ -430,14 +438,39 @@
                 <div class="col">titolo</div>
                 <div class="col text-end">durata</div>
               </div>
+              <div class="row mx-3 g-3">
+                <div class="col">traccia</div>
+                <div class="col">titolo</div>
+                <div class="col text-end">durata</div>
+              </div>
+              <div class="row mx-3 g-3">
+                <div class="col">traccia</div>
+                <div class="col">titolo</div>
+                <div class="col text-end">durata</div>
+              </div>
+              <div class="row mx-3 g-3">
+                <div class="col">traccia</div>
+                <div class="col">titolo</div>
+                <div class="col text-end">durata</div>
+              </div>
+              <div class="row mx-3 g-3">
+                <div class="col">traccia</div>
+                <div class="col">titolo</div>
+                <div class="col text-end">durata</div>
+              </div>
+              <div class="row mx-3 g-3">
+                <div class="col">traccia</div>
+                <div class="col">titolo</div>
+                <div class="col text-end">durata</div>
+              </div>
             </div>
           </div>
           <footer class="mt-5">
             <div class="d-flex">
               <div class="d-flex border-bottom flex-grow-1">
                 <div class="">
-                  <ul class="p-0 mx-3">
-                    <h5>Azienda</h5>
+                  <h5 class="fs-6">Azienda</h5>
+                  <ul class="p-0 list-unstyled mx-3">
                     <li class="mt-2">
                       <a
                         href=""
@@ -463,8 +496,8 @@
                 </div>
 
                 <div>
-                  <ul class="p-0 mx-5">
-                    <h5>Community</h5>
+                  <h5 class="fs-6">Community</h5>
+                  <ul class="p-0 list-unstyled mx-5">
                     <li class="mt-2">
                       <a
                         href=""
@@ -503,8 +536,8 @@
                   </ul>
                 </div>
                 <div>
-                  <ul class="p-0 ms-5">
-                    <h5>Link utili</h5>
+                  <h5 class="fs-6">Link utili</h5>
+                  <ul class="p-0 list-unstyled ms-5">
                     <li class="mt-2">
                       <a
                         href=""
