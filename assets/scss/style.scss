@@ -1,6 +1,201 @@
 @import "overrides";
 @import "../css/circular-font.css";
 
-body {
-  background-color: rgb(46, 7, 241);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-track {
+  // -webkit-box-shadow: none !important;
+  // background-color: transparent !important;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #6c757d34;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  display: block;
+  background-color: $secondary;
+}
+
+.home-hero-container {
+  background-color: #535353;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6) 0, #121212 30%);
+}
+
+// .home-hero-container {
+//   transition: opacity 0.3s, visibility 0.3s, top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
+// }
+
+// .home-hero-container::-webkit-scrollbar {
+//   width: 14px;
+// }
+
+// .home-hero-container::-webkit-scrollbar-track {
+//   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to $primary);
+//   background-image: linear-gradient(rgba(0, 0, 0, 0.6) 0, $primary 100%);
+//   background: transparent;
+// }
+
+// .home-hero-container::-webkit-scrollbar-thumb {
+//   background-color: hsla(0, 0%, 100%, 0.3);
+// }
+//-----------------CLASSI
+
+.img-album {
+  width: 20%;
+}
+.thumbnail {
+  width: 100px;
+
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.box {
+  width: 35px;
+  height: 35px;
+  border-radius: 60%;
+  position: relative;
+}
+.play-background {
+  width: 50px;
+  height: 50px;
+  border-radius: 60%;
+  background-color: #2edf64;
+  position: relative;
+}
+.height-for-fixed-bottom {
+  height: 70px;
+  width: 100%;
+}
+
+.btn-head {
+  padding-block: 0;
+  padding-inline: 2rem;
+  border-radius: 25px;
+  height: 25px;
+}
+
+.home-sidebar {
+  min-width: 300px;
+  width: 300px;
+}
+
+.home-sidebar-buttons {
+  position: relative;
+}
+
+.home-sidebar-buttons a {
+  padding-inline: 10px;
+}
+
+.home-sidebar-buttons-faded {
+  -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 120px), transparent);
+  mask-image: linear-gradient(90deg, #000 calc(100% - 120px), transparent);
+}
+
+.home-sidebar-buttons-next {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+}
+
+.home-sidebar-list img {
+  width: 48px;
+  height: 48px;
+  border-radius: 6px;
+}
+
+.home-hero {
+  // height: 30vh;
+
+  // background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.5)));
+  // background: linear-gradient(transparent 0, rgba(0, 0, 0, 0.5) 100%);
+
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to $primary);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6) 0, $primary 100%);
+  background-color: #535353;
+  // position: absolute;
+  // top: 0;
+  // bottom: 0;
+  // left: 0;
+  // right: 0;
+  margin-top: -72px;
+  // padding-bottom: 72px;
+}
+
+.home-hero-nav-container {
+}
+
+.home-hero-nav {
+  padding: 20px;
+}
+
+.home-hero-nav img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50vh;
+  border: 3px solid $primary;
+}
+
+#home-container {
+  height: calc(100vh - 90px);
+}
+
+.hero-test {
+}
+
+.home-card {
+  background-color: $tertiary;
+}
+
+.home-card img {
+  width: 100%;
+}
+
+#artist-body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#artist-main {
+  flex: 1;
+  display: flex;
+}
+
+#side-bar {
+  width: 30%;
+}
+
+#main-content {
+  flex: 1;
+  transition: overflow 0.3s;
+  overflow: auto;
+  max-height: calc(100vh - 88px);
+  overflow: hidden;
+}
+
+#main-content:hover {
+  overflow-y: scroll;
+}
+
+#music-player {
+  height: 72px;
+}
+
+#artist-left-buttons {
+  right: 0;
 }
