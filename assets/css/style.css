@@ -10165,8 +10165,6 @@ textarea.form-control-lg {
   height: 50px;
   border-radius: 60%;
   background-color: #2edf64;
-  position: sticky;
-  top: 0px;
 }
 
 .height-for-fixed-bottom {
