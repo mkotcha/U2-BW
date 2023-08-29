@@ -81,8 +81,8 @@ const numCol = () => {
 const hideCard = () => {
   const num = parseInt(numCol());
   const cards = document.querySelectorAll(".recent-list .col");
-  if (num < maxCard) cards[0].parentElement.classList = `row row-cols-${num} g-0 recent-list`;
-  else cards[0].parentElement.classList = `row row-cols-${maxCard} g-0 recent-list`;
+  if (num < maxCard) cards[0].parentElement.classList = `row row-cols-${num} g-2 recent-list`;
+  else cards[0].parentElement.classList = `row row-cols-${maxCard} g-2 recent-list`;
   cards.forEach((elm, index) => {
     if (index >= num) {
       elm.classList.add("d-none");
