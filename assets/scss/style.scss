@@ -61,6 +61,19 @@
   border-radius: 50%;
   object-fit: cover;
 }
+.box {
+  width: 35px;
+  height: 35px;
+  border-radius: 60%;
+  position: relative;
+}
+.play-background {
+  width: 50px;
+  height: 50px;
+  border-radius: 60%;
+  background-color: #2edf64;
+  position: relative;
+}
 
 .space-for-fixed {
   height: 38px;
@@ -74,19 +87,6 @@
   left: 75%;
 }
 
-.cerchio-play {
-  font-size: 30px;
-  position: relative;
-  left: 20px;
-  top: 10px;
-}
-.box {
-  width: 35px;
-  height: 35px;
-  border-radius: 60%;
-  position: relative;
-}
-
 .btn-head {
   padding-block: 0;
   padding-inline: 2rem;
@@ -94,13 +94,6 @@
   color: white;
   border-radius: 25px;
   height: 25px;
-}
-.play {
-  width: 65px;
-  height: 65px;
-  border-radius: 60%;
-  background-color: #2edf64;
-  position: relative;
 }
 
 .home-sidebar {
