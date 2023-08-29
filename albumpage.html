@@ -16,6 +16,22 @@
       href="assets/css/style.css" />
   </head>
   <body>
+    <div class="container-fluid">
+      <div class="position-fixed bg-black z-3 bottom-0 d-flex">
+        <div class="me-3 d-flex">
+          <div class="box bg-dark d-flex justify-content-center align-items-center">
+            <i class="bi bi-chevron-left"></i>
+          </div>
+          <div class="box bg-dark d-flex justify-content-center align-items-center mx-3">
+            <i class="bi bi-chevron-right"></i>
+          </div>
+        </div>
+        <div class="">
+          <button class="btn btn-dark">Iscriviti</button>
+          <button class="btn btn-dark">Accedi</button>
+        </div>
+      </div>
+    </div>
     <div class="container-flex bg-black vh-100 overflow-hidden">
       <div class="d-flex h-100">
         <div class="home-sidebar p-2">
@@ -331,32 +347,25 @@
             </div>
           </div>
         </div>
-        <main>
-          <div>
-            <div class="d-flex align-items-center justify-content-between p-3 mb-3">
-              <div class="d-flex gap-3">
-                <div class="box">
-                  <i class="bi bi-chevron-left cerchio"></i>
+        <main class="container overflow-hidden vh-100 position-relative bg-primary rounded-5">
+          <div class="container-fluid p-3">
+            <div class="position-fixed w-50 d-flex">
+              <div class="me-3 d-flex">
+                <div class="box bg-dark d-flex justify-content-center align-items-center">
+                  <i class="bi bi-chevron-left"></i>
                 </div>
-                <div class="box">
-                  <i class="bi bi-chevron-right cerchio-uno"></i>
+                <div class="box bg-dark d-flex justify-content-center align-items-center mx-3">
+                  <i class="bi bi-chevron-right"></i>
                 </div>
               </div>
-              <div>
-                <a
-                  href=""
-                  class="btn btn-dark"
-                  >Iscriviti</a
-                >
-                <a
-                  href=""
-                  class="btn btn-dark"
-                  >Accedi</a
-                >
+              <div class="position-relative start-100">
+                <button class="btn btn-dark">Iscriviti</button>
+                <button class="btn btn-dark">Accedi</button>
               </div>
             </div>
           </div>
-          <div class="d-flex align-items-end sfondo">
+          <div class="album-heigth"></div>
+          <div class="d-flex align-items-end">
             <img
               src="https://www.ad010.com/wp-content/uploads/2015/11/AD010_ARTICOLO-BLOG_CARLO_901x704.jpg"
               class="img-album"
@@ -406,29 +415,44 @@
                 <div class="col">titolo</div>
                 <div class="col text-end">durata</div>
               </div>
+              <div class="row mx-3 g-3">
+                <div class="col">traccia</div>
+                <div class="col">titolo</div>
+                <div class="col text-end">durata</div>
+              </div>
+              <div class="row mx-3 g-3">
+                <div class="col">traccia</div>
+                <div class="col">titolo</div>
+                <div class="col text-end">durata</div>
+              </div>
+              <div class="row mx-3 g-3">
+                <div class="col">traccia</div>
+                <div class="col">titolo</div>
+                <div class="col text-end">durata</div>
+              </div>
             </div>
           </div>
           <footer class="mt-5">
             <div class="d-flex">
               <div class="d-flex border-bottom flex-grow-1">
                 <div class="">
-                  <h5>Azienda</h5>
-                  <ul>
-                    <li>
+                  <ul class="p-0 mx-3">
+                    <h5>Azienda</h5>
+                    <li class="mt-2">
                       <a
                         href=""
                         class="text-decoration-none"
                         >Chi siamo</a
                       >
                     </li>
-                    <li>
+                    <li class="mt-2">
                       <a
                         href=""
                         class="text-decoration-none"
                         >Opportunità di lavoro</a
                       >
                     </li>
-                    <li>
+                    <li class="mt-2">
                       <a
                         href=""
                         class="text-decoration-none"
@@ -439,37 +463,37 @@
                 </div>
 
                 <div>
-                  <h5>Community</h5>
-                  <ul>
-                    <li>
+                  <ul class="p-0 mx-5">
+                    <h5>Community</h5>
+                    <li class="mt-2">
                       <a
                         href=""
                         class="text-decoration-none"
                         >Per artisti</a
                       >
                     </li>
-                    <li>
+                    <li class="mt-2">
                       <a
                         href=""
                         class="text-decoration-none"
                         >Sviluppatori</a
                       >
                     </li>
-                    <li>
+                    <li class="mt-2">
                       <a
                         href=""
                         class="text-decoration-none"
                         >Pubblicità</a
                       >
                     </li>
-                    <li>
+                    <li class="mt-2">
                       <a
                         href=""
                         class="text-decoration-none"
                         >Invertitori</a
                       >
                     </li>
-                    <li>
+                    <li class="mt-2">
                       <a
                         href=""
                         class="text-decoration-none"
@@ -479,23 +503,23 @@
                   </ul>
                 </div>
                 <div>
-                  <h5>Link utili</h5>
-                  <ul>
-                    <li>
+                  <ul class="p-0 ms-5">
+                    <h5>Link utili</h5>
+                    <li class="mt-2">
                       <a
                         href=""
                         class="text-decoration-none"
                         >Assistenza</a
                       >
                     </li>
-                    <li>
+                    <li class="mt-2">
                       <a
                         href=""
                         class="text-decoration-none"
                         >App per cellulare gratuita</a
                       >
                     </li>
-                    <li>
+                    <li class="mt-2">
                       <a
                         href=""
                         class="text-decoration-none"
@@ -504,22 +528,21 @@
                     </li>
                   </ul>
                 </div>
-
-                <div class="d-flex">
-                  <div class="box bg-primary d-flex justify-content-center align-items-center">
-                    <i class="bi bi-instagram"></i>
+                <div class="flex-grow-1 text-end me-3 d-flex justify-content-end">
+                  <div class="box bg-dark d-flex justify-content-center align-items-center">
+                    <i class="bi bi-instagram d-block"></i>
                   </div>
-                  <div class="box bg-primary d-flex justify-content-center align-items-center">
-                    <i class="bi bi-twitter"></i>
+                  <div class="box bg-dark d-flex justify-content-center align-items-center mx-3">
+                    <i class="bi bi-twitter d-block"></i>
                   </div>
-                  <div class="box bg-primary d-flex justify-content-center align-items-center">
-                    <i class="bi bi-facebook"></i>
+                  <div class="box bg-dark d-flex justify-content-center align-items-center">
+                    <i class="bi bi-facebook d-block"></i>
                   </div>
                 </div>
               </div>
             </div>
             <div>
-              <div>
+              <div class="d-flex flex-grow-1">
                 <a
                   href=""
                   class="text-decoration-none"
@@ -527,22 +550,22 @@
                 >
                 <a
                   href=""
-                  class="text-decoration-none"
+                  class="text-decoration-none mx-2"
                   >Centro sulla privacy</a
                 >
                 <a
                   href=""
-                  class="text-decoration-none"
+                  class="text-decoration-none mx-2"
                   >Informativa sulla privacy</a
                 >
                 <a
                   href=""
-                  class="text-decoration-none"
+                  class="text-decoration-none mx-2"
                   >Impostazioni cookie</a
                 >
                 <a
                   href=""
-                  class="text-decoration-none"
+                  class="text-decoration-none mx-2"
                   >Info annunci</a
                 >
                 <a
@@ -550,14 +573,17 @@
                   class="text-decoration-none"
                   >Accessibilità</a
                 >
-                <p>Spotify AB</p>
+                <a
+                  href=""
+                  class="flex-grow-1 text-end text-decoration-none"
+                  >©Spotify AB</a
+                >
               </div>
             </div>
           </footer>
         </main>
       </div>
     </div>
-
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
