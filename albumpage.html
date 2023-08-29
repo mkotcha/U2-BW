@@ -395,7 +395,7 @@
               </div>
               <!-- copyright infondo tracce -->
               <div class="row pt-4 px-3">
-                <div class="col-12"><span>uscita album</span></div>
+                <div class="col-12"><span class="year">uscita album</span></div>
                 <div class="col-12"><span>copyright</span></div>
                 <div class="col-12"><span>altri copyright</span></div>
               </div>
@@ -745,6 +745,7 @@
             artist[1].innerHTML = `${dato.artist.name}`;
             ntracce[0].innerHTML = `${dato.tracks.data.length} brani ◦`;
             anno[0].innerHTML = `${dato.release_date} ◦`;
+            anno[1].innerHTML = `${dato.release_date} `;
             dtracce[0].innerHTML = `${Math.round((dato.duration / 60) * 100) / 100}`;
             const tracce = document.getElementsByClassName("tracce");
             for (let i = 0; i < dato.tracks.data.length; i++) {
