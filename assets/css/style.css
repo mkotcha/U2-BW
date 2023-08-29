@@ -10130,7 +10130,7 @@ textarea.form-control-lg {
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.062745098);
   display: none;
 }
 
