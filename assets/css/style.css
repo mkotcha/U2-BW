@@ -9868,8 +9868,7 @@ textarea.form-control-lg {
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #121212;
-  display: none;
+  background-color: rgba(108, 117, 125, 0.2039215686);
 }
 
 *::-webkit-scrollbar-thumb:hover {
@@ -9974,11 +9973,7 @@ textarea.form-control-lg {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to #121212);
   background-image: linear-gradient(rgba(0, 0, 0, 0.6) 0, #121212 100%);
   background-color: #535353;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  margin-top: -72px;
 }
 
 .home-hero-nav {

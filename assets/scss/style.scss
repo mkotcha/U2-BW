@@ -19,8 +19,7 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: $primary;
-  display: none;
+  background-color: #6c757d34;
 }
 
 *::-webkit-scrollbar-thumb:hover {
@@ -63,15 +62,15 @@
   object-fit: cover;
 }
 
-.space-for-fixed{
+.space-for-fixed {
   height: 38px;
 }
-.height-for-fixed-bottom{
+.height-for-fixed-bottom {
   height: 70px;
-  width:100%;
+  width: 100%;
 }
-.posizione-pulsanti-fixed-bottom{
-  position:relative;
+.posizione-pulsanti-fixed-bottom {
+  position: relative;
   left: 75%;
 }
 
@@ -144,11 +143,12 @@
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to $primary);
   background-image: linear-gradient(rgba(0, 0, 0, 0.6) 0, $primary 100%);
   background-color: #535353;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  // position: absolute;
+  // top: 0;
+  // bottom: 0;
+  // left: 0;
+  // right: 0;
+  margin-top: -72px;
 }
 
 .home-hero-nav-container {
