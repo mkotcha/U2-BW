@@ -19,7 +19,8 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #6c757d34;
+  background-color: transparent;
+  display: none;
 }
 
 *::-webkit-scrollbar-thumb:hover {
