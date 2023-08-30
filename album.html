@@ -335,7 +335,7 @@
         </div>
         <main class="">
           <div
-            class="home-hero-container overflow-y-scroll h-100 rounded-4 position-relative"
+            class="home-hero-container overflow-y-scroll overflow-x-hidden h-100 rounded-4 position-relative"
             id="scrollo">
             <!-- BARRA STICKY -->
             <div class="home-hero-nav sticky-top">
@@ -735,21 +735,40 @@
               ntracce[0].innerHTML = `${obj.tracks.data.length} brani ◦`;
               anno[0].innerHTML = `${obj.release_date} ◦`;
               anno[1].innerHTML = `${obj.release_date} `;
-              dtracce[0].innerHTML = `${Math.round(obj.duration / 60).toFixed(2)}`;
+              dtracce[0].innerHTML = `${(Math.floor((obj.duration / 60) * 100) / 100)
+                .toString()
+                .replace(".", " minuti ")} secondi`;
+              console.log(obj.duration);
               const tracce = document.getElementsByClassName("tracce");
               for (let i = 0; i < obj.tracks.data.length; i++) {
                 const titolo = obj.tracks.data[i].title;
                 const durata = obj.tracks.data[i].duration;
-                const row = document.createElement("div");
-                row.classList.add("row", "g-3");
-                row.innerHTML = `
+                const durataConvertita = (Math.round((durata / 60) * 100) / 100).toString().replace(".", ":");
+                if (durataConvertita.length === 3) {
+                  const convertito = durataConvertita + "0";
 
+                  const row = document.createElement("div");
+                  row.classList.add("row", "g-3");
+                  row.innerHTML = `
+                  
                   <div class="col-1">${i + 1}</div>
                   <div class="col">${titolo}</div>
-                  <div class="col text-end">${Math.round((durata / 60) * 100) / 100}</div>
-
-            `;
-                tracce[0].appendChild(row);
+                  <div class="col text-end">${convertito}</div>
+                  
+                  `;
+                  tracce[0].appendChild(row);
+                } else {
+                  const row = document.createElement("div");
+                  row.classList.add("row", "g-3");
+                  row.innerHTML = `
+                  
+                  <div class="col-1">${i + 1}</div>
+                  <div class="col">${titolo}</div>
+                  <div class="col text-end">${durataConvertita}</div>
+                  
+                  `;
+                  tracce[0].appendChild(row);
+                }
               }
             });
         } catch {
