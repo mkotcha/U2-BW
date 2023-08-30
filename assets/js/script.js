@@ -1,27 +1,26 @@
 document.addEventListener("DOMContentLoaded", (event) => {
-  const sidebarElm = document.getElementById("sidebar");
   const playerElm = document.getElementById("player");
 
   fetch("assets/html/sidebar.html")
     .then((response) => response.text())
-    .then((data) => (sidebarElm.innerHTML = data));
-  load();
+    .then((data) => loadSidebar(data));
+
   fetch("assets/html/player.html")
     .then((response) => response.text())
     .then((data) => (playerElm.innerHTML = data));
-  load();
 });
 
-async function load() {
+async function loadSidebar(data) {
+  document.getElementById("sidebar").innerHTML = data;
   const side = await query("playlist/10361569942");
   printSideCards(side);
-
   hideCard();
-
-  const sidebarSelectorList = document.querySelectorAll(".home-sidebar-list a");
-  sidebarSelectorList.forEach((elm) => {
-    elm.addEventListener("click", sidebarSelection);
-  });
+  document.querySelectorAll(".home-sidebar-list a").forEach((elm) => elm.addEventListener("click", sidebarSelection));
+  const pathName = window.location.pathname;
+  if (pathName === "/search.html") {
+    document.getElementById("sidebar-link-home").classList.remove("text-reset");
+    document.getElementById("sidebar-link-search").classList.add("text-reset");
+  }
 }
 
 const url = "https://deezerdevs-deezer.p.rapidapi.com/";
@@ -171,16 +170,12 @@ async function sidebarSelection(event) {
       printSideCards(side);
       break;
   }
-
   const list = document.querySelector(".side-list");
   list.innerHTML = "";
-
   for (const id of arrLists) {
     const track = await queryTrack(id[0]);
     printSideCard(track);
   }
-
-  console.log(arrLists);
 }
 
 function sortFunction(a, b) {
