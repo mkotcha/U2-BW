@@ -207,18 +207,17 @@ async function initAudio(data) {
   let nowPlaing = localStorage.getItem("nowPlaing") ? localStorage.getItem("nowPlaing") : 2299840635;
   const track = await queryTrack(nowPlaing);
   audioElm.src = track.preview;
-  console.log(audioElm);
   const audioContext = new AudioContext();
   const audioTrack = audioContext.createMediaElementSource(audioElm);
   audioTrack.connect(audioContext.destination);
 
-  const duration = track.duration;
-  const minutes = Math.floor(duration / 60);
-  const seconds = duration - minutes * 60;
+  // const duration = track.duration;
+  // const minutes = Math.floor(duration / 60);
+  // const seconds = duration - minutes * 60;
   // document.getElementById("total-time").innerText = minutes + ":" + seconds;
   document.getElementById("total-time").innerText = "00:30";
 
-  const playButton = document.getElementById("play-button");
+  const playButton = document.getElementById("play-button-player");
   playButton.addEventListener(
     "click",
     () => {
@@ -240,7 +239,6 @@ async function initAudio(data) {
   );
   audioElm.addEventListener("timeupdate", () => {
     document.getElementById("seekbar").setAttribute("value", audioElm.currentTime / audioElm.duration);
-    console.log(audioElm.currentTime);
     document.getElementById("elapsed-time").innerText =
       "00:" + parseInt(audioElm.currentTime).toString().padStart(2, "0");
   });
