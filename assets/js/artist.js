@@ -42,6 +42,10 @@ async function fetchArtistData() {
     const artistImage = document.getElementById("artist-image");
     artistImage.style.backgroundImage = `url(${artistData.picture_xl})`;
 
+    const artistIconUrl = artistData.picture;
+    const artistIcon = document.getElementById("artist-icon");
+    artistIcon.src = artistIconUrl;
+
     //FUNZIONE PER CREARE LE CANZONI
     popularSongs.forEach((song, index) => {
       const listItemContainer = document.createElement("div");
