@@ -10222,6 +10222,17 @@ span.search-box {
   width: 200px;
 }
 
+#range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 3px;
+  height: 3px;
+  background: #078dd8;
+  color: #2edf64;
+  border-radius: 50%;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
 .box {
   width: 35px;
   height: 35px;
