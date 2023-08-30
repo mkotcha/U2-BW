@@ -56,12 +56,12 @@ async function fetchArtistData() {
       listItem.className = "row d-flex align-items-center justify-content-between";
 
       listItem.innerHTML = `
-      <span class="col">${songNumber}</span>
+      <span class="col song-number"><span>${songNumber}</span></span>
       <div id="artist-song-title" class="d-flex col-9 col-md-6">
       <img src="${song.album.cover_small}" class="me-3" width="40" height="40" alt="" />
       <div>
         <div class="text-white">${song.title}</div>
-        <i class="bi bi-explicit-fill text-secondary"></i>
+        ${song.explicit_lyrics ? '<i class="bi bi-explicit-fill text-secondary"></i>' : ""}
       </div>
     </div>
     <div id="artist-song-plays" class="d-flex d-none d-md-block col-3">${song.rank}</div>

@@ -255,6 +255,24 @@ slidecontainer {
 #artist-song-minutes {
   flex-grow: 1;
 }
+
+.btn-check:checked + .btn {
+  background-color: white;
+  color: black;
+}
+
+.song-number {
+  width: 20px;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 5px;
+}
+
+.song-number span {
+  display: inline-block;
+}
+
 .dropend:hover > .dropdown-menu {
   display: block;
   margin-top: 0;
