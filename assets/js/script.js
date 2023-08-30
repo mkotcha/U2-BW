@@ -29,29 +29,6 @@ async function queryTrack(id) {
   }
 }
 
-window.onload = async () => {
-  const recentData = await query("playlist/752286631");
-  const showData = await query("playlist/7456464544");
-  const userData = await query("playlist/11470122864");
-
-  const recentElm = document.querySelector(".recent-list");
-  const showElm = document.querySelector(".show-list");
-  const userElm = document.querySelector(".user-list");
-
-  const side = await query("playlist/10361569942");
-  printSideCards(side);
-  printCard(recentElm, recentData);
-  printCard(showElm, showData);
-  printCard(userElm, userData);
-
-  hideCard();
-
-  const sidebarSelectorList = document.querySelectorAll(".home-sidebar-list a");
-  sidebarSelectorList.forEach(elm => {
-    elm.addEventListener("click", sidebarSelection);
-  });
-};
-
 const printCard = (elm, data) => {
   for (let i = 0; i < maxCard; i++) {
     const col = document.createElement("div");
@@ -89,15 +66,10 @@ const printCard = (elm, data) => {
 };
 
 const printSideCards = data => {
-  //   fetch("https://deezerdevs-deezer.p.rapidapi.com/playlist/10361569942", options)
-  //     .then(resp => resp.json())
-  //     .then(data => console.log(data))
-  //     .catch(error => console.log(error));
   const list = document.querySelector(".side-list");
   list.innerHTML = "";
-  // console.log(data.tracks);
-  data.tracks.data.forEach(elm => {
-    printSideCard(elm);
+  data.tracks.data.forEach(track => {
+    printSideCard(track);
   });
 };
 
@@ -170,6 +142,7 @@ async function sidebarSelection(event) {
       break;
 
     default:
+      printSideCards(side);
       break;
   }
 
