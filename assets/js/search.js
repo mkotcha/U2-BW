@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", event => {
       document.getElementById("sidebar-link-search").classList.add("text-reset");
     });
   load();
-  document.getElementById("sidebar-link-home").classList.remove("text-reset");
 });
 
 async function load() {
