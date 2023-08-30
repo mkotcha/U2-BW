@@ -13,10 +13,10 @@
   background-color: transparent;
 }
 
-*::-webkit-scrollbar-track {
-  // -webkit-box-shadow: none !important;
-  // background-color: transparent !important;
-}
+// *::-webkit-scrollbar-track {
+//   -webkit-box-shadow: none !important;
+//   background-color: transparent !important;
+// }
 
 *::-webkit-scrollbar-thumb {
   background-color: #ffffff10;
@@ -63,12 +63,16 @@ span.search-box {
 .img-album {
   width: 200px;
 }
+
 input {
   border-radius: 20px;
-  height: 6px;
+
+  //  porco dio
+  // height: 6px;
 
   appearance: none;
 }
+
 #range::-webkit-slider-thumb {
   appearance: initial;
   width: 6px;
@@ -77,9 +81,9 @@ input {
   border-radius: 50%;
   cursor: pointer;
 }
-#range::-webkit-slider-runnable-track {
-  // background: white;
-}
+// #range::-webkit-slider-runnable-track {
+//   // background: white;
+// }
 #range::-webkit-slider-thumb:hover {
   content: "";
   background: green;
