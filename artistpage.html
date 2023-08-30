@@ -233,14 +233,14 @@
                 </a>
               </div>
             </div>
-            <div class="artist-hero p-4 d-flex text-white">
+            <div id="artist-image" class="artist-hero p-4 d-flex text-white">
               <div class="d-flex align-items-end">
                 <div>
                   <div id="artist-verified" class="d-flex align-items-center">
                     <span><i class="bi bi-patch-check-fill fs-4" style="color: #3d91f4"></i></span>
                     <span class="ms-1">Artista verificato</span>
                   </div>
-                  <h1 id="artist-name" class="fw-bold mb-3 lh-1">Artist name</h1>
+                  <h1 id="artist-name" class="artist-name-big fw-bold mb-3 lh-1">Artist name</h1>
                   <p class="mb-0">ascoltatori mensili</p>
                 </div>
               </div>
@@ -472,7 +472,7 @@
                     <div>
                       <div>
                         <img src="./assets/imgs/main/image-1.jpg" class="rounded-circle me-2" width="24" />
-                        <span>Pubblicato da Artista</span>
+                        <span id="artist-name">Pubblicato da Artista</span>
                       </div>
                       <div><a href="#" class="fs-5 text-white fw-bold text-decoration-none">Nome Album</a></div>
                       <div>Playlist</div>
@@ -861,6 +861,7 @@
       </div>
     </div>
     <section class=""><div class="home-player">player</div></section>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -872,6 +873,7 @@
       integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
       crossorigin="anonymous"
     ></script>
-    <script src="assets/js/script.js"></script>
+    <!-- <script src="assets/js/script.js"></script> -->
+    <script src="./assets/js/artist.js"></script>
   </body>
 </html>

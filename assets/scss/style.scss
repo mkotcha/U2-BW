@@ -164,6 +164,7 @@
   background-image: url(../imgs/main/image-1.jpg);
   background-repeat: no-repeat;
   background-position: center;
+  background-position: top;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -193,12 +194,12 @@
   counter-increment: item;
 }
 
-#artist-name {
+.artist-name-big {
   font-size: 5rem;
 }
 
 #artist-song-title {
-  flex-grow: 3;
+  flex-grow: 2;
 }
 #artist-song-plays {
   flex-grow: 2;
