@@ -161,11 +161,13 @@
 
 .artist-hero {
   height: 500px;
-  background-image: url(../imgs/main/image-1.jpg);
+
   background-repeat: no-repeat;
+  background-size: 100%;
   background-position: center;
   background-position: top;
   position: absolute;
+  object-fit: cover;
   top: 0;
   bottom: 0;
   left: 0;
