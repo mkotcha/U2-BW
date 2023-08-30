@@ -72,7 +72,7 @@ const printCard = (elm, data) => {
     const title = document.createElement("p");
     title.classList = "fs-6 fw-bold m-0 mb-1 text-truncate";
     const titleLink = document.createElement("a");
-    titleLink.classList = "text-reset text-decoration-none";
+    titleLink.classList = "text-reset text-decoration-none text-truncate";
     titleLink.href = "track.html?id=" + data.tracks.data[i].id;
     titleLink.innerText = data.tracks.data[i].title;
     const artist = document.createElement("p");
@@ -104,13 +104,19 @@ const printSideCards = (data) => {
 const printSideCard = (track) => {
   const list = document.querySelector(".side-list");
   list.innerHTML += `<div class="d-flex mb-3">
-  <img class="" src="${track.album.cover_medium}" alt="" />
-  <div class="ps-3 fs-6 flex-shrink-1 text-truncate">
-    <p class="fw-bold m-0 text-truncate">${track.title}</p>
-    <p class="text-body-secondary m-0">
-      <i class="bi bi-pin-angle text-success d-none"></i> <span class="category">${track.artist.name}</span>
-    </p>
-  </div>`;
+                      <a href="album.html?id=${track.album.id}">
+                        <img class="" src="${track.album.cover_medium}" alt="" /></a>
+                      <div class="ps-3 fs-6 flex-shrink-1 text-truncate">
+                        <p class="fw-bold m-0 text-truncate">
+                        <a href="track.html?id=${track.id}" class="text-reset text-decoration-none">
+                          ${track.title}</a></p>
+                        <p class="text-body-secondary m-0">
+                          <i class="bi bi-pin-angle text-success d-none"></i> 
+                          <span class="category">
+                          <a href="artist.html?id=${track.artist.id}" class="text-reset text-decoration-none">
+                          ${track.artist.name}</a></span>
+                        </p>
+                      </div>`;
 };
 
 const numCol = () => {
