@@ -1,4 +1,4 @@
-async function load() {
+window.onload = async function () {
   const recentData = await query("playlist/752286631");
   const showData = await query("playlist/7456464544");
   const userData = await query("playlist/11470122864");
@@ -19,4 +19,4 @@ async function load() {
   sidebarSelectorList.forEach((elm) => {
     elm.addEventListener("click", sidebarSelection);
   });
-}
+};
