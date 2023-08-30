@@ -733,8 +733,8 @@
               artist[0].innerHTML = `${obj.artist.name} ◦`;
               artist[1].innerHTML = `${obj.artist.name}`;
               ntracce[0].innerHTML = `${obj.tracks.data.length} brani ◦`;
-              anno[0].innerHTML = `${obj.release_date} ◦`;
-              anno[1].innerHTML = `${obj.release_date} `;
+              anno[0].innerHTML = `${obj.release_date.slice(0, 4)} ◦`;
+              anno[1].innerHTML = `${obj.release_date.slice(0, 4)} `;
               dtracce[0].innerHTML = `${(Math.floor((obj.duration / 60) * 100) / 100)
                 .toString()
                 .replace(".", " minuti ")} secondi`;
