@@ -13,10 +13,10 @@
   background-color: transparent;
 }
 
-*::-webkit-scrollbar-track {
-  // -webkit-box-shadow: none !important;
-  // background-color: transparent !important;
-}
+// *::-webkit-scrollbar-track {
+//   -webkit-box-shadow: none !important;
+//   background-color: transparent !important;
+// }
 
 *::-webkit-scrollbar-thumb {
   background-color: #ffffff10;
@@ -77,9 +77,9 @@ input {
   border-radius: 50%;
   cursor: pointer;
 }
-#range::-webkit-slider-runnable-track {
-  // background: white;
-}
+// #range::-webkit-slider-runnable-track {
+//   // background: white;
+// }
 #range::-webkit-slider-thumb:hover {
   content: "";
   background: green;
