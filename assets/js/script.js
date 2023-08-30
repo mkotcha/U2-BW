@@ -212,12 +212,16 @@ async function initAudio(data) {
   const audioTrack = audioContext.createMediaElementSource(audioElm);
   audioTrack.connect(audioContext.destination);
 
-  const playButton = document.getElementById("play-button");
+  const duration = track.duration;
+  const minutes = Math.floor(duration / 60);
+  const seconds = duration - minutes * 60;
+  // document.getElementById("total-time").innerText = minutes + ":" + seconds;
+  document.getElementById("total-time").innerText = "00:30";
 
+  const playButton = document.getElementById("play-button");
   playButton.addEventListener(
     "click",
     () => {
-      console.log(playButton);
       // Check if context is in suspended state (autoplay policy)
       if (audioContext.state === "suspended") {
         audioContext.resume();
@@ -226,7 +230,6 @@ async function initAudio(data) {
       // Play or pause track depending on state
       if (playButton.dataset.playing === "false") {
         audioElm.play();
-        console.log("play");
         playButton.dataset.playing = "true";
       } else if (playButton.dataset.playing === "true") {
         audioElm.pause();
@@ -235,6 +238,12 @@ async function initAudio(data) {
     },
     false
   );
+  audioElm.addEventListener("timeupdate", () => {
+    document.getElementById("seekbar").setAttribute("value", audioElm.currentTime / audioElm.duration);
+    console.log(audioElm.currentTime);
+    document.getElementById("elapsed-time").innerText =
+      "00:" + parseInt(audioElm.currentTime).toString().padStart(2, "0");
+  });
 }
 
 window.addEventListener("resize", hideCard);
