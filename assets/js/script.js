@@ -76,7 +76,7 @@ const printSideCard = data => {
     list.innerHTML += `<div class="d-flex mb-3">
   <img class="" src="${elm.album.cover_medium}" alt="" />
   <div class="ps-3 fs-6 flex-shrink-1 text-truncate">
-    <p class="fw-bold m-0">${elm.title}</p>
+    <p class="fw-bold m-0 text-truncate">${elm.title}</p>
     <p class="text-body-secondary m-0">
       <i class="bi bi-pin-angle text-success d-none"></i> <span class="category">${elm.artist.name}</span>
     </p>
