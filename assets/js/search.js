@@ -2,8 +2,13 @@ document.addEventListener("DOMContentLoaded", event => {
   const sidebarElm = document.getElementById("sidebar");
   fetch("assets/html/sidebar.html")
     .then(response => response.text())
-    .then(data => (sidebarElm.innerHTML = data));
+    .then(data => {
+      sidebarElm.innerHTML = data;
+      document.getElementById("sidebar-link-home").classList.remove("text-reset");
+      document.getElementById("sidebar-link-search").classList.add("text-reset");
+    });
   load();
+  document.getElementById("sidebar-link-home").classList.remove("text-reset");
 });
 
 async function load() {

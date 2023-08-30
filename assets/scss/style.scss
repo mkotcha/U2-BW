@@ -28,6 +28,15 @@
   background-color: $secondary;
 }
 
+input.search-box {
+  border-left: none;
+  // padding-left: 0;
+}
+
+span.search-box {
+  border-right: none;
+}
+
 .home-hero-container {
   background-color: #535353;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6) 0, #121212 30%);
@@ -136,9 +145,6 @@
   // right: 0;
   margin-top: -72px;
   // padding-bottom: 72px;
-}
-
-.home-hero-nav-container {
 }
 
 .home-hero-nav {
