@@ -20,11 +20,15 @@ async function query(query) {
 }
 
 window.onload = async () => {
-  const recent = await query("playlist/752286631");
-  const elm = document.querySelector(".recent-list");
+  const recentData = await query("playlist/752286631");
+  const showData = await query("playlist/7456464544");
+  const recentElm = document.querySelector(".recent-list");
+  const showElm = document.querySelector(".show-list");
   const side = await query("playlist/10361569942");
-  printCard(elm, recent);
   printSideCard(side);
+  printCard(recentElm, recentData);
+  printCard(showElm, showData);
+
   hideCard();
 };
 
@@ -44,13 +48,13 @@ const printCard = (elm, data) => {
     title.classList = "fs-6 fw-bold m-0 mb-1 text-truncate";
     const titleLink = document.createElement("a");
     titleLink.classList = "text-reset text-decoration-none";
-    titleLink.href = "track.html/id=" + data.tracks.data[i].id;
+    titleLink.href = "track.html?id=" + data.tracks.data[i].id;
     titleLink.innerText = data.tracks.data[i].title;
     const artist = document.createElement("p");
     artist.classList = "fs-6 fw-bold m-0 mb-1 text-truncate";
     const artistLink = document.createElement("a");
-    artistLink.classList = "text-reset text-decoration-none";
-    artistLink.href = "track.html?id=" + data.tracks.data[i].id;
+    artistLink.classList = "text-decoration-none";
+    artistLink.href = "artist.html?id=" + data.tracks.data[i].id;
     artistLink.innerText = data.tracks.data[i].artist.name;
 
     albumLink.appendChild(img);
@@ -71,7 +75,7 @@ const printSideCard = data => {
   //     .catch(error => console.log(error));
   const list = document.querySelector(".side-list");
   list.innerHTML = "";
-  console.log(data.tracks);
+  // console.log(data.tracks);
   data.tracks.data.forEach(elm => {
     list.innerHTML += `<div class="d-flex mb-3">
   <img class="" src="${elm.album.cover_medium}" alt="" />
@@ -86,20 +90,36 @@ const printSideCard = data => {
 
 const numCol = () => {
   const container = document.querySelector("main");
-  return container.offsetWidth / 200;
+  return parseInt(container.offsetWidth / 200);
 };
 
 const hideCard = () => {
-  const num = parseInt(numCol());
-  const cards = document.querySelectorAll(".recent-list .col");
-  if (num < maxCard) cards[0].parentElement.classList = `row row-cols-${num} g-2 recent-list`;
-  else cards[0].parentElement.classList = `row row-cols-${maxCard} g-2 recent-list`;
-  cards.forEach((elm, index) => {
-    if (index >= num) {
-      elm.classList.add("d-none");
-    } else {
-      elm.classList.remove("d-none");
+  const num = numCol();
+  const rowLists = document.querySelectorAll(".row-list");
+  const prefix = "row-cols-";
+  const regx = new RegExp(`\\b` + prefix + `[^ ]*[ ]?\\b`, `g`);
+
+  rowLists.forEach(list => {
+    for (let i = 1; i <= maxCard; i++) {
+      list.classList.remove("row-cols-" + i);
     }
+    if (num < maxCard) {
+      list.classList.add("row-cols-" + num);
+    } else {
+      // list.classList = `row row-cols-${maxCard} g-4 recent-list`;
+      list.classList.add("row-cols-" + maxCard);
+    }
+    const cards = list.querySelectorAll(".col");
+
+    cards.forEach((elm, index) => {
+      console.log(elm);
+      if (index >= num) {
+        elm.classList.add("d-none");
+        console.log("hide", index, num);
+      } else {
+        elm.classList.remove("d-none");
+      }
+    });
   });
 };
 
