@@ -646,8 +646,7 @@
     <script src="assets/js/script.js"></script>
     <script>
       const idAlbum = new URLSearchParams(window.location.search).get("id");
-      const prova = 341052; //METTERE ID ALBUM PROVENIENTE DAL CLICK SU LINK AD ALBUM DA QUESTA O ALTRE PAGINE
-      const urlAlbum = "https://striveschool-api.herokuapp.com/api/deezer/album/" + `${prova}`;
+      const urlAlbum = "https://striveschool-api.herokuapp.com/api/deezer/album/" + `${idAlbum}`;
       const idArtist = "";
 
       //--------------Fetch
@@ -682,7 +681,7 @@
                             </div>
                             <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
                               <a
-                                href=""
+                                href="./album.html?id=${array[rand[i]].album.id}"
                                 class="text-reset text-decoration-none"
                                 >${array[rand[i]].album.title}</a
                               >
@@ -691,7 +690,7 @@
                               <a
                                 href=""
                                 class="text-decoration-none"
-                                ></a
+                                >${array[rand[i]].artist.name}</a
                               >
                             </p>
                           </div>
