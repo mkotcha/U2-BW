@@ -361,7 +361,7 @@
             <!-- fine barrasticky -->
 
             <!-- Inizio dettaglio Album -->
-            <div class="d-flex align-items-end px-3">
+            <div class="d-flex align-items-end px-4 py-2">
               <!-- classe img-album per largh. image 200px -->
               <img
                 src=""
@@ -385,7 +385,7 @@
             </div>
             <!-- fine dettaglio album -->
             <div>
-              <div class="d-flex align-items-center gap-3 px-3 my-4">
+              <div class="d-flex align-items-center gap-4 px-4 my-4">
                 <!-- bottoni -->
                 <div
                   class="play-background d-flex justify-content-center align-items-center scompare"
@@ -397,21 +397,26 @@
                 <i class="bi bi-three-dots fs-4"></i>
               </div>
               <!-- Creazione elementi traccia xjs il pirmo è quello di riferimento-->
-              <div class="d-flex flex-column px-3 tracce">
+              <div class="d-flex flex-column px-5 tracce">
                 <div
                   class="row g-3 border-bottom sticky-top mb-3"
                   style="top: 58px">
-                  <div class="col-1"><i class="bi bi-hash"></i></div>
-                  <div class="col"><p>Titolo</p></div>
+                  <div
+                    class="col-1 p-0 ps-2"
+                    style="width: 30px">
+                    <i class="bi bi-hash"></i>
+                  </div>
+                  <div class="col p-0">
+                    <p style="font-size: 0.8em; font-weight: lighter">Titolo</p>
+                  </div>
                   <div class="col text-end"><i class="bi bi-clock flex-grow-1 text-end"></i></div>
                 </div>
                 <!-- qui si creano le tracce dinamiche -->
               </div>
               <!-- copyright infondo tracce -->
               <div class="row pt-4 px-3">
-                <div class="col-12"><span class="year">uscita album</span></div>
-                <div class="col-12"><span>copyright</span></div>
-                <div class="col-12"><span>altri copyright</span></div>
+                <div class="col-12"><span class="year"></span></div>
+                <div class="col-12"><span class="copyright-label">©</span></div>
               </div>
               <!-- Altro Artista -->
               <div class="pt-4 px-3">
@@ -652,6 +657,7 @@
       //--------------Fetch
       const urlArtist =
         "https://striveschool-api.herokuapp.com/api/deezer/search?q=" + sessionStorage.getItem("nameArtist");
+      sessionStorage.clear();
       fetch(urlArtist)
         .then(risposta => risposta.json())
         .then(objArray => objArray.data)
@@ -719,6 +725,7 @@
           await fetch(urlAlbum)
             .then(rispostaServer => rispostaServer.json())
             .then(async obj => {
+              console.log("obj", obj);
               sessionStorage.setItem("nameArtist", obj.artist.name);
               const img = document.getElementsByClassName("img-album");
               const titoloAlbum = document.getElementsByClassName("titolo-album");
@@ -726,18 +733,21 @@
               const ntracce = document.getElementsByClassName("ntracks");
               const dtracce = document.getElementsByClassName("dtracks");
               const anno = document.getElementsByClassName("year");
+              const copyrightLabel = document.getElementsByClassName("copyright-label");
+              //copyright.innerHTML=`${ogj}`
+              copyrightLabel[0].innerHTML = `©${obj.label}`;
               img[0].src = `${obj.cover}`;
               img[1].src = `${obj.cover}`;
               img[2].src = `${obj.cover}`;
               titoloAlbum[0].innerHTML = `${obj.title}`;
               artist[0].innerHTML = `${obj.artist.name} ◦`;
               artist[1].innerHTML = `${obj.artist.name}`;
-              ntracce[0].innerHTML = `${obj.tracks.data.length} brani ◦`;
+              ntracce[0].innerHTML = `${obj.tracks.data.length} brani, `;
               anno[0].innerHTML = `${obj.release_date.slice(0, 4)} ◦`;
               anno[1].innerHTML = `${obj.release_date.slice(0, 4)} `;
               dtracce[0].innerHTML = `${(Math.floor((obj.duration / 60) * 100) / 100)
                 .toString()
-                .replace(".", " minuti ")} secondi`;
+                .replace(".", " min ")} sec.`;
               console.log(obj.duration);
               const tracce = document.getElementsByClassName("tracce");
               for (let i = 0; i < obj.tracks.data.length; i++) {
@@ -748,23 +758,27 @@
                   const convertito = durataConvertita + "0";
 
                   const row = document.createElement("div");
-                  row.classList.add("row", "g-3");
+                  row.classList.add("row", "g-3", "py-2");
                   row.innerHTML = `
                   
-                  <div class="col-1">${i + 1}</div>
-                  <div class="col">${titolo}</div>
-                  <div class="col text-end">${convertito}</div>
+                  <div class="col-1 p-0 ps-2" style="font-size: 1em; font-weight: lighter; width:30px;">${i + 1}</div>
+                  <div class="col my-1 p-0" style="font-size: 1em; font-weight: lighter"><p style ="margin:0;padding:0;">${titolo}</p><p style="font-size: 0.8em;margin:0; padding:0; ">${
+                    obj.label
+                  }, ${obj.artist.name}</p></div>
+                  <div class="col text-end" style="font-size: 0.8em; font-weight: lighter">${convertito}</div>
                   
                   `;
                   tracce[0].appendChild(row);
                 } else {
                   const row = document.createElement("div");
-                  row.classList.add("row", "g-3");
+                  row.classList.add("row", "g-3", "py-2");
                   row.innerHTML = `
                   
-                  <div class="col-1">${i + 1}</div>
-                  <div class="col">${titolo}</div>
-                  <div class="col text-end">${durataConvertita}</div>
+                  <div class="col-1 p-0 ps-2" style="font-size: 0.8em; font-weight: lighter; width:30px;">${i + 1}</div>
+                  <div class="col my-1 p-0" style="font-size: 1em; font-weight: lighter"><p style ="margin:0;padding:0;">${titolo}</p><p style="font-size: 0.8em;margin:0; padding:0; ">${
+                    obj.label
+                  }, ${obj.artist.name}</p></div>
+                  <div class="col text-end" style="font-size: 0.8em; font-weight: lighter">${durataConvertita}</div>
                   
                   `;
                   tracce[0].appendChild(row);
