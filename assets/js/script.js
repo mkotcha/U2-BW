@@ -1,13 +1,13 @@
-document.addEventListener("DOMContentLoaded", event => {
+document.addEventListener("DOMContentLoaded", (event) => {
   const playerElm = document.getElementById("player");
 
   fetch("assets/html/sidebar.html")
-    .then(response => response.text())
-    .then(data => loadSidebar(data));
+    .then((response) => response.text())
+    .then((data) => loadSidebar(data));
 
   fetch("assets/html/player.html")
-    .then(response => response.text())
-    .then(data => (playerElm.innerHTML = data));
+    .then((response) => response.text())
+    .then((data) => (playerElm.innerHTML = data));
 });
 
 async function loadSidebar(data) {
@@ -15,7 +15,7 @@ async function loadSidebar(data) {
   const side = await query("playlist/10361569942");
   printSideCards(side);
   hideCard();
-  document.querySelectorAll(".home-sidebar-list a").forEach(elm => elm.addEventListener("click", sidebarSelection));
+  document.querySelectorAll(".home-sidebar-list a").forEach((elm) => elm.addEventListener("click", sidebarSelection));
   const pathName = window.location.pathname;
   if (pathName === "/search.html") {
     document.getElementById("sidebar-link-home").classList.remove("text-reset");
@@ -23,13 +23,16 @@ async function loadSidebar(data) {
   }
 }
 //885547a862msh72c9372ebc31c61p1f6b27jsn187746473b51
+// mf 4ba7a35e2emsh5b7d70d861796cbp1d1951jsnc270044357e6
+// mk e13be1f8d2msha90dfa9e08e83f5p16dc04jsn33020578052c
+
 const url = "https://deezerdevs-deezer.p.rapidapi.com/";
 const options = {
   method: "GET",
   headers: {
     "X-RapidAPI-Key": "4ba7a35e2emsh5b7d70d861796cbp1d1951jsnc270044357e6",
-    "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com"
-  }
+    "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+  },
 };
 let queryStr = "";
 const maxCard = 9;
@@ -90,15 +93,15 @@ const printCard = (elm, data) => {
   }
 };
 
-const printSideCards = data => {
+const printSideCards = (data) => {
   const list = document.querySelector(".side-list");
   list.innerHTML = "";
-  data.tracks.data.forEach(track => {
+  data.tracks.data.forEach((track) => {
     printSideCard(track);
   });
 };
 
-const printSideCard = track => {
+const printSideCard = (track) => {
   const list = document.querySelector(".side-list");
   list.innerHTML += `<div class="d-flex mb-3">
   <img class="" src="${track.album.cover_medium}" alt="" />
@@ -118,7 +121,7 @@ const numCol = () => {
 const hideCard = () => {
   const num = numCol();
   const rowLists = document.querySelectorAll(".row-list");
-  rowLists.forEach(list => {
+  rowLists.forEach((list) => {
     for (let i = 1; i <= maxCard; i++) {
       list.classList.remove("row-cols-" + i);
     }
@@ -146,21 +149,21 @@ async function sidebarSelection(event) {
 
   switch (selection) {
     case "Recently Added":
-      side.tracks.data.forEach(elm => {
+      side.tracks.data.forEach((elm) => {
         arrLists.push([elm.id, elm.time_add]);
       });
       arrLists.sort(compareSecondColumn);
       break;
 
     case "Alphabetical":
-      side.tracks.data.forEach(elm => {
+      side.tracks.data.forEach((elm) => {
         arrLists.push([elm.id, elm.title]);
       });
       arrLists.sort(compareSecondColumn);
       break;
 
     case "Artist":
-      side.tracks.data.forEach(elm => {
+      side.tracks.data.forEach((elm) => {
         arrLists.push([elm.id, elm.artist.name]);
       });
       arrLists.sort(compareSecondColumn);
