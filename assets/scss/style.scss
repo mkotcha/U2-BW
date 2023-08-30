@@ -13,10 +13,10 @@
   background-color: transparent;
 }
 
-*::-webkit-scrollbar-track {
-  // -webkit-box-shadow: none !important;
-  // background-color: transparent !important;
-}
+// *::-webkit-scrollbar-track {
+//   -webkit-box-shadow: none !important;
+//   background-color: transparent !important;
+// }
 
 *::-webkit-scrollbar-thumb {
   background-color: #ffffff10;
@@ -64,6 +64,44 @@ span.search-box {
   width: 200px;
 }
 
+input {
+  border-radius: 20px;
+
+  //  porco dio
+  // height: 6px;
+
+  appearance: none;
+}
+
+#range::-webkit-slider-thumb {
+  appearance: initial;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+// #range::-webkit-slider-runnable-track {
+//   // background: white;
+// }
+#range::-webkit-slider-thumb:hover {
+  content: "";
+  background: green;
+  width: 15px;
+  height: 15px;
+}
+#range::before {
+  content: "";
+  background: white;
+}
+/*
+slidecontainer {
+  margin: 0 auto;
+  background-color: #afe0fc;
+  padding: 1.5em;
+  border-radius: 5px;
+}
+*/
 .box {
   width: 35px;
   height: 35px;
@@ -221,6 +259,24 @@ span.search-box {
 #artist-song-minutes {
   flex-grow: 1;
 }
+
+.btn-check:checked + .btn {
+  background-color: white;
+  color: black;
+}
+
+.song-number {
+  width: 20px;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 5px;
+}
+
+.song-number span {
+  display: inline-block;
+}
+
 .dropend:hover > .dropdown-menu {
   display: block;
   margin-top: 0;
