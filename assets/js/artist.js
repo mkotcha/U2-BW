@@ -1,7 +1,8 @@
+const artistName = sessionStorage.getItem("nameArtist");
 const artistOptions = {
   method: "GET",
   url: "https://deezerdevs-deezer.p.rapidapi.com/search",
-  params: { q: "eminem" },
+  params: { q: artistName },
   headers: {
     "X-RapidAPI-Key": "4dee4a6d79msh10e7f11101e9eafp1eb14cjsn68ce37f58686",
     "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
@@ -36,7 +37,7 @@ async function fetchArtistData() {
 
     const artistNameElements = document.querySelectorAll("#artist-name");
 
-    artistNameElements.forEach((element) => {
+    artistNameElements.forEach(element => {
       element.innerHTML = artistData.name;
     });
     const artistImage = document.getElementById("artist-image");
@@ -110,12 +111,12 @@ showMoreButton.addEventListener("click", () => {
   const hiddenItems = document.querySelectorAll(".hidden-item");
 
   if (areSongsVisible) {
-    hiddenItems.forEach((item) => {
+    hiddenItems.forEach(item => {
       item.classList.add("d-none");
     });
     showMoreButton.textContent = "Visualizza altro";
   } else {
-    hiddenItems.forEach((item) => {
+    hiddenItems.forEach(item => {
       item.classList.remove("d-none");
     });
     showMoreButton.textContent = "Mostra meno";

@@ -203,9 +203,9 @@
         "https://striveschool-api.herokuapp.com/api/deezer/search?q=" + sessionStorage.getItem("nameArtist");
       sessionStorage.clear();
       fetch(urlArtist)
-        .then((risposta) => risposta.json())
-        .then((objArray) => objArray.data)
-        .then((array) => {
+        .then(risposta => risposta.json())
+        .then(objArray => objArray.data)
+        .then(array => {
           console.log(array);
           const rand = [];
           const rigaAltroAlbum = document.getElementById("card-append");
@@ -254,7 +254,7 @@
       const appare = document.getElementsByClassName("appare");
       const scompare = document.getElementsByClassName("scompare");
       const scrollo = document.getElementById("scrollo");
-      scrollo.addEventListener("scroll", (event) => {
+      scrollo.addEventListener("scroll", event => {
         if (scompare[0].getBoundingClientRect().top < 10) {
           appare[0].style.opacity = 1;
           scompare[0].style.opacity = 0;
@@ -264,11 +264,11 @@
         }
       });
       //------------------------------------
-      window.onload = async (event) => {
+      window.onload = async event => {
         try {
           await fetch(urlAlbum)
-            .then((rispostaServer) => rispostaServer.json())
-            .then(async (obj) => {
+            .then(rispostaServer => rispostaServer.json())
+            .then(async obj => {
               console.log("obj", obj);
               sessionStorage.setItem("nameArtist", obj.artist.name);
               const img = document.getElementsByClassName("img-album");
@@ -330,7 +330,7 @@
               }
             });
         } catch {
-          (error) => console.log(error);
+          error => console.log(error);
         }
       };
     </script>
