@@ -1,342 +1,21 @@
 <!DOCTYPE html>
-<html
-  lang="en"
-  data-bs-theme="dark">
+<html lang="en" data-bs-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spotify</title>
-    <link
-      rel="stylesheet"
-      href="node_modules/bootstrap-icons/font/bootstrap-icons.min.css" />
-    <link
-      rel="stylesheet"
-      href="assets/css/style.css" />
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <div
-      class="container-flex bg-black"
-      id="home-container">
+    <div class="container-flex bg-black" id="home-container">
       <div class="d-flex h-100">
-        <div class="home-sidebar p-2 overflow-y-scroll">
-          <div class="home-sidebar-box bg-primary rounded-4 px-4 py-2 fs-4 mb-2">
-            <div class="home-sidebar-link mb-3">
-              <a
-                href="index.html"
-                class="text-reset text-decoration-none d-flex align-items-center"
-                ><i class="bi bi-house-door-fill me-3"></i><span class="fw-bold fs-6">Home</span></a
-              >
-            </div>
-            <div class="home-sidebar-link">
-              <a
-                href="index.html"
-                class="text-decoration-none d-flex align-items-center"
-                ><i class="bi bi-search me-3"></i><span class="fw-bold fs-6">Cerca</span></a
-              >
-            </div>
-          </div>
-
-          <div class="home-sidebar-box bg-primary rounded-4 px-4 py-2 fs-4 overflow-hidden">
-            <div class="home-sidebar-link d-flex">
-              <a
-                href="index.html"
-                class="text-decoration-none d-flex align-items-center me-auto"
-                ><i class="bi bi-collection me-3"></i><span class="fw-bold fs-6">La tua libreria</span></a
-              >
-              <a
-                href="index.html"
-                class="text-decoration-none d-flex align-items-center"
-                ><i class="bi bi-plus fs-3"></i
-              ></a>
-            </div>
-
-            <div class="home-sidebar-buttons my-3">
-              <div class="home-sidebar-buttons-faded d-flex overflow-x-hidden gap-2 position-relative">
-                <a
-                  href="#"
-                  class="btn btn-sm btn-dark"
-                  >Playlist</a
-                >
-                <a
-                  href="#"
-                  class="btn btn-sm btn-dark"
-                  >Artist</a
-                >
-                <a
-                  href="#"
-                  class="btn btn-sm btn-dark"
-                  >Albums</a
-                >
-                <a
-                  href="#"
-                  class="flex-shrink-0 btn btn-sm btn-dark"
-                  >Podcasts & Shows</a
-                >
-                <a
-                  href="#"
-                  class="btn btn-sm btn-dark"
-                  >Playlist</a
-                >
-              </div>
-              <div>
-                <a
-                  href="#"
-                  class="btn btn-sm btn-dark home-sidebar-buttons-next"
-                  ><i class="bi bi-chevron-right"></i
-                ></a>
-              </div>
-            </div>
-            <div class="home-sidebar-list overflow-y-auto h-75">
-              <div class="d-flex fs-6 fw-bold mb-4">
-                <i class="bi bi-search me-auto"></i>
-                <ul class="navbar-nav">
-                  <li class="dropdown">
-                    <span
-                      class="dropdown-toggle"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false">
-                      Recents
-                    </span>
-                    <ul class="dropdown-menu dropdown-menu-dark">
-                      <span>ordina per</span>
-                      <li>
-                        <a
-                          class="dropdown-item"
-                          href="#"
-                          >Recents</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          class="dropdown-item"
-                          href="#"
-                          >Recently Added</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          class="dropdown-item"
-                          href="#"
-                          >Alphabetical</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          class="dropdown-item"
-                          href="#"
-                          >Creator</a
-                        >
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-              <div class="d-flex flex-column">
-                <div class="d-flex mb-3">
-                  <img
-                    class="me-3"
-                    src="assets/imgs/search/image-1.jpeg"
-                    alt="" />
-                  <div class="fs-6">
-                    <p class="fw-bold m-0">Liked Songs</p>
-                    <p class="text-body-secondary m-0">
-                      <i class="bi bi-pin-angle text-success"></i> <span class="category">Playlist</span
-                      ><span class="detail">2.567 brani</span>
-                    </p>
-                  </div>
-                </div>
-                <div class="d-flex mb-3">
-                  <img
-                    class="me-3"
-                    src="assets/imgs/search/image-1.jpeg"
-                    alt="" />
-                  <div class="fs-6">
-                    <p class="fw-bold m-0">Liked Songs</p>
-                    <p class="text-body-secondary m-0">
-                      <i class="bi bi-pin-angle text-success"></i> <span class="category">Playlist</span
-                      ><span class="detail">2.567 brani</span>
-                    </p>
-                  </div>
-                </div>
-                <div class="d-flex mb-3">
-                  <img
-                    class="me-3"
-                    src="assets/imgs/search/image-1.jpeg"
-                    alt="" />
-                  <div class="fs-6">
-                    <p class="fw-bold m-0">Liked Songs</p>
-                    <p class="text-body-secondary m-0">
-                      <i class="bi bi-pin-angle text-success"></i> <span class="category">Playlist</span
-                      ><span class="detail">2.567 brani</span>
-                    </p>
-                  </div>
-                </div>
-                <div class="d-flex mb-3">
-                  <img
-                    class="me-3"
-                    src="assets/imgs/search/image-1.jpeg"
-                    alt="" />
-                  <div class="fs-6">
-                    <p class="fw-bold m-0">Liked Songs</p>
-                    <p class="text-body-secondary m-0">
-                      <i class="bi bi-pin-angle text-success"></i> <span class="category">Playlist</span
-                      ><span class="detail">2.567 brani</span>
-                    </p>
-                  </div>
-                </div>
-                <div class="d-flex mb-3">
-                  <img
-                    class="me-3"
-                    src="assets/imgs/search/image-1.jpeg"
-                    alt="" />
-                  <div class="fs-6">
-                    <p class="fw-bold m-0">Liked Songs</p>
-                    <p class="text-body-secondary m-0">
-                      <i class="bi bi-pin-angle text-success"></i> <span class="category">Playlist</span
-                      ><span class="detail">2.567 brani</span>
-                    </p>
-                  </div>
-                </div>
-                <div class="d-flex mb-3">
-                  <img
-                    class="me-3"
-                    src="assets/imgs/search/image-1.jpeg"
-                    alt="" />
-                  <div class="fs-6">
-                    <p class="fw-bold m-0">Liked Songs</p>
-                    <p class="text-body-secondary m-0">
-                      <i class="bi bi-pin-angle text-success"></i> <span class="category">Playlist</span
-                      ><span class="detail">2.567 brani</span>
-                    </p>
-                  </div>
-                </div>
-                <div class="d-flex mb-3">
-                  <img
-                    class="me-3"
-                    src="assets/imgs/search/image-1.jpeg"
-                    alt="" />
-                  <div class="fs-6">
-                    <p class="fw-bold m-0">Liked Songs</p>
-                    <p class="text-body-secondary m-0">
-                      <i class="bi bi-pin-angle text-success"></i> <span class="category">Playlist</span
-                      ><span class="detail">2.567 brani</span>
-                    </p>
-                  </div>
-                </div>
-                <div class="d-flex mb-3">
-                  <img
-                    class="me-3"
-                    src="assets/imgs/search/image-1.jpeg"
-                    alt="" />
-                  <div class="fs-6">
-                    <p class="fw-bold m-0">Liked Songs</p>
-                    <p class="text-body-secondary m-0">
-                      <i class="bi bi-pin-angle text-success"></i> <span class="category">Playlist</span
-                      ><span class="detail">2.567 brani</span>
-                    </p>
-                  </div>
-                </div>
-                <div class="d-flex mb-3">
-                  <img
-                    class="me-3"
-                    src="assets/imgs/search/image-1.jpeg"
-                    alt="" />
-                  <div class="fs-6">
-                    <p class="fw-bold m-0">Liked Songs</p>
-                    <p class="text-body-secondary m-0">
-                      <i class="bi bi-pin-angle text-success"></i> <span class="category">Playlist</span
-                      ><span class="detail">2.567 brani</span>
-                    </p>
-                  </div>
-                </div>
-                <div class="d-flex mb-3">
-                  <img
-                    class="me-3"
-                    src="assets/imgs/search/image-1.jpeg"
-                    alt="" />
-                  <div class="fs-6">
-                    <p class="fw-bold m-0">Liked Songs</p>
-                    <p class="text-body-secondary m-0">
-                      <i class="bi bi-pin-angle text-success"></i> <span class="category">Playlist</span
-                      ><span class="detail">2.567 brani</span>
-                    </p>
-                  </div>
-                </div>
-                <div class="d-flex mb-3">
-                  <img
-                    class="me-3"
-                    src="assets/imgs/search/image-1.jpeg"
-                    alt="" />
-                  <div class="fs-6">
-                    <p class="fw-bold m-0">Liked Songs</p>
-                    <p class="text-body-secondary m-0">
-                      <i class="bi bi-pin-angle text-success"></i> <span class="category">Playlist</span
-                      ><span class="detail">2.567 brani</span>
-                    </p>
-                  </div>
-                </div>
-                <div class="d-flex mb-3">
-                  <img
-                    class="me-3"
-                    src="assets/imgs/search/image-1.jpeg"
-                    alt="" />
-                  <div class="fs-6">
-                    <p class="fw-bold m-0">Liked Songs</p>
-                    <p class="text-body-secondary m-0">
-                      <i class="bi bi-pin-angle text-success"></i> <span class="category">Playlist</span
-                      ><span class="detail">2.567 brani</span>
-                    </p>
-                  </div>
-                </div>
-                <div class="d-flex mb-3">
-                  <img
-                    class="me-3"
-                    src="assets/imgs/search/image-1.jpeg"
-                    alt="" />
-                  <div class="fs-6">
-                    <p class="fw-bold m-0">Liked Songs</p>
-                    <p class="text-body-secondary m-0">
-                      <i class="bi bi-pin-angle text-success"></i> <span class="category">Playlist</span
-                      ><span class="detail">2.567 brani</span>
-                    </p>
-                  </div>
-                </div>
-                <div class="d-flex mb-3">
-                  <img
-                    class="me-3"
-                    src="assets/imgs/search/image-1.jpeg"
-                    alt="" />
-                  <div class="fs-6">
-                    <p class="fw-bold m-0">Liked Songs</p>
-                    <p class="text-body-secondary m-0">
-                      <i class="bi bi-pin-angle text-success"></i> <span class="category">Playlist</span
-                      ><span class="detail">2.567 brani</span>
-                    </p>
-                  </div>
-                </div>
-                <div class="d-flex mb-3">
-                  <img
-                    class="me-3"
-                    src="assets/imgs/search/image-1.jpeg"
-                    alt="" />
-                  <div class="fs-6">
-                    <p class="fw-bold m-0">Liked Songs</p>
-                    <p class="text-body-secondary m-0">
-                      <i class="bi bi-pin-angle text-success"></i> <span class="category">Playlist</span
-                      ><span class="detail">2.567 brani</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div id="sidebar"></div>
         <main class="">
           <div
             class="home-hero-container overflow-y-scroll overflow-x-hidden h-100 rounded-4 position-relative"
-            id="scrollo">
+            id="scrollo"
+          >
             <!-- BARRA STICKY -->
             <div class="home-hero-nav sticky-top">
               <div class="d-flex gap-2">
@@ -347,9 +26,7 @@
                   <i class="bi bi-chevron-right"></i>
                 </div>
                 <!-- bottone play da fare apparire -->
-                <div
-                  class="play-background d-flex justify-content-center align-items-center appare"
-                  style="opacity: 0">
+                <div class="play-background d-flex justify-content-center align-items-center appare" style="opacity: 0">
                   <i class="bi bi-play-fill text-black fs-3"></i>
                 </div>
                 <!--  -->
@@ -363,19 +40,13 @@
             <!-- Inizio dettaglio Album -->
             <div class="d-flex align-items-end px-4 py-2">
               <!-- classe img-album per largh. image 200px -->
-              <img
-                src=""
-                class="img-album"
-                alt="" />
+              <img src="" class="img-album" alt="" />
               <div class="d-inline-block m-4">
                 <span>Album</span>
                 <h1 class="titolo-album">Nome Album</h1>
                 <div class="d-flex align-items-center gap-2">
                   <!-- classe per mini thumbnail -->
-                  <img
-                    alt=""
-                    class="rounded-circle img-album"
-                    style="height: 20px; width: 20px" />
+                  <img alt="" class="rounded-circle img-album" style="height: 20px; width: 20px" />
 
                   <span class="artist">artista/</span><span class="year">data/</span>
                   <span class="ntracks">n brani/</span>
@@ -389,7 +60,8 @@
                 <!-- bottoni -->
                 <div
                   class="play-background d-flex justify-content-center align-items-center scompare"
-                  style="top: 50px">
+                  style="top: 50px"
+                >
                   <i class="bi bi-play-fill text-black fs-3"></i>
                 </div>
                 <!-- fine da fare scomparire -->
@@ -398,12 +70,8 @@
               </div>
               <!-- Creazione elementi traccia xjs il pirmo è quello di riferimento-->
               <div class="d-flex flex-column px-5 tracce">
-                <div
-                  class="row g-3 border-bottom sticky-top mb-3"
-                  style="top: 58px">
-                  <div
-                    class="col-1 p-0 ps-2"
-                    style="width: 30px">
+                <div class="row g-3 border-bottom sticky-top mb-3" style="top: 58px">
+                  <div class="col-1 p-0 ps-2" style="width: 30px">
                     <i class="bi bi-hash"></i>
                   </div>
                   <div class="col p-0">
@@ -422,16 +90,10 @@
               <div class="pt-4 px-3">
                 <div class="d-flex justify-content-between">
                   <h3>Altro dell'Artista</h3>
-                  <a
-                    href=""
-                    class="text-decoration-none">
-                    VEDI DISCOGRAFIA</a
-                  >
+                  <a href="" class="text-decoration-none"> VEDI DISCOGRAFIA</a>
                 </div>
                 <!-- CARDS -->
-                <div
-                  class="row row-cols-4 px-3 pb-4"
-                  id="card-append">
+                <div class="row row-cols-4 px-3 pb-4" id="card-append">
                   <!-- CARD DINAMICHE -->
                 </div>
               </div>
@@ -444,25 +106,13 @@
                     <h5 class="fs-6">Azienda</h5>
                     <ul class="p-0 list-unstyled">
                       <li class="mt-2">
-                        <a
-                          href=""
-                          class="text-decoration-none"
-                          >Chi siamo</a
-                        >
+                        <a href="" class="text-decoration-none">Chi siamo</a>
                       </li>
                       <li class="mt-2">
-                        <a
-                          href=""
-                          class="text-decoration-none"
-                          >Opportunità di lavoro</a
-                        >
+                        <a href="" class="text-decoration-none">Opportunità di lavoro</a>
                       </li>
                       <li class="mt-2">
-                        <a
-                          href=""
-                          class="text-decoration-none"
-                          >For the record</a
-                        >
+                        <a href="" class="text-decoration-none">For the record</a>
                       </li>
                     </ul>
                   </div>
@@ -471,39 +121,19 @@
                     <h5 class="fs-6">Community</h5>
                     <ul class="p-0 list-unstyled">
                       <li class="mt-2">
-                        <a
-                          href=""
-                          class="text-decoration-none"
-                          >Per artisti</a
-                        >
+                        <a href="" class="text-decoration-none">Per artisti</a>
                       </li>
                       <li class="mt-2">
-                        <a
-                          href=""
-                          class="text-decoration-none"
-                          >Sviluppatori</a
-                        >
+                        <a href="" class="text-decoration-none">Sviluppatori</a>
                       </li>
                       <li class="mt-2">
-                        <a
-                          href=""
-                          class="text-decoration-none"
-                          >Pubblicità</a
-                        >
+                        <a href="" class="text-decoration-none">Pubblicità</a>
                       </li>
                       <li class="mt-2">
-                        <a
-                          href=""
-                          class="text-decoration-none"
-                          >Invertitori</a
-                        >
+                        <a href="" class="text-decoration-none">Invertitori</a>
                       </li>
                       <li class="mt-2">
-                        <a
-                          href=""
-                          class="text-decoration-none"
-                          >Venditori</a
-                        >
+                        <a href="" class="text-decoration-none">Venditori</a>
                       </li>
                     </ul>
                   </div>
@@ -511,25 +141,13 @@
                     <h5 class="fs-6">Link utili</h5>
                     <ul class="p-0 list-unstyled">
                       <li class="mt-2">
-                        <a
-                          href=""
-                          class="text-decoration-none"
-                          >Assistenza</a
-                        >
+                        <a href="" class="text-decoration-none">Assistenza</a>
                       </li>
                       <li class="mt-2">
-                        <a
-                          href=""
-                          class="text-decoration-none"
-                          >App per cellulare gratuita</a
-                        >
+                        <a href="" class="text-decoration-none">App per cellulare gratuita</a>
                       </li>
                       <li class="mt-2">
-                        <a
-                          href=""
-                          class="text-decoration-none"
-                          >Diritti del consumatore</a
-                        >
+                        <a href="" class="text-decoration-none">Diritti del consumatore</a>
                       </li>
                     </ul>
                   </div>
@@ -548,114 +166,33 @@
               </div>
               <div class="d-flex justify-content-between my-5 mx-3">
                 <div class="d-flex flex-wrap w-75">
-                  <a
-                    href=""
-                    class="text-decoration-none"
-                    >Informazioni legali</a
-                  >
-                  <a
-                    href=""
-                    class="text-decoration-none mx-2"
-                    >Centro sulla privacy</a
-                  >
-                  <a
-                    href=""
-                    class="text-decoration-none mx-2"
-                    >Informativa sulla privacy</a
-                  >
-                  <a
-                    href=""
-                    class="text-decoration-none mx-2"
-                    >Impostazioni cookie</a
-                  >
-                  <a
-                    href=""
-                    class="text-decoration-none ms-2"
-                    >Info annunci</a
-                  >
-                  <a
-                    href=""
-                    class="text-decoration-none"
-                    >Accessibilità</a
-                  >
+                  <a href="" class="text-decoration-none">Informazioni legali</a>
+                  <a href="" class="text-decoration-none mx-2">Centro sulla privacy</a>
+                  <a href="" class="text-decoration-none mx-2">Informativa sulla privacy</a>
+                  <a href="" class="text-decoration-none mx-2">Impostazioni cookie</a>
+                  <a href="" class="text-decoration-none ms-2">Info annunci</a>
+                  <a href="" class="text-decoration-none">Accessibilità</a>
                 </div>
-                <a
-                  href=""
-                  class="text-decoration-none text-white"
-                  >© 2023 Spotify AB</a
-                >
+                <a href="" class="text-decoration-none text-white">© 2023 Spotify AB</a>
               </div>
             </footer>
           </div>
         </main>
       </div>
     </div>
-    <div class="sticky-bottom bg-black height-for-fixed-bottom d-flex justify-content-between align-items-end">
-      <div class="ms-3 d-flex">
-        <!-- mettere info album -->
-        <div class="d-flex align-items-center mb-3">
-          <img
-            class="me-3 img-album"
-            style="width: 60px"
-            src="assets/imgs/search/image-1.jpeg"
-            alt="" />
-          <div class="fs-6">
-            <p class="fw-bold m-0">Canzone</p>
-            <p class="text-body-secondary m-0 artist"></p>
-          </div>
-          <i class="bi bi-heart mx-2 fs-5"></i>
-        </div>
-        <!-- mettere cuore -->
-      </div>
-      <div class="d-flex flex-column align-content-center align-items-center mb-2">
-        <div class="d-flex gap-4 align-items-center">
-          <i class="bi bi-shuffle"></i>
-          <i class="bi bi-skip-start-fill fs-4"></i>
-          <div class="d-flex box rounded-circle bg-white justify-content-center align-items-center">
-            <i class="bi bi-play-fill text-black fs-4"></i>
-          </div>
-          <i class="bi bi-skip-end-fill fs-4"></i>
-        </div>
-        <div class="d-flex gap-2">
-          <span>00:00</span>
-          <div
-            class="progress bg-primary mt-2"
-            role="progressbar"
-            aria-label="Basic example"
-            aria-valuenow="75"
-            aria-valuemin="0"
-            aria-valuemax="100">
-            <div class="progress-bar bg-white w-75"></div>
-          </div>
-          <span>3:75</span>
-        </div>
-      </div>
-      <div class="d-flex align-items-center me-3 mb-4">
-        <i class="bi bi-mic"></i>
-        <i class="bi bi-list"></i>
-        <i class="bi bi-speaker"></i>
-
-        <i class="bi bi-volume-off fs-5"></i>
-        <div
-          id="slidecontainer"
-          class="container-fluid">
-          <input
-            type="range"
-            id="range"
-            style="appearance: unset" />
-        </div>
-        <i class="bi bi-arrows-angle-expand ms-2"></i>
-      </div>
-    </div>
+    <div id="player"></div>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous"></script>
+      crossorigin="anonymous"
+    ></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
       integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
-      crossorigin="anonymous"></script>
+      crossorigin="anonymous"
+    ></script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/album.js"></script>
     <script>
       const idAlbum = new URLSearchParams(window.location.search).get("id");
       const urlAlbum = "https://striveschool-api.herokuapp.com/api/deezer/album/" + `${idAlbum}`;
@@ -666,9 +203,9 @@
         "https://striveschool-api.herokuapp.com/api/deezer/search?q=" + sessionStorage.getItem("nameArtist");
       sessionStorage.clear();
       fetch(urlArtist)
-        .then(risposta => risposta.json())
-        .then(objArray => objArray.data)
-        .then(array => {
+        .then((risposta) => risposta.json())
+        .then((objArray) => objArray.data)
+        .then((array) => {
           console.log(array);
           const rand = [];
           const rigaAltroAlbum = document.getElementById("card-append");
@@ -717,7 +254,7 @@
       const appare = document.getElementsByClassName("appare");
       const scompare = document.getElementsByClassName("scompare");
       const scrollo = document.getElementById("scrollo");
-      scrollo.addEventListener("scroll", event => {
+      scrollo.addEventListener("scroll", (event) => {
         if (scompare[0].getBoundingClientRect().top < 10) {
           appare[0].style.opacity = 1;
           scompare[0].style.opacity = 0;
@@ -727,11 +264,11 @@
         }
       });
       //------------------------------------
-      window.onload = async event => {
+      window.onload = async (event) => {
         try {
           await fetch(urlAlbum)
-            .then(rispostaServer => rispostaServer.json())
-            .then(async obj => {
+            .then((rispostaServer) => rispostaServer.json())
+            .then(async (obj) => {
               console.log("obj", obj);
               sessionStorage.setItem("nameArtist", obj.artist.name);
               const img = document.getElementsByClassName("img-album");
@@ -793,7 +330,7 @@
               }
             });
         } catch {
-          error => console.log(error);
+          (error) => console.log(error);
         }
       };
     </script>

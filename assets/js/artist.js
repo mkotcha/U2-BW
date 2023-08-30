@@ -36,7 +36,7 @@ async function fetchArtistData() {
 
     const artistNameElements = document.querySelectorAll("#artist-name");
 
-    artistNameElements.forEach(element => {
+    artistNameElements.forEach((element) => {
       element.innerHTML = artistData.name;
     });
     const artistImage = document.getElementById("artist-image");
@@ -106,12 +106,12 @@ showMoreButton.addEventListener("click", () => {
   const hiddenItems = document.querySelectorAll(".hidden-item");
 
   if (areSongsVisible) {
-    hiddenItems.forEach(item => {
+    hiddenItems.forEach((item) => {
       item.classList.add("d-none");
     });
     showMoreButton.textContent = "Visualizza altro";
   } else {
-    hiddenItems.forEach(item => {
+    hiddenItems.forEach((item) => {
       item.classList.remove("d-none");
     });
     showMoreButton.textContent = "Mostra meno";

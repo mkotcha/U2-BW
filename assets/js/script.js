@@ -1,3 +1,29 @@
+document.addEventListener("DOMContentLoaded", (event) => {
+  const sidebarElm = document.getElementById("sidebar");
+  const playerElm = document.getElementById("player");
+
+  fetch("assets/html/sidebar.html")
+    .then((response) => response.text())
+    .then((data) => (sidebarElm.innerHTML = data));
+  load();
+  fetch("assets/html/player.html")
+    .then((response) => response.text())
+    .then((data) => (playerElm.innerHTML = data));
+  load();
+});
+
+async function load() {
+  const side = await query("playlist/10361569942");
+  printSideCards(side);
+
+  hideCard();
+
+  const sidebarSelectorList = document.querySelectorAll(".home-sidebar-list a");
+  sidebarSelectorList.forEach((elm) => {
+    elm.addEventListener("click", sidebarSelection);
+  });
+}
+
 const url = "https://deezerdevs-deezer.p.rapidapi.com/";
 const options = {
   method: "GET",
@@ -65,15 +91,15 @@ const printCard = (elm, data) => {
   }
 };
 
-const printSideCards = data => {
+const printSideCards = (data) => {
   const list = document.querySelector(".side-list");
   list.innerHTML = "";
-  data.tracks.data.forEach(track => {
+  data.tracks.data.forEach((track) => {
     printSideCard(track);
   });
 };
 
-const printSideCard = track => {
+const printSideCard = (track) => {
   const list = document.querySelector(".side-list");
   list.innerHTML += `<div class="d-flex mb-3">
   <img class="" src="${track.album.cover_medium}" alt="" />
@@ -93,7 +119,7 @@ const numCol = () => {
 const hideCard = () => {
   const num = numCol();
   const rowLists = document.querySelectorAll(".row-list");
-  rowLists.forEach(list => {
+  rowLists.forEach((list) => {
     for (let i = 1; i <= maxCard; i++) {
       list.classList.remove("row-cols-" + i);
     }
@@ -121,21 +147,21 @@ async function sidebarSelection(event) {
 
   switch (selection) {
     case "Recently Added":
-      side.tracks.data.forEach(elm => {
+      side.tracks.data.forEach((elm) => {
         arrLists.push([elm.id, elm.time_add]);
       });
       arrLists.sort(compareSecondColumn);
       break;
 
     case "Alphabetical":
-      side.tracks.data.forEach(elm => {
+      side.tracks.data.forEach((elm) => {
         arrLists.push([elm.id, elm.title]);
       });
       arrLists.sort(compareSecondColumn);
       break;
 
     case "Artist":
-      side.tracks.data.forEach(elm => {
+      side.tracks.data.forEach((elm) => {
         arrLists.push([elm.id, elm.artist.name]);
       });
       arrLists.sort(compareSecondColumn);
