@@ -1,4 +1,4 @@
-const options = {
+const artistOptions = {
   method: "GET",
   url: "https://deezerdevs-deezer.p.rapidapi.com/search",
   params: { q: "eminem" },
@@ -10,36 +10,58 @@ const options = {
 
 async function fetchArtistData() {
   try {
-    const response = await axios.request(options);
+    const response = await axios.request(artistOptions);
+
+    //DATI ARTISTA
     const artistData = response.data.data[0].artist;
     const artistList = document.getElementById("artist-list");
     const popularSongs = response.data.data.slice(0, 10);
+
+    //DATI ALBUM
+    const artistpageAlbumData = response.data.data[0].album;
+
+    //ALBUM COVER
+    const artistpageAlbumCoverURL = artistpageAlbumData.cover_medium;
+    const artistpageAlbumCover = document.getElementById("artist-album-image");
+    artistpageAlbumCover.src = artistpageAlbumCoverURL;
+
+    //ALBUM TITLE
+    const artistpageAlbumTitle = artistpageAlbumData.title;
+    const artistpageAlbumTitleContainer = document.getElementById("artist-album-title");
+    artistpageAlbumTitleContainer.textContent = artistpageAlbumTitle;
+
+    console.log();
     artistList.innerHTML = "";
     let songNumber = 1;
 
-    document.getElementById("artist-name").textContent = artistData.name;
+    const artistNameElements = document.querySelectorAll("#artist-name");
+
+    artistNameElements.forEach(element => {
+      element.innerHTML = artistData.name;
+    });
     const artistImage = document.getElementById("artist-image");
     artistImage.style.backgroundImage = `url(${artistData.picture_xl})`;
 
+    //FUNZIONE PER CREARE LE CANZONI
     popularSongs.forEach((song, index) => {
       const listItemContainer = document.createElement("div");
-      listItemContainer.className = "artist-list-items-container p-2 px-3 rounded-2 row";
+      listItemContainer.className = "artist-list-items-container p-2 px-3 rounded-2 ";
 
       const listItem = document.createElement("li");
       listItem.className = "row d-flex align-items-center justify-content-between";
 
       listItem.innerHTML = `
       <span class="col">${songNumber}</span>
-      <div id="artist-song-title" class="d-flex col-6">
+      <div id="artist-song-title" class="d-flex col-9 col-md-6">
       <img src="${song.album.cover_small}" class="me-3" width="40" height="40" alt="" />
       <div>
         <div class="text-white">${song.title}</div>
         <i class="bi bi-explicit-fill text-secondary"></i>
       </div>
     </div>
-    <div id="artist-song-plays" class="d-flex col-3">${song.rank}</div>
-    <div id="artist-song-minutes" class="d-flex col-2 justify-content-between align-items-center">
-      <div><i class="bi bi-heart"></i></div>
+    <div id="artist-song-plays" class="d-flex d-none d-md-block col-3">${song.rank}</div>
+    <div id="artist-song-minutes" class="d-flex col col-md-2 justify-content-between align-items-center">
+      <div><i class="bi bi-heart me-3"></i></div>
       <div>${Math.floor(song.duration / 60)}:${String(song.duration % 60).padStart(2, "0")}</div>
       <div class="dropdown">
         <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

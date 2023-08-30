@@ -470,13 +470,22 @@
                 <div>
                   <h3 class="fw-bold text-white">Selezione dell'artista</h3>
                   <div class="d-flex">
-                    <img src="./assets/imgs/main/image-1.jpg" class="me-3" width="88" />
+                    <img id="artist-album-image" src="./assets/imgs/main/image-1.jpg" class="me-3" width="88" />
                     <div>
                       <div>
-                        <img src="./assets/imgs/main/image-1.jpg" class="rounded-circle me-2" width="24" />
-                        <span id="artist-name">Pubblicato da Artista</span>
+                        <img
+                          id="artist-icon"
+                          src="./assets/imgs/main/image-1.jpg"
+                          class="rounded-circle me-2"
+                          width="24"
+                        />
+                        <span>Pubblicato da <span id="artist-name">Artista</span></span>
                       </div>
-                      <div><a href="#" class="fs-5 text-white fw-bold text-decoration-none">Nome Album</a></div>
+                      <div>
+                        <a id="artist-album-title" href="#" class="fs-5 text-white fw-bold text-decoration-none"
+                          >Nome Album</a
+                        >
+                      </div>
                       <div>Playlist</div>
                     </div>
                   </div>
@@ -486,7 +495,7 @@
                     <h3 class="fw-bold text-white">Discografia</h3>
                     <div class="fw-bold fs-6"><a href="#" class="text-decoration-none">Mostra tutto</a></div>
                   </div>
-                  <div class="mb-2">
+                  <div class="mb-4">
                     <input
                       type="radio"
                       class="btn-check"
