@@ -19,17 +19,37 @@ async function query(query) {
   }
 }
 
+async function queryTrack(id) {
+  try {
+    const resp = await fetch(url + "track/" + id, options);
+    const result = await resp.json();
+    return result;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 window.onload = async () => {
   const recentData = await query("playlist/752286631");
   const showData = await query("playlist/7456464544");
+  const userData = await query("playlist/11470122864");
+
   const recentElm = document.querySelector(".recent-list");
   const showElm = document.querySelector(".show-list");
+  const userElm = document.querySelector(".user-list");
+
   const side = await query("playlist/10361569942");
-  printSideCard(side);
+  printSideCards(side);
   printCard(recentElm, recentData);
   printCard(showElm, showData);
+  printCard(userElm, userData);
 
   hideCard();
+
+  const sidebarSelectorList = document.querySelectorAll(".home-sidebar-list a");
+  sidebarSelectorList.forEach(elm => {
+    elm.addEventListener("click", sidebarSelection);
+  });
 };
 
 const printCard = (elm, data) => {
@@ -68,7 +88,7 @@ const printCard = (elm, data) => {
   }
 };
 
-const printSideCard = data => {
+const printSideCards = data => {
   //   fetch("https://deezerdevs-deezer.p.rapidapi.com/playlist/10361569942", options)
   //     .then(resp => resp.json())
   //     .then(data => console.log(data))
@@ -77,15 +97,20 @@ const printSideCard = data => {
   list.innerHTML = "";
   // console.log(data.tracks);
   data.tracks.data.forEach(elm => {
-    list.innerHTML += `<div class="d-flex mb-3">
-  <img class="" src="${elm.album.cover_medium}" alt="" />
+    printSideCard(elm);
+  });
+};
+
+const printSideCard = track => {
+  const list = document.querySelector(".side-list");
+  list.innerHTML += `<div class="d-flex mb-3">
+  <img class="" src="${track.album.cover_medium}" alt="" />
   <div class="ps-3 fs-6 flex-shrink-1 text-truncate">
-    <p class="fw-bold m-0 text-truncate">${elm.title}</p>
+    <p class="fw-bold m-0 text-truncate">${track.title}</p>
     <p class="text-body-secondary m-0">
-      <i class="bi bi-pin-angle text-success d-none"></i> <span class="category">${elm.artist.name}</span>
+      <i class="bi bi-pin-angle text-success d-none"></i> <span class="category">${track.artist.name}</span>
     </p>
   </div>`;
-  });
 };
 
 const numCol = () => {
@@ -96,9 +121,6 @@ const numCol = () => {
 const hideCard = () => {
   const num = numCol();
   const rowLists = document.querySelectorAll(".row-list");
-  const prefix = "row-cols-";
-  const regx = new RegExp(`\\b` + prefix + `[^ ]*[ ]?\\b`, `g`);
-
   rowLists.forEach(list => {
     for (let i = 1; i <= maxCard; i++) {
       list.classList.remove("row-cols-" + i);
@@ -110,17 +132,72 @@ const hideCard = () => {
       list.classList.add("row-cols-" + maxCard);
     }
     const cards = list.querySelectorAll(".col");
-
     cards.forEach((elm, index) => {
-      console.log(elm);
       if (index >= num) {
         elm.classList.add("d-none");
-        console.log("hide", index, num);
       } else {
         elm.classList.remove("d-none");
       }
     });
   });
 };
+
+async function sidebarSelection(event) {
+  const selection = event.target.innerText;
+  const side = await query("playlist/10361569942");
+  const arrLists = [];
+
+  switch (selection) {
+    case "Recently Added":
+      side.tracks.data.forEach(elm => {
+        arrLists.push([elm.id, elm.time_add]);
+      });
+      arrLists.sort(compareSecondColumn);
+      break;
+
+    case "Alphabetical":
+      side.tracks.data.forEach(elm => {
+        arrLists.push([elm.id, elm.title]);
+      });
+      arrLists.sort(compareSecondColumn);
+      break;
+
+    case "Artist":
+      side.tracks.data.forEach(elm => {
+        arrLists.push([elm.id, elm.artist.name]);
+      });
+      arrLists.sort(compareSecondColumn);
+      break;
+
+    default:
+      break;
+  }
+
+  const list = document.querySelector(".side-list");
+  list.innerHTML = "";
+
+  for (const id of arrLists) {
+    const track = await queryTrack(id[0]);
+    printSideCard(track);
+  }
+
+  console.log(arrLists);
+}
+
+function sortFunction(a, b) {
+  if (a[0] === b[0]) {
+    return 0;
+  } else {
+    return a[0] < b[0] ? -1 : 1;
+  }
+}
+
+function compareSecondColumn(a, b) {
+  if (a[1] === b[1]) {
+    return 0;
+  } else {
+    return a[1] < b[1] ? -1 : 1;
+  }
+}
 
 window.addEventListener("resize", hideCard);
