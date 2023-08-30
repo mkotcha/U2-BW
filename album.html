@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Spotify</title>
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap-icons/font/bootstrap-icons.min.css" />
+    <link
+      rel="stylesheet"
+      href="assets/css/style.css" />
+  </head>
+  <body>
+    <div
+      class="container-flex bg-black"
+      id="home-container">
+      <div class="d-flex h-100">
+        <div id="sidebar"></div>
+        <main class="flex-grow-1">
+          <div
+            class="home-hero-container overflow-y-scroll overflow-x-hidden h-100 rounded-4 position-relative"
+            id="scrollo">
+            <!-- BARRA STICKY -->
+            <div class="home-hero-nav sticky-top">
+              <div class="d-flex gap-2">
+                <div class="box bg-dark d-flex justify-content-center align-items-center">
+                  <i class="bi bi-chevron-left"></i>
+                </div>
+                <div class="box bg-dark d-flex justify-content-center align-items-center mx-3">
+                  <i class="bi bi-chevron-right"></i>
+                </div>
+                <!-- bottone play da fare apparire -->
+                <div
+                  class="play-background d-flex justify-content-center align-items-center appare"
+                  style="opacity: 0">
+                  <i class="bi bi-play-fill text-black fs-3"></i>
+                </div>
+                <!--  -->
+                <div class="flex-grow-1"></div>
+                <button class="btn btn-dark btn-head">Iscriviti</button>
+                <button class="btn btn-dark btn-head">Accedi</button>
+              </div>
+            </div>
+            <!-- fine barrasticky -->
+
+            <!-- Inizio dettaglio Album -->
+            <div class="d-flex align-items-end px-4 py-2">
+              <!-- classe img-album per largh. image 200px -->
+              <img
+                src=""
+                class="img-album"
+                alt="" />
+              <div class="d-inline-block m-4">
+                <span>Album</span>
+                <h1 class="titolo-album">Nome Album</h1>
+                <div class="d-flex align-items-center gap-2">
+                  <!-- classe per mini thumbnail -->
+                  <img
+                    alt=""
+                    class="rounded-circle img-album"
+                    style="height: 20px; width: 20px" />
+
+                  <span class="artist">artista/</span><span class="year">data/</span>
+                  <span class="ntracks">n brani/</span>
+                  <span class="dtracks">durata</span>
+                </div>
+              </div>
+            </div>
+            <!-- fine dettaglio album -->
+            <div>
+              <div class="d-flex align-items-center gap-4 px-4 my-4">
+                <!-- bottoni -->
+                <div
+                  class="play-background d-flex justify-content-center align-items-center scompare"
+                  style="top: 50px">
+                  <i class="bi bi-play-fill text-black fs-3"></i>
+                </div>
+                <!-- fine da fare scomparire -->
+                <i class="bi bi-heart fs-4"></i>
+                <i class="bi bi-three-dots fs-4"></i>
+              </div>
+              <!-- Creazione elementi traccia xjs il pirmo è quello di riferimento-->
+              <div class="d-flex flex-column px-5 tracce">
+                <div
+                  class="row g-3 border-bottom sticky-top mb-3"
+                  style="top: 58px">
+                  <div
+                    class="col-1 p-0 ps-2"
+                    style="width: 30px">
+                    <i class="bi bi-hash"></i>
+                  </div>
+                  <div class="col p-0">
+                    <p style="font-size: 0.8em; font-weight: lighter">Titolo</p>
+                  </div>
+                  <div class="col text-end"><i class="bi bi-clock flex-grow-1 text-end"></i></div>
+                </div>
+                <!-- qui si creano le tracce dinamiche -->
+              </div>
+              <!-- copyright infondo tracce -->
+              <div class="row pt-4 px-3">
+                <div class="col-12"><span class="year"></span></div>
+                <div class="col-12"><span class="copyright-label">©</span></div>
+              </div>
+              <!-- Altro Artista -->
+              <div class="pt-4 px-3">
+                <div class="d-flex justify-content-between">
+                  <h3>Altro dell'Artista</h3>
+                  <a
+                    href=""
+                    class="text-decoration-none">
+                    VEDI DISCOGRAFIA</a
+                  >
+                </div>
+                <!-- CARDS -->
+                <div
+                  class="row row-cols-4 px-3 pb-4"
+                  id="card-append">
+                  <!-- CARD DINAMICHE -->
+                </div>
+              </div>
+            </div>
+            <!-- Fine dettagli album -->
+            <footer>
+              <div class="d-flex mt-5">
+                <div class="d-flex border-bottom flex-grow-1">
+                  <div class="px-5">
+                    <h5 class="fs-6">Azienda</h5>
+                    <ul class="p-0 list-unstyled">
+                      <li class="mt-2">
+                        <a
+                          href=""
+                          class="text-decoration-none"
+                          >Chi siamo</a
+                        >
+                      </li>
+                      <li class="mt-2">
+                        <a
+                          href=""
+                          class="text-decoration-none"
+                          >Opportunità di lavoro</a
+                        >
+                      </li>
+                      <li class="mt-2">
+                        <a
+                          href=""
+                          class="text-decoration-none"
+                          >For the record</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="ms-3 pe-5 me-5">
+                    <h5 class="fs-6">Community</h5>
+                    <ul class="p-0 list-unstyled">
+                      <li class="mt-2">
+                        <a
+                          href=""
+                          class="text-decoration-none"
+                          >Per artisti</a
+                        >
+                      </li>
+                      <li class="mt-2">
+                        <a
+                          href=""
+                          class="text-decoration-none"
+                          >Sviluppatori</a
+                        >
+                      </li>
+                      <li class="mt-2">
+                        <a
+                          href=""
+                          class="text-decoration-none"
+                          >Pubblicità</a
+                        >
+                      </li>
+                      <li class="mt-2">
+                        <a
+                          href=""
+                          class="text-decoration-none"
+                          >Invertitori</a
+                        >
+                      </li>
+                      <li class="mt-2">
+                        <a
+                          href=""
+                          class="text-decoration-none"
+                          >Venditori</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="px-5 ms-5">
+                    <h5 class="fs-6">Link utili</h5>
+                    <ul class="p-0 list-unstyled">
+                      <li class="mt-2">
+                        <a
+                          href=""
+                          class="text-decoration-none"
+                          >Assistenza</a
+                        >
+                      </li>
+                      <li class="mt-2">
+                        <a
+                          href=""
+                          class="text-decoration-none"
+                          >App per cellulare gratuita</a
+                        >
+                      </li>
+                      <li class="mt-2">
+                        <a
+                          href=""
+                          class="text-decoration-none"
+                          >Diritti del consumatore</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="flex-grow-1 text-end me-3 d-flex justify-content-end">
+                    <div class="box bg-dark d-flex justify-content-center align-items-center">
+                      <i class="bi bi-instagram d-block"></i>
+                    </div>
+                    <div class="box bg-dark d-flex justify-content-center align-items-center mx-3">
+                      <i class="bi bi-twitter d-block"></i>
+                    </div>
+                    <div class="box bg-dark d-flex justify-content-center align-items-center">
+                      <i class="bi bi-facebook d-block"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex justify-content-between my-5 mx-3">
+                <div class="d-flex flex-wrap w-75">
+                  <a
+                    href=""
+                    class="text-decoration-none"
+                    >Informazioni legali</a
+                  >
+                  <a
+                    href=""
+                    class="text-decoration-none mx-2"
+                    >Centro sulla privacy</a
+                  >
+                  <a
+                    href=""
+                    class="text-decoration-none mx-2"
+                    >Informativa sulla privacy</a
+                  >
+                  <a
+                    href=""
+                    class="text-decoration-none mx-2"
+                    >Impostazioni cookie</a
+                  >
+                  <a
+                    href=""
+                    class="text-decoration-none ms-2"
+                    >Info annunci</a
+                  >
+                  <a
+                    href=""
+                    class="text-decoration-none"
+                    >Accessibilità</a
+                  >
+                </div>
+                <a
+                  href=""
+                  class="text-decoration-none text-white"
+                  >© 2023 Spotify AB</a
+                >
+              </div>
+            </footer>
+          </div>
+        </main>
+      </div>
+    </div>
+    <div id="player"></div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
+      crossorigin="anonymous"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/album.js"></script>
+    <script>
+      const idAlbum = new URLSearchParams(window.location.search).get("id");
+      const urlAlbum = "https://striveschool-api.herokuapp.com/api/deezer/album/" + `${idAlbum}`;
+      const idArtist = "";
+
+      //--------------Fetch
+      const urlArtist =
+        "https://striveschool-api.herokuapp.com/api/deezer/search?q=" + sessionStorage.getItem("nameArtist");
+      sessionStorage.clear();
+      fetch(urlArtist)
+        .then(risposta => risposta.json())
+        .then(objArray => objArray.data)
+        .then(array => {
+          console.log(array);
+          const rand = [];
+          const rigaAltroAlbum = document.getElementById("card-append");
+          for (let i = 0; i < 9; i++) {
+            const casual = Math.floor(Math.random() * array.length);
+            if (!rand.includes(casual)) {
+              rand.push(casual);
+            } else {
+              i--;
+            }
+          }
+          console.log("if", rand);
+          for (let i = 0; i < 4; i++) {
+            const div = document.createElement("div");
+            div.classList.add("col");
+            div.innerHTML = `
+                    <div class="home-card rounded-2 d-flex flex-column p-3">
+                            <div class="mb-3">
+                              <img
+                                src="${array[rand[i]].album.cover}"
+                                class="rounded-2"
+                                alt="" />
+                            </div>
+                            <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
+                              <a
+                                href="./album.html?id=${array[rand[i]].album.id}"
+                                class="text-reset text-decoration-none"
+                                >${array[rand[i]].album.title}</a
+                              >
+                            </p>
+                            <p class="fs-6 m-0">
+                              <a
+                                href=""
+                                class="text-decoration-none"
+                                >${array[rand[i]].artist.name}</a
+                              >
+                            </p>
+                          </div>
+
+                    `;
+
+            rigaAltroAlbum.appendChild(div);
+          }
+        });
+      //--------------Play move
+      const appare = document.getElementsByClassName("appare");
+      const scompare = document.getElementsByClassName("scompare");
+      const scrollo = document.getElementById("scrollo");
+      scrollo.addEventListener("scroll", event => {
+        if (scompare[0].getBoundingClientRect().top < 10) {
+          appare[0].style.opacity = 1;
+          scompare[0].style.opacity = 0;
+        } else {
+          appare[0].style.opacity = 0;
+          scompare[0].style.opacity = 1;
+        }
+      });
+      //------------------------------------
+      window.onload = async event => {
+        try {
+          await fetch(urlAlbum)
+            .then(rispostaServer => rispostaServer.json())
+            .then(async obj => {
+              console.log("obj", obj);
+              sessionStorage.setItem("nameArtist", obj.artist.name);
+              const img = document.getElementsByClassName("img-album");
+              const titoloAlbum = document.getElementsByClassName("titolo-album");
+              const artist = document.getElementsByClassName("artist");
+              const ntracce = document.getElementsByClassName("ntracks");
+              const dtracce = document.getElementsByClassName("dtracks");
+              const anno = document.getElementsByClassName("year");
+              const copyrightLabel = document.getElementsByClassName("copyright-label");
+              //copyright.innerHTML=`${ogj}`
+              copyrightLabel[0].innerHTML = `©${obj.label}`;
+              img[0].src = `${obj.cover}`;
+              img[1].src = `${obj.cover}`;
+              img[2].src = `${obj.cover}`;
+              titoloAlbum[0].innerHTML = `${obj.title}`;
+              artist[0].innerHTML = `${obj.artist.name} ◦`;
+              artist[1].innerHTML = `${obj.artist.name}`;
+              ntracce[0].innerHTML = `${obj.tracks.data.length} brani, `;
+              anno[0].innerHTML = `${obj.release_date.slice(0, 4)} ◦`;
+              anno[1].innerHTML = `${obj.release_date.slice(0, 4)} `;
+              dtracce[0].innerHTML = `${(Math.floor((obj.duration / 60) * 100) / 100)
+                .toString()
+                .replace(".", " min ")} sec.`;
+              console.log(obj.duration);
+              const tracce = document.getElementsByClassName("tracce");
+              for (let i = 0; i < obj.tracks.data.length; i++) {
+                const titolo = obj.tracks.data[i].title;
+                const durata = obj.tracks.data[i].duration;
+                const durataConvertita = (Math.round((durata / 60) * 100) / 100).toString().replace(".", ":");
+                if (durataConvertita.length === 3) {
+                  const convertito = durataConvertita + "0";
+
+                  const row = document.createElement("div");
+                  row.classList.add("row", "g-3", "py-2");
+                  row.innerHTML = `
+                  
+                  <div class="col-1 p-0 ps-2" style="font-size: 1em; font-weight: lighter; width:30px;">${i + 1}</div>
+                  <div class="col my-1 p-0" style="font-size: 1em; font-weight: lighter"><p style ="margin:0;padding:0;">${titolo}</p><p style="font-size: 0.8em;margin:0; padding:0; ">${
+                    obj.label
+                  }, ${obj.artist.name}</p></div>
+                  <div class="col text-end" style="font-size: 0.8em; font-weight: lighter">${convertito}</div>
+                  
+                  `;
+                  tracce[0].appendChild(row);
+                } else {
+                  const row = document.createElement("div");
+                  row.classList.add("row", "g-3", "py-2");
+                  row.innerHTML = `
+                  
+                  <div class="col-1 p-0 ps-2" style="font-size: 0.8em; font-weight: lighter; width:30px;">${i + 1}</div>
+                  <div class="col my-1 p-0" style="font-size: 1em; font-weight: lighter"><p style ="margin:0;padding:0;">${titolo}</p><p style="font-size: 0.8em;margin:0; padding:0; ">${
+                    obj.label
+                  }, ${obj.artist.name}</p></div>
+                  <div class="col text-end" style="font-size: 0.8em; font-weight: lighter">${durataConvertita}</div>
+                  
+                  `;
+                  tracce[0].appendChild(row);
+                }
+              }
+            });
+        } catch {
+          error => console.log(error);
+        }
+      };
+    </script>
+  </body>
+</html>
