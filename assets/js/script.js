@@ -1,13 +1,11 @@
-document.addEventListener("DOMContentLoaded", (event) => {
-  const playerElm = document.getElementById("player");
-
+document.addEventListener("DOMContentLoaded", event => {
   fetch("assets/html/sidebar.html")
-    .then((response) => response.text())
-    .then((data) => loadSidebar(data));
+    .then(response => response.text())
+    .then(data => loadSidebar(data));
 
   fetch("assets/html/player.html")
-    .then((response) => response.text())
-    .then((data) => (playerElm.innerHTML = data));
+    .then(response => response.text())
+    .then(data => initAudio(data));
 });
 
 async function loadSidebar(data) {
@@ -15,7 +13,7 @@ async function loadSidebar(data) {
   const side = await query("playlist/10361569942");
   printSideCards(side);
   hideCard();
-  document.querySelectorAll(".home-sidebar-list a").forEach((elm) => elm.addEventListener("click", sidebarSelection));
+  document.querySelectorAll(".home-sidebar-list a").forEach(elm => elm.addEventListener("click", sidebarSelection));
   const pathName = window.location.pathname;
   if (pathName === "/search.html") {
     document.getElementById("sidebar-link-home").classList.remove("text-reset");
@@ -93,15 +91,15 @@ const printCard = (elm, data) => {
   }
 };
 
-const printSideCards = (data) => {
+const printSideCards = data => {
   const list = document.querySelector(".side-list");
   list.innerHTML = "";
-  data.tracks.data.forEach((track) => {
+  data.tracks.data.forEach(track => {
     printSideCard(track);
   });
 };
 
-const printSideCard = (track) => {
+const printSideCard = track => {
   const list = document.querySelector(".side-list");
   list.innerHTML += `<div class="d-flex mb-3">
                       <a href="album.html?id=${track.album.id}">
@@ -127,7 +125,7 @@ const numCol = () => {
 const hideCard = () => {
   const num = numCol();
   const rowLists = document.querySelectorAll(".row-list");
-  rowLists.forEach((list) => {
+  rowLists.forEach(list => {
     for (let i = 1; i <= maxCard; i++) {
       list.classList.remove("row-cols-" + i);
     }
@@ -155,21 +153,21 @@ async function sidebarSelection(event) {
 
   switch (selection) {
     case "Recently Added":
-      side.tracks.data.forEach((elm) => {
+      side.tracks.data.forEach(elm => {
         arrLists.push([elm.id, elm.time_add]);
       });
       arrLists.sort(compareSecondColumn);
       break;
 
     case "Alphabetical":
-      side.tracks.data.forEach((elm) => {
+      side.tracks.data.forEach(elm => {
         arrLists.push([elm.id, elm.title]);
       });
       arrLists.sort(compareSecondColumn);
       break;
 
     case "Artist":
-      side.tracks.data.forEach((elm) => {
+      side.tracks.data.forEach(elm => {
         arrLists.push([elm.id, elm.artist.name]);
       });
       arrLists.sort(compareSecondColumn);
@@ -201,6 +199,42 @@ function compareSecondColumn(a, b) {
   } else {
     return a[1] < b[1] ? -1 : 1;
   }
+}
+
+async function initAudio(data) {
+  document.getElementById("player").innerHTML += data;
+  const audioElm = document.querySelector("audio");
+  let nowPlaing = localStorage.getItem("nowPlaing") ? localStorage.getItem("nowPlaing") : 2299840635;
+  const track = await queryTrack(nowPlaing);
+  audioElm.src = track.preview;
+  console.log(audioElm);
+  const audioContext = new AudioContext();
+  const audioTrack = audioContext.createMediaElementSource(audioElm);
+  audioTrack.connect(audioContext.destination);
+
+  const playButton = document.getElementById("play-button");
+
+  playButton.addEventListener(
+    "click",
+    () => {
+      console.log(playButton);
+      // Check if context is in suspended state (autoplay policy)
+      if (audioContext.state === "suspended") {
+        audioContext.resume();
+      }
+
+      // Play or pause track depending on state
+      if (playButton.dataset.playing === "false") {
+        audioElm.play();
+        console.log("play");
+        playButton.dataset.playing = "true";
+      } else if (playButton.dataset.playing === "true") {
+        audioElm.pause();
+        playButton.dataset.playing = "false";
+      }
+    },
+    false
+  );
 }
 
 window.addEventListener("resize", hideCard);
