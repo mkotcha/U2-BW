@@ -58,9 +58,11 @@ const appare = document.getElementsByClassName("appare");
 const scompare = document.getElementsByClassName("scompare");
 const scrollo = document.getElementById("scrollo");
 scrollo.addEventListener("scroll", event => {
-  if (scompare[0].getBoundingClientRect().top < 10) {
+  if (scompare[0].getBoundingClientRect().top < 60) {
     appare[0].style.opacity = 1;
+    appare[0].style.transition = "opacity 0.5s ease-in-out";
     scompare[0].style.opacity = 0;
+    scompare[0].style.transition = "opacity 0.3s ease-in-out";
   } else {
     appare[0].style.opacity = 0;
     scompare[0].style.opacity = 1;
@@ -81,7 +83,6 @@ window.onload = async event => {
         const dtracce = document.getElementsByClassName("dtracks");
         const anno = document.getElementsByClassName("year");
         const copyrightLabel = document.getElementsByClassName("copyright-label");
-        //copyright.innerHTML=`${ogj}`
         copyrightLabel[0].innerHTML = `©${obj.label}`;
         img[0].src = `${obj.cover}`;
         img[1].src = `${obj.cover}`;
@@ -95,6 +96,7 @@ window.onload = async event => {
         anno[1].innerHTML = `${obj.release_date.slice(0, 4)} `;
         dtracce[0].innerHTML = `${(Math.floor((obj.duration / 60) * 100) / 100).toString().replace(".", " min ")} sec.`;
         console.log(obj.duration);
+        //CREAZIONE TRACCE
         const tracce = document.getElementsByClassName("tracce");
         for (let i = 0; i < obj.tracks.data.length; i++) {
           const titolo = obj.tracks.data[i].title;
@@ -112,7 +114,9 @@ window.onload = async event => {
                   <div class="col my-1 p-0" style="font-size: 1em; font-weight: lighter"><a class"text-decoration-none" style ="margin:0;padding:0;">${titolo}</a><p style="font-size: 0.8em;margin:0; padding:0; ">${
               obj.artist.name
             }</p></div>
-                  <div class="col text-end" style="font-size: 0.8em; font-weight: lighter">${convertito}</div>
+            <div class="col-1 p-0" style="width:55px;"><i class="plusPiu bi bi-suit-heart"></i></div>
+                  <div class="col-1 p-0" style="width:55px;font-size: 0.8em; font-weight: lighter">${convertito}</div>
+                  <div class="col-1 p-0" style="width:55px;"><i class="plusPiuDot bi bi-three-dots"></i></div>
                   
                   `;
             tracce[0].appendChild(row);
@@ -125,13 +129,52 @@ window.onload = async event => {
                   <div class="col my-1 p-0" style="font-size: 1em; font-weight: lighter"><a class"text-decoration-none" style ="margin:0;padding:0;">${titolo}</a><p style="font-size: 0.8em;margin:0; padding:0; ">${
               obj.artist.name
             }</p></div>
-                  <div class="col text-end" style="font-size: 0.8em; font-weight: lighter">${durataConvertita}</div>
+            <div class="col-1 p-0" style="width:55px;"><i class="plusPiu bi bi-suit-heart"></i></div>
+                  <div class="col-1 p-0" style="width:55px;font-size: 0.8em; font-weight: lighter">${durataConvertita}</div>
+                  <div class="col-1 p-0" style="width:55px;"><i class="plusPiuDot bi bi-three-dots"></i></div>
+                  
                   
                   `;
             tracce[0].appendChild(row);
           }
           const tracceSel = document.getElementsByClassName("hov");
-          console.log(tracceSel[i]);
+          const plusPiu = document.getElementsByClassName("plusPiu");
+          const plusPiuDot = document.getElementsByClassName("plusPiuDot");
+          plusPiu[i].classList.add("opacity-0");
+          plusPiuDot[i].classList.add("opacity-0", "dropdown");
+          plusPiuDot[i].setAttribute("data-bs-toggle", "dropdown");
+          plusPiuDot[i].innerHTML = `  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>`;
+
+          tracceSel[i].addEventListener("mouseenter", () => {
+            plusPiu[i].classList.remove("opacity-0");
+            plusPiuDot[i].classList.remove("opacity-0");
+          });
+          tracceSel[i].addEventListener("mouseleave", () => {
+            plusPiu[i].classList.add("opacity-0");
+            plusPiuDot[i].classList.add("opacity-0");
+          });
+          plusPiu[i].addEventListener("click", () => {
+            if (!plusPiu[i].classList.contains("selectedDue")) {
+              plusPiu[i].classList.remove("bi-suit-heart");
+              plusPiu[i].classList.add("selectedDue", "bi-suit-heart-fill");
+              plusPiu[i].style.color = "green";
+              const sempreVerde = document.createElement("i");
+              sempreVerde.classList.add("secondHeart", "bi-suit-heart-fill");
+              sempreVerde.style.color = "green";
+              plusPiu[i].classList.add("d-none");
+              plusPiu[i].parentElement.appendChild(sempreVerde);
+              tracceSel[i].style.backgroundColor = "rgba(255, 255, 255, 0.11)";
+              tracceSel[i].style.borderRadius = "20px";
+            } else {
+              plusPiu[i].classList.add("bi-suit-heart");
+              plusPiu[i].style.color = "white";
+              plusPiu[i].classList.remove("selectedDue", "bi-suit-heart-fill");
+            }
+          });
           tracceSel[i].addEventListener("click", () => {
             const check = document.getElementsByClassName("selected");
             if (!tracceSel[i].classList.contains("selected")) {
