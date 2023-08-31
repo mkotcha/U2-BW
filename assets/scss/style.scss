@@ -63,16 +63,12 @@ span.search-box {
 .img-album {
   width: 200px;
 }
-
 input {
   border-radius: 20px;
-
-  //  porco dio
-  // height: 6px;
+  height: 6px;
 
   appearance: none;
 }
-
 #range::-webkit-slider-thumb {
   appearance: initial;
   width: 6px;
@@ -81,9 +77,9 @@ input {
   border-radius: 50%;
   cursor: pointer;
 }
-// #range::-webkit-slider-runnable-track {
-//   // background: white;
-// }
+#range::-webkit-slider-runnable-track {
+  // background: white;
+}
 #range::-webkit-slider-thumb:hover {
   content: "";
   background: green;
