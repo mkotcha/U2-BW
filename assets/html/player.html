@@ -1,59 +1,67 @@
-<div class="sticky-bottom bg-black height-for-fixed-bottom d-flex justify-content-between align-items-end">
-  <div class="ms-3 d-flex">
-    <!-- mettere info album -->
-    <div class="d-flex align-items-center mb-3">
-      <img class="me-3 img-album" style="width: 60px" src="assets/imgs/search/image-1.jpeg" alt="" />
-      <div class="fs-6">
-        <p class="fw-bold m-0">Canzone</p>
-        <p class="text-body-secondary m-0 artist"></p>
+<audio src="" crossorigin></audio>
+<div class="d-flex align-items-center h-100 bg-black">
+  <div class="bg-black flex-grow-1">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center">
+        <!-- mettere info album -->
+        <div class="d-flex align-items-center mb-3">
+          <img class="me-3 img-album" style="width: 60px" src="assets/imgs/search/image-1.jpeg" alt="" />
+          <div class="fs-6">
+            <p class="fw-bold m-0">Canzone</p>
+            <p class="text-body-secondary m-0 artist"></p>
+          </div>
+          <i class="bi bi-heart mx-2 fs-5"></i>
+        </div>
+        <!-- mettere cuore -->
       </div>
-      <i class="bi bi-heart mx-2 fs-5"></i>
-    </div>
-    <!-- mettere cuore -->
-  </div>
-  <audio src="" crossorigin></audio>
-  <div class="d-flex flex-column align-content-center align-items-center mb-2">
-    <div class="d-flex gap-4 align-items-center">
-      <i class="bi bi-shuffle"></i>
-      <i class="bi bi-skip-start-fill fs-4"></i>
-      <div class="d-flex box rounded-circle bg-white justify-content-center align-items-center">
-        <button
-          id="play-button-player"
-          data-playing="false"
-          class="btn btn-white rounded-circle"
-          role="switch"
-          aria-checked="false">
-          <i class="bi bi-play-fill text-black fs-4"></i>
-        </button>
+      <div class="flex-grow-1">
+        <div class="d-flex flex-column align-items-center">
+          <div class="d-flex gap-4 align-items-center">
+            <i class="bi bi-shuffle"></i>
+            <i class="bi bi-skip-start-fill fs-4"></i>
+            <div class="d-flex box rounded-circle bg-white justify-content-center align-items-center">
+              <button
+                id="play-button-player"
+                data-playing="false"
+                class="btn btn-white rounded-circle"
+                role="switch"
+                aria-checked="false">
+                <i class="bi bi-play-fill text-black fs-4"></i>
+              </button>
+            </div>
+            <i class="bi bi-skip-end-fill fs-5"></i>
+          </div>
+        </div>
+        <div class="px-4">
+          <div class="d-flex align-items-center">
+            <div><span id="elapsed-time">00:00</span></div>
+            <div class="flex-grow-1">
+              <progress
+                id="seekbar"
+                class="progress bg-primary w-100 px-3"
+                role="progressbar"
+                aria-label="Basic example"
+                aria-valuenow="75"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                value="0"
+                max="1"></progress>
+            </div>
+            <div><span id="total-time">3:75</span></div>
+          </div>
+        </div>
       </div>
-      <i class="bi bi-skip-end-fill fs-5"></i>
-    </div>
-    <div class="d-flex gap-2">
-      <span id="elapsed-time">00:00</span>
-      <progress
-        id="seekbar"
-        class="progress bg-primary mt-2"
-        role="progressbar"
-        aria-label="Basic example"
-        aria-valuenow="75"
-        aria-valuemin="0"
-        aria-valuemax="100"
-        value="0"
-        max="1">
-        <div class="progress-bar bg-white w-75"></div>
-      </progress>
-      <span id="total-time">3:75</span>
-    </div>
-  </div>
-  <div class="d-flex align-items-center me-3 mb-4">
-    <i class="bi bi-mic"></i>
-    <i class="bi bi-list"></i>
-    <i class="bi bi-speaker"></i>
 
-    <i class="bi bi-volume-off fs-5"></i>
-    <div id="slidecontainer" class="container-fluid">
-      <input type="range" id="range" style="appearance: unset" />
+      <div class="d-flex align-items-center me-3 mb-4">
+        <i class="bi bi-mic"></i>
+        <i class="bi bi-list"></i>
+        <i class="bi bi-speaker"></i>
+        <i class="bi bi-volume-off fs-5"></i>
+        <div id="slidecontainer" class="container-fluid">
+          <input type="range" id="range" style="appearance: unset" />
+        </div>
+        <i class="bi bi-arrows-angle-expand ms-2"></i>
+      </div>
     </div>
-    <i class="bi bi-arrows-angle-expand ms-2"></i>
   </div>
 </div>
