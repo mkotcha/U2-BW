@@ -12389,36 +12389,20 @@ span.search-box {
   width: 200px;
 }
 
-#range::-webkit-slider-thumb {
-  appearance: initial;
-  width: 6px;
+#range {
+  overflow: hidden;
+  background: linear-gradient(to right, white 0%, white 30%, #535353 30%, #535353 100%);
+  border: none;
+  accent-color: white;
+  border-radius: 20px;
   height: 6px;
-  background: white;
-  border-radius: 50%;
-  cursor: pointer;
+  -webkit-appearance: none;
 }
 
-#range::-webkit-slider-thumb:hover {
-  content: "";
-  background: green;
-  width: 15px;
-  height: 15px;
+#range:hover {
+  overflow: visible;
 }
 
-#range::before {
-  content: "";
-  background: white;
-}
-
-/*
-slidecontainer {
-  margin: 0 auto;
-  background-color: #afe0fc;
-  padding: 1.5em;
-  border-radius: 5px;
-}
-
-*/
 .box {
   width: 35px;
   height: 35px;
