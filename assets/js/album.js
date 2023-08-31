@@ -137,6 +137,19 @@ window.onload = async event => {
                   `;
             tracce[0].appendChild(row);
           }
+          //Elemento volume player
+          document.getElementById("range").oninput = function () {
+            let value = ((this.value - this.min) / (this.max - this.min)) * 100;
+            this.style.background =
+              "linear-gradient(to right, green 0%, green " + value + "%, #535353 " + value + "%, #535353 100%)";
+
+            document.getElementById("range").addEventListener("mouseleave", () => {
+              let value = ((this.value - this.min) / (this.max - this.min)) * 100;
+              this.style.background =
+                "linear-gradient(to right, white 0%, white " + value + "%, #535353 " + value + "%, #535353 100%)";
+            });
+            console.log(this.value);
+          };
           const tracceSel = document.getElementsByClassName("hov");
           const plusPiu = document.getElementsByClassName("plusPiu");
           const plusPiuDot = document.getElementsByClassName("plusPiuDot");
