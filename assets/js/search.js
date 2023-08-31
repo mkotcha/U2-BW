@@ -1,4 +1,4 @@
 window.onload = async function () {
-  cardWidth = 170;
+  cardWidth = 220;
   hideCard();
 };
