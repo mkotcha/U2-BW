@@ -1,3 +1,4 @@
+let cardWidth = 200;
 document.addEventListener("DOMContentLoaded", event => {
   fetch("assets/html/sidebar.html")
     .then(response => response.text())
@@ -30,9 +31,9 @@ const url = "https://deezerdevs-deezer.p.rapidapi.com/";
 const options = {
   method: "GET",
   headers: {
-    "X-RapidAPI-Key": "e13be1f8d2msha90dfa9e08e83f5p16dc04jsn33020578052c",
-    "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com"
-  }
+    "X-RapidAPI-Key": "4ba7a35e2emsh5b7d70d861796cbp1d1951jsnc270044357e6",
+    "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+  },
 };
 let queryStr = "";
 const maxCard = 9;
@@ -121,7 +122,7 @@ const printSideCard = track => {
 
 const numCol = () => {
   const container = document.querySelector("main");
-  return parseInt(container.offsetWidth / 200);
+  return parseInt(container.offsetWidth / cardWidth);
 };
 
 const hideCard = () => {
