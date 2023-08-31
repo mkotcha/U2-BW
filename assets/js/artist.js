@@ -27,11 +27,14 @@ async function fetchArtistData() {
     const artistpageAlbumCoverURL = artistpageAlbumData.cover_medium;
     const artistpageAlbumCover = document.getElementById("artist-album-image");
     artistpageAlbumCover.src = artistpageAlbumCoverURL;
+    const artistAlbumLink = document.getElementById("artist-album-link");
+    artistAlbumLink.href = `album.html?id=${artistpageAlbumData.id}`;
 
     //ALBUM TITLE
     const artistpageAlbumTitle = artistpageAlbumData.title;
     const artistpageAlbumTitleContainer = document.getElementById("artist-album-title");
     artistpageAlbumTitleContainer.textContent = artistpageAlbumTitle;
+    artistpageAlbumTitleContainer.href = `album.html?id=${artistpageAlbumData.id}`;
 
     //ARTIST FAN NUMBER
 

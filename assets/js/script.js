@@ -80,7 +80,7 @@ const printCard = (elm, data) => {
     artist.classList = "fs-6 fw-bold m-0 mb-1 text-truncate";
     const artistLink = document.createElement("a");
     artistLink.classList = "text-decoration-none";
-    artistLink.href = "artist.html?id=" + data.tracks.data[i].id;
+    artistLink.href = "artist.html?id=" + data.tracks.data[i].artist.name;
     artistLink.innerText = data.tracks.data[i].artist.name;
 
     albumLink.appendChild(img);
@@ -114,7 +114,7 @@ const printSideCard = track => {
                         <p class="text-body-secondary m-0">
                           <i class="bi bi-pin-angle text-success d-none"></i> 
                           <span class="category">
-                          <a href="artist.html?id=${track.artist.id}" class="text-reset text-decoration-none">
+                          <a href="artist.html?id=${track.artist.name}" class="text-reset text-decoration-none">
                           ${track.artist.name}</a></span>
                         </p>
                       </div>`;
