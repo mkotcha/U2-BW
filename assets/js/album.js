@@ -86,7 +86,6 @@ window.onload = async event => {
         copyrightLabel[0].innerHTML = `©${obj.label}`;
         img[0].src = `${obj.cover}`;
         img[1].src = `${obj.cover}`;
-        img[2].src = `${obj.cover}`;
         titoloAlbum[0].innerHTML = `${obj.title}`;
         artist[0].innerHTML = `${obj.artist.name} ◦`;
         artist[1].innerHTML = `${obj.artist.name}`;
@@ -95,7 +94,6 @@ window.onload = async event => {
         anno[0].innerHTML = `${obj.release_date.slice(0, 4)} ◦`;
         anno[1].innerHTML = `${obj.release_date.slice(0, 4)} `;
         dtracce[0].innerHTML = `${(Math.floor((obj.duration / 60) * 100) / 100).toString().replace(".", " min ")} sec.`;
-        console.log(obj.duration);
         //CREAZIONE TRACCE
         const tracce = document.getElementsByClassName("tracce");
         for (let i = 0; i < obj.tracks.data.length; i++) {
@@ -111,7 +109,7 @@ window.onload = async event => {
             row.innerHTML = `
                   
                   <div class="col-1 p-0 ps-2 " style="font-size: 1em; font-weight: lighter; width:30px;">${i + 1}</div>
-                  <div class="col my-1 p-0" style="font-size: 1em; font-weight: lighter"><a class"text-decoration-none" style ="margin:0;padding:0;">${titolo}</a><p style="font-size: 0.8em;margin:0; padding:0; ">${
+                  <div class="col my-1 p-0" style="font-size: 1em; font-weight: lighter"><p class="rip text-decoration-none" style ="margin:0;padding:0;">${titolo}</p><p style="font-size: 0.8em;margin:0; padding:0; ">${
               obj.artist.name
             }</p></div>
             <div class="col-1 p-0" style="width:55px;"><i class="plusPiu bi bi-suit-heart"></i></div>
@@ -126,7 +124,7 @@ window.onload = async event => {
             row.innerHTML = `
                   
                   <div class="col-1 p-0 ps-2" style="font-size: 0.8em; font-weight: lighter; width:30px;">${i + 1}</div>
-                  <div class="col my-1 p-0" style="font-size: 1em; font-weight: lighter"><a class"text-decoration-none" style ="margin:0;padding:0;">${titolo}</a><p style="font-size: 0.8em;margin:0; padding:0; ">${
+                  <div class="col my-1 p-0" style="font-size: 1em; font-weight: lighter"><p class="rip text-decoration-none" style ="margin:0;padding:0;">${titolo}</p><p style="font-size: 0.8em;margin:0; padding:0; ">${
               obj.artist.name
             }</p></div>
             <div class="col-1 p-0" style="width:55px;"><i class="plusPiu bi bi-suit-heart"></i></div>
@@ -137,9 +135,18 @@ window.onload = async event => {
                   `;
             tracce[0].appendChild(row);
           }
+          const tracceRip = document.getElementsByClassName("rip");
+          tracceRip[i].addEventListener("click", event => {
+            const canzone = document.querySelector(".canzone");
+            localStorage.setItem("nowPlaing", obj.tracks.data[i].id);
+            img[2].src = `${obj.tracks.data[i].album.cover}`;
+            canzone.innerHTML = `${event.target.innerHTML}`;
+            initAudio();
+          });
           //Elemento volume player
+          let value;
           document.getElementById("range").oninput = function () {
-            let value = ((this.value - this.min) / (this.max - this.min)) * 100;
+            value = ((this.value - this.min) / (this.max - this.min)) * 100;
             this.style.background =
               "linear-gradient(to right, green 0%, green " + value + "%, #535353 " + value + "%, #535353 100%)";
 
@@ -148,8 +155,17 @@ window.onload = async event => {
               this.style.background =
                 "linear-gradient(to right, white 0%, white " + value + "%, #535353 " + value + "%, #535353 100%)";
             });
-            console.log(this.value);
+            //manipolazione volume utente
+            const player = document.querySelector("audio");
+            const volumeSlider = document.querySelector("#range");
+
+            volumeSlider.addEventListener("input", function () {
+              let dato;
+              dato = (this.value / 100).toFixed(1);
+              player.volume = dato;
+            });
           };
+
           const tracceSel = document.getElementsByClassName("hov");
           const plusPiu = document.getElementsByClassName("plusPiu");
           const plusPiuDot = document.getElementsByClassName("plusPiuDot");
