@@ -16,20 +16,26 @@
             <div class="d-flex flex-column bg-primary overflow-y-scroll h-100 rounded-4">
               <div class="search-hero-nav sticky-top bg-primary py-2 ps-4 pe-2">
                 <div class="d-flex gap-2 align-items-center">
-                  <button class="btn btn-primary btn-sm"><i class="bi bi-chevron-left"></i></button>
-                  <button class="btn btn-primary btn-sm me-auto"><i class="bi bi-chevron-right"></i></button>
+                  <button class="btn btn-primary btn-sm">
+                    <i class="bi bi-chevron-left"></i>
+                  </button>
+                  <button class="btn btn-primary btn-sm me-auto">
+                    <i class="bi bi-chevron-right"></i>
+                  </button>
                   <form action="">
-                  <div class="input-group input-group-lg flex-nowrap">
-                    <span class="input-group-text search-box" id="addon-wrapping"><i class="bi bi-search"></i></span>
-                    
+                    <div class="input-group input-group-lg flex-nowrap">
+                      <span class="input-group-text search-box" id="addon-wrapping">
+                        <i class="bi bi-search"></i>
+                      </span>
                       <input
                         type="text"
+                        id="query"
                         class="form-control search-box"
                         placeholder="Cosa stai cercando?"
                         aria-label="Cosa stai cercando?"
                         aria-describedby="addon-wrapping" />
-                    </form>
-                  </div>
+                    </div>
+                  </form>
                   <div class="flex-grow-1"></div>
                   <button class="btn btn-light btn-sm text-nowrap">Esplora Premium</button>
                   <button class="btn btn-primary btn-sm text-nowrap">
@@ -40,11 +46,47 @@
                   </a>
                 </div>
               </div>
+
               <div class="ps-4 pe-2 pb-0">
-                <div class="">
-                  <h3 class="mb-4 fw-bold">Sfoglia tutto</h3>
+                <div class="query-result d-none">
+                  <div id="result-selector" class="my-3 d-flex gap-2">
+                    <button class="btn btn-light btn-sm">Tutto</button>
+                    <button class="btn btn-secondary btn-sm">Artisti</button>
+                    <button class="btn btn-secondary btn-sm">PlayList</button>
+                    <button class="btn btn-secondary btn-sm">Brani</button>
+                    <button class="btn btn-secondary btn-sm">Album</button>
+                  </div>
+
+                  <div class="d-flex">
+                    <div class="d-flex flex-column">
+                      <h3>Risultato più rilevante</h3>
+                      <div class="d-flex flex-column bg-info">
+                        <img src="assets/imgs/main/image-3.jpg" alt="" class="rounded-circle w-25" />
+                        <h2>Artist Name</h2>
+                        <div><button class="btn btn-primary btn-sm">Artista</button></div>
+                      </div>
+                    </div>
+                    <div class="flex-grow-1">
+                      <div class="d-flex flex-column ps-4">
+                        <h3>Brani</h3>
+                        <div class="d-flex flex-column">
+                          <div class="d-flex">
+                            <img src="assets/imgs/search/image-13.jpeg" alt="" class="w-25" />
+                            <div class="d-flex flex-column flex-grow-1">
+                              <p class="text-reset">Title</p>
+                              <p>Artist</p>
+                            </div>
+                            <p>duration</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="row row-cols-4 row-list search-view-container g-2"></div>
+                <div id="search-discover">
+                  <h3 class="my-4 fw-bold">Sfoglia tutto</h3>
+                  <div class="row row-cols-4 row-list search-view-container g-2"></div>
+                </div>
               </div>
             </div>
           </main>
