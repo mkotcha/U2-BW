@@ -10469,7 +10469,7 @@ slidecontainer {
 .artist-hero {
   height: 500px;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   background-position: center;
   background-position: top;
   position: absolute;
@@ -10483,6 +10483,13 @@ slidecontainer {
 
 #artist-main-content {
   margin-top: 428px;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 #artist-list-items {
