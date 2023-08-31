@@ -1,143 +1,114 @@
 @import "../../node_modules/bootstrap/scss/functions";
 
 $font-family-sans-serif: Circular;
+// $enable-important-utilities: true;
 
 $primary: #121212;
-$homec: #0000ff;
+$secondary: #232323;
 $tertiary: #181818;
 $forth: #242424;
-$forth-border-subtle: $forth;
+$fifth: #232323;
+$sixth: #535353;
 
 $custom-colors: (
   "tertiary": $tertiary,
-  "homec": #0000ff,
   "forth": $forth,
-);
-
-$custom-theme-colors: (
-  "tertiary": $tertiary,
-  "homec": #0000ff,
-  "forth": $forth,
-);
-
-$custom-utilities-colors: (
-  "tertiary": $tertiary,
-  "homec": #0000ff,
-  "forth": $forth,
-);
-
-$custom-theme-colors-bg-subtle: (
-  "tertiary": $tertiary,
-  "homec": #0000ff,
-  "forth": $forth,
+  "fifth": $fifth,
+  "nero": #050505,
+  "sisth": $sixth,
 );
 
 $btn-border-radius: 50vh;
+$btn-border-radius-sm: 50vh;
 
 $grid-row-columns: 9 !default;
 
-.bg-forth {
-  background-color: $forth;
-}
+// .bg-forth {
+//   background-color: $forth;
+// }
 
-@mixin bg-forth() {
-  background-color: $forth;
-}
+// @mixin bg-forth() {
+//   background-color: $forth;
+// }
+
+$font-size-base: 1rem;
+
+$h7-font-size: 0.75rem;
+$h8-font-size: 0.65rem;
+$h9-font-size: 0.5rem;
+
+$custom-font-sizes: (
+  7: $h7-font-size,
+  8: $h8-font-size,
+  9: $h9-font-size,
+);
+
+$custom-display-font-sizes: (
+  7: $h7-font-size,
+  8: $h8-font-size,
+  9: $h9-font-size,
+);
+
+$input-padding-x-lg: 10px;
+$input-border-color: white;
+$input-border-width: 2px;
+$input-border-radius-lg: 50vh;
+$input-focus-border-color: white;
+$input-focus-box-shadow: none;
+$form-color-width: 3rem;
+$input-group-addon-border-color: white;
+
+// import
 
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/variables-dark";
 @import "../../node_modules/bootstrap/scss/maps";
+
+$display-font-sizes: map-merge($display-font-sizes, $custom-font-sizes);
+$font-sizes: map-merge($font-sizes, $custom-font-sizes);
+$all-colors: map-merge-multiple($custom-colors, $theme-colors);
+$theme-colors: map-merge-multiple($custom-colors, $theme-colors);
+
 @import "../../node_modules/bootstrap/scss/mixins";
 @import "../../node_modules/bootstrap/scss/utilities";
 
-$btn-border-radius-sm: 50vh;
+$utilities: map-merge(
+  $utilities,
+  (
+    "color":
+      map-merge(
+        map-get($utilities, "color"),
+        (
+          values: map-merge(map-get(map-get($utilities, "color"), "values"), ($all-colors)),
+        )
+      ),
+  )
+);
 
-$input-padding-y: $input-btn-padding-y;
-$input-padding-x: $input-btn-padding-x;
-$input-font-family: $input-btn-font-family;
-$input-font-size: $input-btn-font-size;
-$input-font-weight: $font-weight-base;
-$input-line-height: $input-btn-line-height;
+$utilities: map-merge(
+  $utilities,
+  (
+    "background-color":
+      map-merge(
+        map-get($utilities, "background-color"),
+        (
+          values: map-merge(map-get(map-get($utilities, "background-color"), "values"), ($all-colors)),
+        )
+      ),
+  )
+);
 
-$input-padding-y-sm: $input-btn-padding-y-sm;
-$input-padding-x-sm: $input-btn-padding-x-sm;
-$input-font-size-sm: $input-btn-font-size-sm;
+// $utilities: map-merge(
+//   $utilities,
+//   (
+//     "text-color":
+//       map-merge(
+//         map-get($utilities, "text-color"),
+//         (
+//           values: map-merge(map-get(map-get($utilities, "text-color"), "values"), ($all-colors)),
+//         )
+//       ),
+//   )
+// );
 
-$input-padding-y-lg: $input-btn-padding-y-lg;
-$input-padding-x-lg: 10px;
-$input-font-size-lg: $input-btn-font-size-lg;
-
-$input-bg: $forth;
-$input-disabled-color: null;
-$input-disabled-bg: var(--#{$prefix}secondary-bg);
-$input-disabled-border-color: null;
-
-$input-color: var(--#{$prefix}body-color);
-$input-border-color: white;
-$input-border-width: 2px;
-$input-box-shadow: $box-shadow-inset;
-
-$input-border-radius: var(--#{$prefix}border-radius);
-$input-border-radius-sm: var(--#{$prefix}border-radius-sm);
-$input-border-radius-lg: 50vh;
-
-$input-focus-bg: $input-bg;
-$input-focus-border-color: white;
-$input-focus-color: $input-color;
-$input-focus-width: $input-btn-focus-width;
-$input-focus-box-shadow: none;
-
-$input-placeholder-color: var(--#{$prefix}secondary-color);
-$input-plaintext-color: var(--#{$prefix}body-color);
-
-$input-height-border: calc(#{$input-border-width} * 2); // stylelint-disable-line function-disallowed-list
-
-$input-height-inner: add($input-line-height * 1em, $input-padding-y * 2);
-$input-height-inner-half: add($input-line-height * 0.5em, $input-padding-y);
-$input-height-inner-quarter: add($input-line-height * 0.25em, $input-padding-y * 0.5);
-
-$input-height: add($input-line-height * 1em, add($input-padding-y * 2, $input-height-border, false));
-$input-height-sm: add($input-line-height * 1em, add($input-padding-y-sm * 2, $input-height-border, false));
-$input-height-lg: add($input-line-height * 1em, add($input-padding-y-lg * 2, $input-height-border, false));
-
-$input-transition: none;
-
-$form-color-width: 3rem;
-
-$input-group-addon-padding-y: $input-padding-y;
-$input-group-addon-padding-x: $input-padding-x;
-$input-group-addon-font-weight: $input-font-weight;
-$input-group-addon-color: $input-color;
-$input-group-addon-bg: $forth;
-$input-group-addon-border-color: white;
-
-$colors: map-merge($colors, $custom-colors);
-$theme-colors: map-merge($theme-colors, $custom-theme-colors);
-$utilities-colors: map-merge($utilities-colors, $custom-utilities-colors);
-$theme-colors-bg-subtle: map-merge($theme-colors-bg-subtle, $custom-theme-colors-bg-subtle);
-$utilities-bg: map-merge($utilities-bg, $custom-colors);
-
-$utilities-bg-colors: map-loop($utilities-bg, rgba-css-var, "$key", "bg");
-
-@import "../../node_modules/bootstrap/scss/root";
-@import "../../node_modules/bootstrap/scss/utilities/api";
-@import "../../node_modules/bootstrap/scss/reboot";
-@import "../../node_modules/bootstrap/scss/type";
-@import "../../node_modules/bootstrap/scss/images";
-@import "../../node_modules/bootstrap/scss/containers";
-@import "../../node_modules/bootstrap/scss/grid";
-@import "../../node_modules/bootstrap/scss/helpers";
-@import "../../node_modules/bootstrap/scss/navbar";
-@import "../../node_modules/bootstrap/scss/buttons";
-@import "../../node_modules/bootstrap/scss/dropdown";
-@import "../../node_modules/bootstrap/scss/transitions";
-@import "../../node_modules/bootstrap/scss/card";
-@import "../../node_modules/bootstrap/scss/images";
-@import "../../node_modules/bootstrap/scss/badge";
-@import "../../node_modules/bootstrap/scss/carousel";
-@import "../../node_modules/bootstrap/scss/forms";
-// @import "../../node_modules/bootstrap/scss/utilities";
-@import "../../node_modules/bootstrap/scss/nav";
-@import "../../node_modules/bootstrap/scss/list-group";
-@import "../../node_modules/bootstrap/scss/mixins/caret";
-@import "../../node_modules/bootstrap/scss/progress";
+@import "../../node_modules/bootstrap/scss/bootstrap";

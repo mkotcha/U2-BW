@@ -1,3 +1,5 @@
+const qrId = new URLSearchParams(window.location.search).get("q");
+
 const deezerUrl = "https://api.deezer.com/";
 const deezerOptions = {
   mode: "cors",
@@ -10,23 +12,34 @@ let queryResp = [];
 window.onload = async function () {
   cardWidth = 220;
   hideCard();
-  printDiscover();
+  console.log(qrId);
+  if (qrId) {
+    document.getElementById("search-discover").classList.add("d-none");
+    document.getElementById("query-result").classList.remove("d-none");
+    queryResp = await query("search?q=" + qrId);
+    queryResp = queryResp.data;
+    printResult();
+  } else {
+    printDiscover();
+  }
   document.querySelector("form").addEventListener("submit", search);
 };
 
 async function search(event) {
   event.preventDefault();
   document.getElementById("search-discover").classList.add("d-none");
+  document.getElementById("query-result").classList.remove("d-none");
   const qrStr = event.target.query.value;
   queryResp = await query("search?q=" + qrStr);
   queryResp = queryResp.data;
-  console.log(queryResp[0].title);
   printResult();
 }
 
 const printResult = () => {
-  const container = document.querySelector(".query-result");
-  container.innerHTML = "";
+  const container = document.getElementById("query-result");
+  container.querySelector("#search-artist-box img").src = queryResp[0].artist.picture_medium;
+  container.querySelector("#search-artist-box h2").innerText = queryResp[0].artist.name;
+  container.querySelector("#search-artist-box a").href = "artist.html?id=" + queryResp[0].artist.name;
 };
 
 async function deezerQuery(query) {
@@ -63,7 +76,7 @@ async function printDiscover() {
     title.classList = "fw-bold p-3 fs-4";
     title.innerText = data.title;
     const link = document.createElement("a");
-    link.href = `artist.html?id=${data.artist.id}`;
+    link.href = `artist.html?id=${data.artist.name}`;
     link.classList = "text-reset text-decoration-none";
     const cardInt = document.createElement("div");
     cardInt.classList = "search-card-int ratio ratio-1x1 rounded-3 overflow-hidden";
