@@ -41,7 +41,6 @@ async function fetchArtistData() {
 
     const artistId = artistData.id;
 
-    // Crea le opzioni per la nuova chiamata all'API dell'artista
     const artistInfoOptions = {
       method: "GET",
       url: `https://deezerdevs-deezer.p.rapidapi.com/artist/${artistId}`,
@@ -55,10 +54,8 @@ async function fetchArtistData() {
       try {
         const response = await axios.request(artistInfoOptions);
 
-        // Ottieni i dati dell'artista dalla nuova chiamata
         const artistInfoData = response.data;
 
-        // Puoi ora utilizzare artistInfoData per ottenere ulteriori informazioni sull'artista
         console.log("Artist Info Data:", artistInfoData);
         const artistFans = artistInfoData.nb_fan;
         const artistFansNb = document.getElementById("artist-fan-nb");
@@ -87,6 +84,15 @@ async function fetchArtistData() {
     popularSongs.forEach((song, index) => {
       const listItemContainer = document.createElement("div");
       listItemContainer.className = "artist-list-items-container p-2 px-3 rounded-2 row justify-content-between";
+      listItemContainer.addEventListener("mouseenter", () => {
+        const songOptions = listItemContainer.querySelector(".song-options");
+        songOptions.classList.add("active");
+      });
+
+      listItemContainer.addEventListener("mouseleave", () => {
+        const songOptions = listItemContainer.querySelector(".song-options");
+        songOptions.classList.remove("active");
+      });
 
       const listItem = document.createElement("li");
       listItem.className = "row d-flex align-items-center justify-content-between p-0";
@@ -94,7 +100,7 @@ async function fetchArtistData() {
       listItem.innerHTML = `
       <div class="d-flex col-6 col-md-6 col-lg-7 flex-grow-1">
       <span class="align-items-center song-number justify-content-between">${songNumber}</span>
-      <div id="artist-song-title" class="d-flex">
+      <div id="artist-song-title" class="d-flex text-truncate">
         <img src="${song.album.cover_small}" class="me-3" width="40" height="40" alt="" />
         <div class="d-flex flex-column justify-content-around text-truncate">
           ${song.title} ${song.explicit_lyrics ? '<i class="bi bi-explicit-fill text-secondary"></i>' : ""}
@@ -105,22 +111,33 @@ async function fetchArtistData() {
       <div class="d-flex text-end">${song.rank.toLocaleString()}</div>
     </div>
     <div id="artist-song-minutes" class="d-flex col-4 col-lg-2 align-items-center justify-content-between">
-      <div><i class="bi bi-heart me-3"></i></div>
+      <div><i class="bi bi-heart me-3 song-options"></i></div>
       <div>${Math.floor(song.duration / 60)}:${String(song.duration % 60).padStart(2, "0")}</div>
-      <div class="dropdown">
-        <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="bi bi-three-dots" data-toggle="tooltip" data-placement="top" title="Altre opzioni per"></i>
-        </a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-          <li><hr class="dropdown-divider" /></li>
-        </ul>
+        <div class="dropdown song-options">
+          <a class="btn " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-three-dots " data-toggle="tooltip" data-placement="top" title="Altre opzioni per"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><hr class="dropdown-divider" /></li>
+          </ul>
       </div>
     </div>
     
   `;
+
+      const songNumberContainer = listItem.querySelector(".song-number");
+      const originalNumber = songNumber;
+
+      listItemContainer.addEventListener("mouseenter", () => {
+        songNumberContainer.innerHTML = '<i class="bi bi-play-fill"></i>';
+      });
+
+      listItemContainer.addEventListener("mouseleave", () => {
+        songNumberContainer.innerHTML = originalNumber;
+      });
 
       if (index >= popularSongs.length - 5) {
         listItemContainer.classList.add("d-none");

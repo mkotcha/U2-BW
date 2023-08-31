@@ -10469,12 +10469,22 @@ slidecontainer {
 
 .search-card img {
   position: absolute;
-  -webkit-transform: rotate(25deg) translate(18%, -2%);
   transform: rotate(25deg) translate(18%, -2%);
   right: 0;
   bottom: 0;
   width: 60%;
   height: 60%;
+}
+
+.song-options {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.song-options.active {
+  visibility: visible;
+  opacity: 1;
 }
 
 .artist-hero {
