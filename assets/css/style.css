@@ -10222,12 +10222,6 @@ span.search-box {
   width: 200px;
 }
 
-input {
-  border-radius: 20px;
-  height: 6px;
-  appearance: none;
-}
-
 #range::-webkit-slider-thumb {
   appearance: initial;
   width: 6px;
@@ -10256,6 +10250,7 @@ slidecontainer {
   padding: 1.5em;
   border-radius: 5px;
 }
+
 */
 .box {
   width: 35px;
