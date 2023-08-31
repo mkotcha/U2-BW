@@ -109,9 +109,9 @@ window.onload = async event => {
             row.innerHTML = `
                   
                   <div class="col-1 p-0 ps-2 " style="font-size: 1em; font-weight: lighter; width:30px;">${i + 1}</div>
-                  <div class="col my-1 p-0" style="font-size: 1em; font-weight: lighter"><a class"text-decoration-none" href="" style ="margin:0;padding:0;">${titolo}</a><p style="font-size: 0.8em;margin:0; padding:0; ">${
-              obj.label
-            }, ${obj.artist.name}</p></div>
+                  <div class="col my-1 p-0" style="font-size: 1em; font-weight: lighter"><a class"text-decoration-none" style ="margin:0;padding:0;">${titolo}</a><p style="font-size: 0.8em;margin:0; padding:0; ">${
+              obj.artist.name
+            }</p></div>
                   <div class="col text-end" style="font-size: 0.8em; font-weight: lighter">${convertito}</div>
                   
                   `;
@@ -122,7 +122,7 @@ window.onload = async event => {
             row.innerHTML = `
                   
                   <div class="col-1 p-0 ps-2" style="font-size: 0.8em; font-weight: lighter; width:30px;">${i + 1}</div>
-                  <div class="col my-1 p-0" style="font-size: 1em; font-weight: lighter"><a class"text-decoration-none" href="" style ="margin:0;padding:0;">${titolo}</a><p style="font-size: 0.8em;margin:0; padding:0; ">${
+                  <div class="col my-1 p-0" style="font-size: 1em; font-weight: lighter"><a class"text-decoration-none" style ="margin:0;padding:0;">${titolo}</a><p style="font-size: 0.8em;margin:0; padding:0; ">${
               obj.artist.name
             }</p></div>
                   <div class="col text-end" style="font-size: 0.8em; font-weight: lighter">${durataConvertita}</div>
