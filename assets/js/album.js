@@ -139,7 +139,7 @@ window.onload = async event => {
                 check[j].style.backgroundColor = "";
                 check[j].classList.remove("selected");
               }
-              tracceSel[i].style.backgroundColor = "white";
+              tracceSel[i].style.backgroundColor = "rgba(255, 255, 255, 0.4)";
               tracceSel[i].style.borderRadius = "20px";
               tracceSel[i].classList.add("selected");
             } else {
