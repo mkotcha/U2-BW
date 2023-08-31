@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", event => {
   fetch("assets/html/player.html")
     .then(response => response.text())
     .then(data => initAudio(data));
+
+  window.addEventListener("resize", hideCard);
 });
 
 async function loadSidebar(data) {
@@ -58,7 +60,7 @@ async function queryTrack(id) {
 const printCard = (elm, data) => {
   for (let i = 0; i < maxCard; i++) {
     const col = document.createElement("div");
-    col.classList = "col";
+    col.classList = "col col-hidable";
     const card = document.createElement("div");
     card.classList = "home-card rounded-2 d-flex flex-column p-3 h-100";
     const albumLink = document.createElement("a");
@@ -135,7 +137,7 @@ const hideCard = () => {
       // list.classList = `row row-cols-${maxCard} g-4 recent-list`;
       list.classList.add("row-cols-" + maxCard);
     }
-    const cards = list.querySelectorAll(".col");
+    const cards = list.querySelectorAll(".col-hidable");
     cards.forEach((elm, index) => {
       if (index >= num) {
         elm.classList.add("d-none");
@@ -244,4 +246,48 @@ async function initAudio(data) {
   });
 }
 
-window.addEventListener("resize", hideCard);
+function getAverageRGB(imgEl) {
+  let blockSize = 5, // only visit every 5 pixels
+    defaultRGB = { r: 0, g: 0, b: 0 }, // for non-supporting envs
+    canvas = document.createElement("canvas"),
+    context = canvas.getContext && canvas.getContext("2d"),
+    data,
+    width,
+    height,
+    i = -4,
+    length,
+    rgb = { r: 0, g: 0, b: 0 },
+    count = 0;
+
+  if (!context) {
+    return defaultRGB;
+  }
+
+  height = canvas.height = imgEl.naturalHeight || imgEl.offsetHeight || imgEl.height;
+  width = canvas.width = imgEl.naturalWidth || imgEl.offsetWidth || imgEl.width;
+
+  context.drawImage(imgEl, 0, 0);
+
+  try {
+    data = context.getImageData(0, 0, width, height);
+  } catch (e) {
+    /* security error, img on diff domain */
+    return defaultRGB;
+  }
+
+  length = data.data.length;
+
+  while ((i += blockSize * 4) < length) {
+    ++count;
+    rgb.r += data.data[i];
+    rgb.g += data.data[i + 1];
+    rgb.b += data.data[i + 2];
+  }
+
+  // ~~ used to floor values
+  rgb.r = ~~(rgb.r / count);
+  rgb.g = ~~(rgb.g / count);
+  rgb.b = ~~(rgb.b / count);
+
+  return rgb;
+}
