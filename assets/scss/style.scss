@@ -186,7 +186,8 @@ slidecontainer {
   padding: 20px;
 }
 
-.home-hero-nav img {
+.home-hero-nav img,
+.search-hero-nav img {
   width: 32px;
   height: 32px;
   border-radius: 50vh;
@@ -204,6 +205,20 @@ slidecontainer {
 
 #home-container {
   height: calc(100vh - 90px);
+}
+
+.search-card div {
+}
+
+.search-card img {
+  position: absolute;
+
+  -webkit-transform: rotate(25deg) translate(18%, -2%);
+  transform: rotate(25deg) translate(18%, -2%);
+  right: 0;
+  bottom: 0;
+  width: 60%;
+  height: 60%;
 }
 
 .artist-hero {
