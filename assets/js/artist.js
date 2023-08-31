@@ -1,4 +1,6 @@
-const artistName = sessionStorage.getItem("nameArtist");
+const urlParams = new URLSearchParams(window.location.search);
+const artistName = urlParams.get("id");
+
 const artistOptions = {
   method: "GET",
   url: "https://deezerdevs-deezer.p.rapidapi.com/search",
@@ -13,12 +15,12 @@ async function fetchArtistData() {
   try {
     const response = await axios.request(artistOptions);
 
-    //DATI ARTISTA
+    //ARTIST DATA
     const artistData = response.data.data[0].artist;
     const artistList = document.getElementById("artist-list");
     const popularSongs = response.data.data.slice(0, 10);
 
-    //DATI ALBUM
+    //ALBUM DATA
     const artistpageAlbumData = response.data.data[0].album;
 
     //ALBUM COVER
@@ -31,9 +33,37 @@ async function fetchArtistData() {
     const artistpageAlbumTitleContainer = document.getElementById("artist-album-title");
     artistpageAlbumTitleContainer.textContent = artistpageAlbumTitle;
 
-    console.log();
-    artistList.innerHTML = "";
-    let songNumber = 1;
+    //ARTIST FAN NUMBER
+
+    const artistId = artistData.id;
+
+    // Crea le opzioni per la nuova chiamata all'API dell'artista
+    const artistInfoOptions = {
+      method: "GET",
+      url: `https://deezerdevs-deezer.p.rapidapi.com/artist/${artistId}`,
+      headers: {
+        "X-RapidAPI-Key": "4dee4a6d79msh10e7f11101e9eafp1eb14cjsn68ce37f58686",
+        "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+      },
+    };
+
+    async function fetchArtistInfo() {
+      try {
+        const response = await axios.request(artistInfoOptions);
+
+        // Ottieni i dati dell'artista dalla nuova chiamata
+        const artistInfoData = response.data;
+
+        // Puoi ora utilizzare artistInfoData per ottenere ulteriori informazioni sull'artista
+        console.log("Artist Info Data:", artistInfoData);
+        const artistFans = artistInfoData.nb_fan;
+        const artistFansNb = document.getElementById("artist-fan-nb");
+        artistFansNb.textContent = artistFans.toLocaleString();
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchArtistInfo();
 
     const artistNameElements = document.querySelectorAll("#artist-name");
 
@@ -47,6 +77,8 @@ async function fetchArtistData() {
     const artistIcon = document.getElementById("artist-icon");
     artistIcon.src = artistIconUrl;
 
+    artistList.innerHTML = "";
+    let songNumber = 1;
     //FUNZIONE PER CREARE LE CANZONI
     popularSongs.forEach((song, index) => {
       const listItemContainer = document.createElement("div");
@@ -60,12 +92,12 @@ async function fetchArtistData() {
       <div id="artist-song-title" class="d-flex col-9 col-md-6">
       <img src="${song.album.cover_small}" class="me-3" width="40" height="40" alt="" />
       <div>
-        <div class="text-white">${song.title}</div>
-        ${song.explicit_lyrics ? '<i class="bi bi-explicit-fill text-secondary"></i>' : ""}
+      <div class="text-white">${song.title}</div>
+      ${song.explicit_lyrics ? '<i class="bi bi-explicit-fill text-secondary"></i>' : ""}
       </div>
-    </div>
-    <div id="artist-song-plays" class="d-flex d-none d-md-block col-3">${song.rank}</div>
-    <div id="artist-song-minutes" class="d-flex col col-md-2 justify-content-between align-items-center">
+      </div>
+      <div id="artist-song-plays" class="d-flex d-none d-md-block col-3 "> <div class"d-flex text-end">${song.rank.toLocaleString()}</div></div>
+      <div id="artist-song-minutes" class="d-flex col col-md-2 justify-content-between align-items-center">
       <div><i class="bi bi-heart me-3"></i></div>
       <div>${Math.floor(song.duration / 60)}:${String(song.duration % 60).padStart(2, "0")}</div>
       <div class="dropdown">
