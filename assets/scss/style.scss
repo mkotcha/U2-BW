@@ -262,14 +262,16 @@ slidecontainer {
   font-size: 5rem;
 }
 
-#artist-song-title {
-  flex-grow: 2;
-}
-#artist-song-plays {
-  flex-grow: 2;
-}
-#artist-song-minutes {
-  flex-grow: 1;
+.artist-hero-container::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 500px;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5060399159663865) 27%, rgba(255, 255, 255, 0) 54%);
 }
 
 .btn-check:checked + .btn {
