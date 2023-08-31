@@ -9,6 +9,7 @@ $tertiary: #181818;
 $forth: #242424;
 $fifth: #232323;
 $sixth: #535353;
+$sub: #b3b3b3;
 
 $custom-colors: (
   "tertiary": $tertiary,
@@ -16,6 +17,7 @@ $custom-colors: (
   "fifth": $fifth,
   "nero": #050505,
   "sisth": $sixth,
+  "sub": $sub,
 );
 
 $btn-border-radius: 50vh;
@@ -33,7 +35,7 @@ $grid-row-columns: 9 !default;
 
 $font-size-base: 1rem;
 
-$h7-font-size: 0.75rem;
+$h7-font-size: 0.85rem;
 $h8-font-size: 0.65rem;
 $h9-font-size: 0.5rem;
 

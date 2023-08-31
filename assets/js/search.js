@@ -40,6 +40,24 @@ const printResult = () => {
   container.querySelector("#search-artist-box img").src = queryResp[0].artist.picture_medium;
   container.querySelector("#search-artist-box h2").innerText = queryResp[0].artist.name;
   container.querySelector("#search-artist-box a").href = "artist.html?id=" + queryResp[0].artist.name;
+
+  const sideContainer = document.querySelector("#search-artist-side-box div");
+  sideContainer.innerHTML = "";
+
+  for (let i = 0; i < 4; i++) {
+    sideContainer.innerHTML += `<div class="d-flex mb-2 p2">
+    <a href="album.html?id=${queryResp[i].album.id}" >
+    <img src="${queryResp[i].album.cover_medium}" alt="${queryResp[i].title}" class="" />
+    </a>
+    <div class="d-flex flex-column ps-2 me-auto">
+    <p class="text-truncate"><a href="" class="text-reset text-decoration-none text-truncat">${queryResp[i].title}</a></p>
+    <p class="fs-7">
+    <a href="" class="text-decoration-none text-sub">${queryResp[i].artist.name}</a>
+    </p>
+    </div>
+    <p class="text-sub">${queryResp[i].duration}</p>
+    </div>`;
+  }
 };
 
 async function deezerQuery(query) {
