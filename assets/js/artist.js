@@ -103,7 +103,12 @@ async function fetchArtistData() {
       <div id="artist-song-title" class="d-flex text-truncate">
         <img src="${song.album.cover_small}" class="me-3" width="40" height="40" alt="" />
         <div class="d-flex flex-column justify-content-around text-truncate">
-          ${song.title} ${song.explicit_lyrics ? '<i class="bi bi-explicit-fill text-secondary"></i>' : ""}
+        <a id="artist-song-link" href="track.html?id=${
+          song.id
+        }" class="text-white artist-song-link text-decoration-none">
+        ${song.title} 
+      </a>
+      ${song.explicit_lyrics ? '<i class="bi bi-explicit-fill text-secondary"></i>' : ""}
         </div>
       </div>
     </div>
@@ -128,6 +133,8 @@ async function fetchArtistData() {
     
   `;
 
+      //SOSTITUISCO I NUMERI CON L'ICONA PLAY
+
       const songNumberContainer = listItem.querySelector(".song-number");
       const originalNumber = songNumber;
 
@@ -137,6 +144,18 @@ async function fetchArtistData() {
 
       listItemContainer.addEventListener("mouseleave", () => {
         songNumberContainer.innerHTML = originalNumber;
+      });
+
+      //METTO L'UNDERLINE ALLE CANZONI
+
+      const artistSongLink = listItem.querySelector("#artist-song-link");
+
+      artistSongLink.addEventListener("mouseenter", () => {
+        artistSongLink.classList.remove("text-decoration-none");
+      });
+
+      artistSongLink.addEventListener("mouseleave", () => {
+        artistSongLink.classList.add("text-decoration-none");
       });
 
       if (index >= popularSongs.length - 5) {

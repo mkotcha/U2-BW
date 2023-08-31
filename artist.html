@@ -8,7 +8,7 @@
     <title>Spotify</title>
   </head>
   <body>
-    <div id="home-container" class="p-2">
+    <div id="home-container" class="p-2 bg-black">
       <div class="d-flex h-100">
         <div id="sidebar"></div>
         <main class="flex-grow-1">
@@ -39,8 +39,8 @@
                 </div>
               </div>
             </div>
-            <div id="artist-main-content">
-              <div id="artist-main-buttons" class="d-flex align-items-center p-4">
+            <div id="artist-main-content" class="p-4 py-0">
+              <div id="artist-main-buttons" class="d-flex align-items-center py-4">
                 <div class="play-background d-flex justify-content-center align-items-center">
                   <i class="bi bi-play-fill text-black fs-3"></i>
                 </div>
@@ -89,92 +89,79 @@
                   </div>
                 </div>
               </div>
-              <div class="p-4 py-0">
-                <h3 class="fw-bold text-white">Popolari</h3>
-                <div class="row">
-                  <div class="col-12 col-xxl-6">
-                    <ol id="artist-list" class="p-0 ps-3"></ol>
-                    <div class="fw-bold fs-6 p-3">
-                      <a id="showMoreButton" href="#" class="text-decoration-none">Visualizza altro</a>
-                    </div>
+              <h3 class="fw-bold text-white">Popolari</h3>
+              <div class="row">
+                <div class="col-12 col-xxl-6">
+                  <ol id="artist-list" class="p-0 ps-3"></ol>
+                  <div class="fw-bold fs-6 p-3">
+                    <a id="showMoreButton" href="#" class="text-decoration-none">Visualizza altro</a>
                   </div>
-                  <div class="col-12 col-xxl-6">
-                    <h3 class="fw-bold text-white">Selezione dell'artista</h3>
-                    <div class="d-flex">
-                      <a id="artist-album-link" href="#">
-                        <img id="artist-album-image" src="./assets/imgs/main/image-1.jpg" class="me-3" width="88" />
-                      </a>
-                      <div>
-                        <div class="mb-2">
-                          <img
-                            id="artist-icon"
-                            src="./assets/imgs/main/image-1.jpg"
-                            class="rounded-circle me-2"
-                            width="24"
-                          />
-                          <span>Pubblicato da <span id="artist-name">Artista</span></span>
-                        </div>
-                        <div>
-                          <a id="artist-album-title" href="#" class="fs-5 text-white fw-bold text-decoration-none"
-                            >Nome Album</a
-                          >
-                        </div>
-                        <div>Playlist</div>
+                </div>
+                <div class="col-12 col-xxl-6">
+                  <h3 class="fw-bold text-white">Selezione dell'artista</h3>
+                  <div class="d-flex">
+                    <a id="artist-album-link" href="#">
+                      <img id="artist-album-image" src="./assets/imgs/main/image-1.jpg" class="me-3" width="88" />
+                    </a>
+                    <div>
+                      <div class="mb-2">
+                        <img
+                          id="artist-icon"
+                          src="./assets/imgs/main/image-1.jpg"
+                          class="rounded-circle me-2"
+                          width="24"
+                        />
+                        <span>Pubblicato da <span id="artist-name">Artista</span></span>
                       </div>
+                      <div>
+                        <a id="artist-album-title" href="#" class="fs-5 text-white fw-bold text-decoration-none"
+                          >Nome Album</a
+                        >
+                      </div>
+                      <div>Playlist</div>
                     </div>
                   </div>
                 </div>
-                <div class="hero-test">
-                  <div class="d-flex mt-5 mb-4 align-items-center justify-content-between">
-                    <h3 class="fw-bold text-white">Discografia</h3>
-                    <div class="fw-bold fs-6"><a href="#" class="text-decoration-none">Mostra tutto</a></div>
-                  </div>
-                  <div class="mb-4">
-                    <input
-                      type="radio"
-                      class="btn-check"
-                      name="options-outlined"
-                      id="uscite-popolari"
-                      autocomplete="off"
-                      checked
-                    />
-                    <label class="btn btn-dark border-0 me-2" for="uscite-popolari">Uscite popolari</label>
+              </div>
+              <div class="hero-test">
+                <div class="d-flex mt-5 mb-4 align-items-center justify-content-between">
+                  <h3 class="fw-bold text-white">Discografia</h3>
+                  <div class="fw-bold fs-6"><a href="#" class="text-decoration-none">Mostra tutto</a></div>
+                </div>
+                <div class="mb-4">
+                  <input
+                    type="radio"
+                    class="btn-check"
+                    name="options-outlined"
+                    id="uscite-popolari"
+                    autocomplete="off"
+                    checked
+                  />
+                  <label class="btn btn-dark border-0 me-2" for="uscite-popolari">Uscite popolari</label>
 
-                    <input
-                      type="radio"
-                      class="btn-check"
-                      name="options-outlined"
-                      id="artist-album"
-                      autocomplete="off"
-                    />
-                    <label class="btn btn-dark border-0 me-2" for="artist-album">Album</label>
-                    <input
-                      type="radio"
-                      class="btn-check"
-                      name="options-outlined"
-                      id="singoli-ed-ep"
-                      autocomplete="off"
-                    />
-                    <label class="btn btn-dark border-0 me-2" for="singoli-ed-ep">Singoli ed EP</label>
-                  </div>
-                  <div class="row row-cols-4 g-4 recent-list row-list">
+                  <input type="radio" class="btn-check" name="options-outlined" id="artist-album" autocomplete="off" />
+                  <label class="btn btn-dark border-0 me-2" for="artist-album">Album</label>
+                  <input type="radio" class="btn-check" name="options-outlined" id="singoli-ed-ep" autocomplete="off" />
+                  <label class="btn btn-dark border-0 me-2" for="singoli-ed-ep">Singoli ed EP</label>
+                </div>
+                <div class="row row-cols-4 g-4 recent-list row-list">
+                  <!-- ! JS -->
+                </div>
+              </div>
+              <div class="hero-test">
+                <div class="d-flex mt-5 mb-4 align-items-center justify-content-between">
+                  <h3 class="fw-bold text-white">Con <span id="artist-name">Nome Artista</span></h3>
+                  <div class="fw-bold fs-6"><a href="#" class="text-decoration-none">Mostra tutto</a></div>
+                </div>
+
+                <div class="hero-test">
+                  <div class="row row-cols-4 g-4 show-list row-list">
                     <!-- ! JS -->
                   </div>
                 </div>
-                <div class="hero-test">
-                  <div class="d-flex mt-5 mb-4 align-items-center justify-content-between">
-                    <h3 class="fw-bold text-white">Con <span id="artist-name">Nome Artista</span></h3>
-                    <div class="fw-bold fs-6"><a href="#" class="text-decoration-none">Mostra tutto</a></div>
-                  </div>
+              </div>
 
-                  <div class="hero-test">
-                    <div class="row row-cols-4 g-4 show-list row-list">
-                      <!-- ! JS -->
-                    </div>
-                  </div>
-                </div>
-
-                <!-- <footer>
+              <!-- <footer>
                   <div class="d-flex mt-5">
                     <div class="d-flex border-bottom flex-grow-1">
                       <div class="px-5">
@@ -251,7 +238,6 @@
                     <a href="" class="text-decoration-none text-white">© 2023 Spotify AB</a>
                   </div>
                 </footer> -->
-              </div>
             </div>
           </div>
         </main>
