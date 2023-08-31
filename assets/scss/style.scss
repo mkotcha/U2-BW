@@ -225,6 +225,17 @@ slidecontainer {
   height: 60%;
 }
 
+.song-options {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.song-options.active {
+  visibility: visible;
+  opacity: 1;
+}
+
 .artist-hero {
   height: 500px;
   background-repeat: no-repeat;
