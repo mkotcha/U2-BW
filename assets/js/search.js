@@ -9,7 +9,7 @@ const deezerOptions = {
 window.onload = async function () {
   cardWidth = 220;
   hideCard();
-  printDiscover();
+  // printDiscover();
 };
 
 async function deezerQuery(query) {
