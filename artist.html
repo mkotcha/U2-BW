@@ -33,7 +33,7 @@
                     <span class="ms-1">Artista verificato</span>
                   </div>
                   <h1 id="artist-name" class="artist-name-big fw-bold mb-3 lh-1">Artist name</h1>
-                  <p class="mb-0">ascoltatori mensili</p>
+                  <p class="mb-0"><span id="artist-fan-nb"> </span> ascoltatori</p>
                 </div>
               </div>
             </div>
@@ -315,43 +315,8 @@
                     />
                     <label class="btn btn-dark border-0 me-2" for="singoli-ed-ep">Singoli ed EP</label>
                   </div>
-                  <div class="row row-cols-4 g-4">
-                    <div class="col">
-                      <div class="home-card rounded-2 d-flex flex-column p-3">
-                        <div class="mb-3"><img src="assets/imgs/main/image-8.jpg" class="rounded-2" alt="" /></div>
-                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
-                          <a href="" class="text-reset text-decoration-none">Title</a>
-                        </p>
-                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="home-card rounded-2 d-flex flex-column p-3">
-                        <div class="mb-3"><img src="assets/imgs/main/image-9.jpg" class="rounded-2" alt="" /></div>
-                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
-                          <a href="" class="text-reset text-decoration-none">Title</a>
-                        </p>
-                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="home-card rounded-2 d-flex flex-column p-3">
-                        <div class="mb-3"><img src="assets/imgs/main/image-7.jpg" class="rounded-2" alt="" /></div>
-                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
-                          <a href="" class="text-reset text-decoration-none">Title</a>
-                        </p>
-                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="home-card rounded-2 d-flex flex-column p-3">
-                        <div class="mb-3"><img src="assets/imgs/main/image-8.jpg" class="rounded-2" alt="" /></div>
-                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
-                          <a href="" class="text-reset text-decoration-none">Title</a>
-                        </p>
-                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
-                      </div>
-                    </div>
+                  <div class="row row-cols-4 g-4 recent-list row-list">
+                    <!-- ! JS -->
                   </div>
                 </div>
                 <div class="hero-test">
@@ -360,8 +325,10 @@
                     <div class="fw-bold fs-6"><a href="#" class="text-decoration-none">Mostra tutto</a></div>
                   </div>
 
-                  <div class="row row-cols-4 g-4 recent-list row-list">
-                    <!-- ! JS -->
+                  <div class="hero-test">
+                    <div class="row row-cols-4 g-4 show-list row-list">
+                      <!-- ! JS -->
+                    </div>
                   </div>
                 </div>
 
@@ -461,10 +428,8 @@
       integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
       crossorigin="anonymous"
     ></script>
-    <script src="./assets/js/index.js"></script>
     <script src="assets/js/script.js"></script>
-    <script src="./assets/js/album.js"></script>
-    <script src="./assets/js/search.js"></script>
     <script src="./assets/js/artist.js"></script>
+    <script src="./assets/js/index.js"></script>
   </body>
 </html>
