@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", event => {
+<<<<<<< Updated upstream
   fetch("assets/html/sidebar.html")
     .then(response => response.text())
     .then(data => loadSidebar(data));
@@ -8,6 +9,19 @@ document.addEventListener("DOMContentLoaded", event => {
     .then(data => initAudio(data));
 
   window.addEventListener("resize", hideCard);
+=======
+  const sidebarElm = document.getElementById("sidebar");
+  const playerElm = document.getElementById("player");
+
+  fetch("assets/html/sidebar.html")
+    .then(response => response.text())
+    .then(data => (sidebarElm.innerHTML = data));
+  load();
+  fetch("assets/html/player.html")
+    .then(response => response.text())
+    .then(data => (playerElm.innerHTML = data));
+  load();
+>>>>>>> Stashed changes
 });
 
 async function loadSidebar(data) {
@@ -15,6 +29,7 @@ async function loadSidebar(data) {
   const side = await query("playlist/10361569942");
   printSideCards(side);
   hideCard();
+<<<<<<< Updated upstream
   document.querySelectorAll(".home-sidebar-list a").forEach(elm => elm.addEventListener("click", sidebarSelection));
   const pathName = window.location.pathname;
   if (pathName === "/search.html") {
@@ -26,13 +41,28 @@ async function loadSidebar(data) {
 // mf 4ba7a35e2emsh5b7d70d861796cbp1d1951jsnc270044357e6
 // mk e13be1f8d2msha90dfa9e08e83f5p16dc04jsn33020578052c
 
+=======
+
+  const sidebarSelectorList = document.querySelectorAll(".home-sidebar-list a");
+  sidebarSelectorList.forEach(elm => {
+    elm.addEventListener("click", sidebarSelection);
+  });
+}
+//885547a862msh72c9372ebc31c61p1f6b27jsn187746473b51 Simo
+>>>>>>> Stashed changes
 const url = "https://deezerdevs-deezer.p.rapidapi.com/";
 const options = {
   method: "GET",
   headers: {
+<<<<<<< Updated upstream
     "X-RapidAPI-Key": "e13be1f8d2msha90dfa9e08e83f5p16dc04jsn33020578052c",
     "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
   },
+=======
+    "X-RapidAPI-Key": "4ba7a35e2emsh5b7d70d861796cbp1d1951jsnc270044357e6",
+    "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com"
+  }
+>>>>>>> Stashed changes
 };
 let queryStr = "";
 const maxCard = 9;
