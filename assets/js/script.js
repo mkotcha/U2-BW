@@ -107,7 +107,7 @@ const printSideCard = track => {
   list.innerHTML += `<div class="d-flex mb-3">
                       <a href="album.html?id=${track.album.id}">
                         <img class="" src="${track.album.cover_medium}" alt="" /></a>
-                      <div class="ps-3 fs-6 flex-shrink-1 text-truncate">
+                      <div class="ps-3 fs-6 flex-shrink-1 text-truncate d-none d-lg-block">
                         <p class="fw-bold m-0 text-truncate">
                         <a href="track.html?id=${track.id}" class="text-reset text-decoration-none">
                           ${track.title}</a></p>
