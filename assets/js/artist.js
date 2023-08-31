@@ -14,6 +14,7 @@ const artistOptions = {
 async function fetchArtistData() {
   try {
     const response = await axios.request(artistOptions);
+    const artistCardContainer = document.getElementById("artist-card-container");
 
     //ARTIST DATA
     const artistData = response.data.data[0].artist;
@@ -85,32 +86,30 @@ async function fetchArtistData() {
     //FUNZIONE PER CREARE LE CANZONI
     popularSongs.forEach((song, index) => {
       const listItemContainer = document.createElement("div");
-      listItemContainer.className = "artist-list-items-container p-2 px-3 rounded-2 ";
+      listItemContainer.className = "artist-list-items-container p-2 px-3 rounded-2 row justify-content-between";
 
       const listItem = document.createElement("li");
-      listItem.className = "row d-flex align-items-center justify-content-between";
+      listItem.className = "row d-flex align-items-center justify-content-between p-0";
 
       listItem.innerHTML = `
-      <span class="col song-number"><span>${songNumber}</span></span>
-      <div id="artist-song-title" class="d-flex col-9 col-md-6">
-      <img src="${song.album.cover_small}" class="me-3" width="40" height="40" alt="" />
-      <div>
-      <div class="text-white">${song.title}</div>
-      ${song.explicit_lyrics ? '<i class="bi bi-explicit-fill text-secondary"></i>' : ""}
+      <div class="d-flex col-6 col-md-6 col-lg-7 flex-grow-1">
+      <span class="align-items-center song-number justify-content-between">${songNumber}</span>
+      <div id="artist-song-title" class="d-flex">
+        <img src="${song.album.cover_small}" class="me-3" width="40" height="40" alt="" />
+        <div class="d-flex flex-column justify-content-around text-truncate">
+          ${song.title} ${song.explicit_lyrics ? '<i class="bi bi-explicit-fill text-secondary"></i>' : ""}
+        </div>
       </div>
-      </div>
-      <div id="artist-song-plays" class="d-flex d-none d-md-block col-3 "> <div class"d-flex text-end">${song.rank.toLocaleString()}</div></div>
-      <div id="artist-song-minutes" class="d-flex col col-md-2 justify-content-between align-items-center">
+    </div>
+    <div id="artist-song-plays" class="d-none d-lg-block col col-lg-3">
+      <div class="d-flex text-end">${song.rank.toLocaleString()}</div>
+    </div>
+    <div id="artist-song-minutes" class="d-flex col-4 col-lg-2 align-items-center justify-content-between">
       <div><i class="bi bi-heart me-3"></i></div>
       <div>${Math.floor(song.duration / 60)}:${String(song.duration % 60).padStart(2, "0")}</div>
       <div class="dropdown">
         <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <i
-            class="bi bi-three-dots"
-            data-toggle="tooltip"
-            data-placement="top"
-            title="Altre opzioni per"
-          ></i>
+          <i class="bi bi-three-dots" data-toggle="tooltip" data-placement="top" title="Altre opzioni per"></i>
         </a>
         <ul class="dropdown-menu">
           <li><a class="dropdown-item" href="#">Action</a></li>
@@ -120,6 +119,7 @@ async function fetchArtistData() {
         </ul>
       </div>
     </div>
+    
   `;
 
       if (index >= popularSongs.length - 5) {

@@ -132,6 +132,10 @@ slidecontainer {
   height: 3px;
   // width: 500px;
 }
+.hov:hover {
+  background-color: rgba(255, 255, 255, 0.109);
+  border-radius: 20px;
+}
 
 .home-sidebar {
   min-width: 300px;
@@ -223,9 +227,8 @@ slidecontainer {
 
 .artist-hero {
   height: 500px;
-
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   background-position: center;
   background-position: top;
   position: absolute;
@@ -238,6 +241,13 @@ slidecontainer {
 
 #artist-main-content {
   margin-top: 428px;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 #artist-list-items {
