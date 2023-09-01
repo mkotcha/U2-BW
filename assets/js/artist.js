@@ -14,7 +14,6 @@ const artistOptions = {
 async function fetchArtistData() {
   try {
     const response = await axios.request(artistOptions);
-    const artistCardContainer = document.getElementById("artist-card-container");
 
     //ARTIST DATA
     const artistData = response.data.data[0].artist;
@@ -56,7 +55,6 @@ async function fetchArtistData() {
 
         const artistInfoData = response.data;
 
-        console.log("Artist Info Data:", artistInfoData);
         const artistFans = artistInfoData.nb_fan;
         const artistFansNb = document.getElementById("artist-fan-nb");
         artistFansNb.textContent = artistFans.toLocaleString();
@@ -99,16 +97,20 @@ async function fetchArtistData() {
 
       listItem.innerHTML = `
       <div class="d-flex col-6 col-md-6 col-lg-7 flex-grow-1">
-      <span class="align-items-center song-number justify-content-between">${songNumber}</span>
-      <div id="artist-song-title" class="d-flex text-truncate">
-        <img src="${song.album.cover_small}" class="me-3" width="40" height="40" alt="" />
+      <span onclick="playTrack(${
+        song.id
+      })" class="align-items-center song-number justify-content-between">${songNumber}</span>
+      <div id="artist-song-title" class="d-flex text-truncate align-middle">
+        <div class="m-auto "><img src="${song.album.cover_small}" class="me-3" width="40" height="40" alt="" /></div>
         <div class="d-flex flex-column justify-content-around text-truncate">
-        <a id="artist-song-link" href="track.html?id=${
-          song.id
-        }" class="text-white artist-song-link text-decoration-none">
-        ${song.title} 
-      </a>
-      ${song.explicit_lyrics ? '<i class="bi bi-explicit-fill text-secondary"></i>' : ""}
+        <p class="text-truncate m-0">
+          <a id="artist-song-link" href="track.html?id=${
+            song.id
+          }" class="text-white artist-song-link text-decoration-none">
+          ${song.title} 
+        </a>
+        </p>
+      ${song.explicit_lyrics ? '<i class="bi bi-explicit-fill text-secondary-emphasis"></i>' : ""}
         </div>
       </div>
     </div>
@@ -132,6 +134,23 @@ async function fetchArtistData() {
     </div>
     
   `;
+
+      //FUNZIONE PER LO SFONDO DELLE CANZONI
+      function handleSongClick(songContainer) {
+        const allSongContainers = document.querySelectorAll(".artist-list-items-container");
+        allSongContainers.forEach(container => {
+          container.classList.remove("selected-song");
+        });
+
+        songContainer.classList.add("selected-song");
+      }
+
+      const allSongContainers = document.querySelectorAll(".artist-list-items-container");
+      allSongContainers.forEach(container => {
+        container.addEventListener("click", () => {
+          handleSongClick(container);
+        });
+      });
 
       //SOSTITUISCO I NUMERI CON L'ICONA PLAY
 
@@ -195,3 +214,54 @@ showMoreButton.addEventListener("click", () => {
 
   areSongsVisible = !areSongsVisible;
 });
+
+const artistCardUrl = "https://striveschool-api.herokuapp.com/api/deezer/search?q=" + urlParams.get("id");
+sessionStorage.clear();
+fetch(artistCardUrl)
+  .then(risposta => risposta.json())
+  .then(objArray => objArray.data)
+  .then(array => {
+    const rand = [];
+    const rigaAltroAlbum = document.getElementById("card-append");
+    for (let i = 0; i < 9; i++) {
+      const casual = Math.floor(Math.random() * array.length);
+      if (!rand.includes(casual)) {
+        rand.push(casual);
+      } else {
+        i--;
+      }
+    }
+    for (let i = 0; i < 9; i++) {
+      const div = document.createElement("div");
+      div.classList.add("col", "col-hidable");
+      div.innerHTML = `
+                    <div class="home-card rounded-2 d-flex flex-column p-3 h-100">
+                            <div class="mb-3">
+                            <a
+                            href="./album.html?id=${array[rand[i]].album.id}"
+                            ><img
+                                src="${array[rand[i]].album.cover_big}"
+                                class="rounded-2"
+                                alt="${array[rand[i]].album.title} cover" />
+                            </div></a>
+                            <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
+                              <a
+                                href="./album.html?id=${array[rand[i]].album.id}"
+                                class="text-reset text-decoration-none text-truncate"
+                                >${array[rand[i]].album.title}</a
+                              >
+                            </p>
+                            <p class="fs-6 m-0">
+                              <a
+                                href="artist.html?id=${array[rand[i]].artist.name}"
+                                class="text-decoration-none"
+                                >${array[rand[i]].artist.name}</a
+                              >
+                            </p>
+                          </div>
+
+                    `;
+
+      rigaAltroAlbum.appendChild(div);
+    }
+  });

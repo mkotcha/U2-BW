@@ -58,7 +58,7 @@ async function queryTrack(id) {
   }
 }
 
-const printCard = (elm, data) => {
+async function printCard(elm, data) {
   for (let i = 0; i < maxCard; i++) {
     const col = document.createElement("div");
     col.classList = "col col-hidable";
@@ -93,7 +93,7 @@ const printCard = (elm, data) => {
     col.appendChild(card);
     elm.appendChild(col);
   }
-};
+}
 
 const printCardq = (elm, data) => {
   for (let i = 0; i < maxCard; i++) {
