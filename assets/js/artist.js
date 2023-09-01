@@ -97,7 +97,9 @@ async function fetchArtistData() {
 
       listItem.innerHTML = `
       <div class="d-flex col-6 col-md-6 col-lg-7 flex-grow-1">
-      <span class="align-items-center song-number justify-content-between">${songNumber}</span>
+      <span onclick="playTrack(${
+        song.id
+      })" class="align-items-center song-number justify-content-between">${songNumber}</span>
       <div id="artist-song-title" class="d-flex text-truncate align-middle">
         <div class="m-auto "><img src="${song.album.cover_small}" class="me-3" width="40" height="40" alt="" /></div>
         <div class="d-flex flex-column justify-content-around text-truncate">
@@ -108,7 +110,7 @@ async function fetchArtistData() {
           ${song.title} 
         </a>
         </p>
-      ${song.explicit_lyrics ? '<i class="bi bi-explicit-fill text-secondary"></i>' : ""}
+      ${song.explicit_lyrics ? '<i class="bi bi-explicit-fill text-secondary-emphasis"></i>' : ""}
         </div>
       </div>
     </div>
@@ -196,13 +198,12 @@ showMoreButton.addEventListener("click", () => {
   areSongsVisible = !areSongsVisible;
 });
 
-const urlArtist = "https://striveschool-api.herokuapp.com/api/deezer/search?q=" + urlParams.get("id");
+const artistCardUrl = "https://striveschool-api.herokuapp.com/api/deezer/search?q=" + urlParams.get("id");
 sessionStorage.clear();
-fetch(urlArtist)
+fetch(artistCardUrl)
   .then(risposta => risposta.json())
   .then(objArray => objArray.data)
   .then(array => {
-    console.log(array);
     const rand = [];
     const rigaAltroAlbum = document.getElementById("card-append");
     for (let i = 0; i < 9; i++) {
@@ -213,7 +214,6 @@ fetch(urlArtist)
         i--;
       }
     }
-    console.log("if", rand);
     for (let i = 0; i < 9; i++) {
       const div = document.createElement("div");
       div.classList.add("col", "col-hidable");
@@ -223,7 +223,7 @@ fetch(urlArtist)
                             <a
                             href="./album.html?id=${array[rand[i]].album.id}"
                             ><img
-                                src="${array[rand[i]].album.cover}"
+                                src="${array[rand[i]].album.cover_big}"
                                 class="rounded-2"
                                 alt="${array[rand[i]].album.title} cover" />
                             </div></a>
