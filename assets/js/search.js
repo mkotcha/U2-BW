@@ -20,7 +20,7 @@ window.onload = async function () {
     queryResp = queryResp.data;
     printResult();
   } else {
-    printDiscover();
+    // printDiscover();
   }
   document.querySelector("form").addEventListener("submit", search);
 };
@@ -50,7 +50,7 @@ const printResult = () => {
     <img src="${queryResp[i].album.cover_medium}" alt="${queryResp[i].title}" class="" />
     </a>
     <div class="d-flex flex-column ps-2 me-auto">
-    <p class="text-truncate"><a href="" class="text-reset text-decoration-none text-truncat">${queryResp[i].title}</a></p>
+    <p class="text-truncate"><span onclick="playTrack(${queryResp[i].id})" class="play-track text-truncate">${queryResp[i].title}</span></p>
     <p class="fs-7">
     <a href="" class="text-decoration-none text-sub">${queryResp[i].artist.name}</a>
     </p>
@@ -83,6 +83,7 @@ async function printDiscover() {
     img.alt = data.title;
     const myPromise = new Promise((resolve, reject) => {
       img.setAttribute("crossorigin", "");
+      return img;
     });
     const title = document.createElement("p");
     title.classList = "fw-bold p-3 fs-4";
@@ -92,7 +93,10 @@ async function printDiscover() {
     link.classList = "text-reset text-decoration-none";
     const cardInt = document.createElement("div");
     cardInt.classList = "search-card-int ratio ratio-1x1 rounded-3 overflow-hidden";
-    myPromise.then((rgb = getAverageRGB(img)));
+    myPromise.then(imgg => {
+      console.log(imgg);
+      rgb = getAverageRGB(imgg);
+    });
     cardInt.style = `background-color: rgb(${rgb.r},${rgb.g},${rgb.b})`;
     const searchCard = document.createElement("div");
     searchCard.classList = "search-card .col";
