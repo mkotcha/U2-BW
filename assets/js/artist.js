@@ -138,19 +138,19 @@ async function fetchArtistData() {
         songContainer.classList.add("selected-song");
       }
 
-      function handleSongClick(songContainer) {
-        const heartIcon = songContainer.querySelector(".heart-icon-clickable");
+      // function handleSongClick(songContainer) {
+      //   const heartIcon = songContainer.querySelector(".heart-icon-clickable");
 
-        if (heartIcon) {
-          if (!heartIcon.classList.contains("green")) {
-            heartIcon.classList.add("green");
-            heartIcon.classList.remove("heart-icon");
-          } else {
-            heartIcon.classList.remove("green");
-            heartIcon.classList.add("heart-icon");
-          }
-        }
-      }
+      //   if (heartIcon) {
+      //     if (!heartIcon.classList.contains("green")) {
+      //       heartIcon.classList.add("green");
+      //       heartIcon.classList.remove("heart-icon");
+      //     } else {
+      //       heartIcon.classList.remove("green");
+      //       heartIcon.classList.add("heart-icon");
+      //     }
+      //   }
+      // }
 
       const allSongContainers = document.querySelectorAll(".artist-list-items-container");
       allSongContainers.forEach(container => {
