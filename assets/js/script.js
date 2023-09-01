@@ -32,8 +32,8 @@ const options = {
   method: "GET",
   headers: {
     "X-RapidAPI-Key": "e13be1f8d2msha90dfa9e08e83f5p16dc04jsn33020578052c",
-    "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
-  },
+    "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com"
+  }
 };
 let queryStr = "";
 const maxCard = 9;
@@ -246,6 +246,26 @@ async function initAudio(data) {
     document.getElementById("elapsed-time").innerText =
       "00:" + parseInt(audioElm.currentTime).toString().padStart(2, "0");
   });
+  document.getElementById("range").oninput = function () {
+    let value = ((this.value - this.min) / (this.max - this.min)) * 100;
+    this.style.background =
+      "linear-gradient(to right, green 0%, green " + value + "%, #535353 " + value + "%, #535353 100%)";
+
+    document.getElementById("range").addEventListener("mouseleave", () => {
+      value = ((this.value - this.min) / (this.max - this.min)) * 100;
+      this.style.background =
+        "linear-gradient(to right, white 0%, white " + value + "%, #535353 " + value + "%, #535353 100%)";
+    });
+    //manipolazione volume utente
+    const player = document.querySelector("audio");
+    const volumeSlider = document.querySelector("#range");
+
+    volumeSlider.addEventListener("input", function () {
+      let dato;
+      dato = (this.value / 100).toFixed(1);
+      player.volume = dato;
+    });
+  };
 }
 
 async function playTrack(id) {

@@ -147,35 +147,11 @@ window.onload = async event => {
           console.log(traccePlay);
           traccePlay[i].addEventListener("click", event => {
             const canzone = document.querySelector(".canzone");
-            localStorage.clear();
-            localStorage.setItem("nowPlaing", obj.tracks.data[i].id);
             const song = localStorage.getItem("nowPlaing");
             img[2].src = `${obj.tracks.data[i].album.cover}`;
             canzone.innerHTML = `${event.target.innerHTML}`;
-            initAudio(song);
-
+            playTrack(obj.tracks.data[i].id);
             //Elemento volume player
-
-            document.getElementById("range").oninput = function () {
-              let value = ((this.value - this.min) / (this.max - this.min)) * 100;
-              this.style.background =
-                "linear-gradient(to right, green 0%, green " + value + "%, #535353 " + value + "%, #535353 100%)";
-
-              document.getElementById("range").addEventListener("mouseleave", () => {
-                value = ((this.value - this.min) / (this.max - this.min)) * 100;
-                this.style.background =
-                  "linear-gradient(to right, white 0%, white " + value + "%, #535353 " + value + "%, #535353 100%)";
-              });
-              //manipolazione volume utente
-              const player = document.querySelector("audio");
-              const volumeSlider = document.querySelector("#range");
-
-              volumeSlider.addEventListener("input", function () {
-                let dato;
-                dato = (this.value / 100).toFixed(1);
-                player.volume = dato;
-              });
-            };
           });
           const tracceSel = document.getElementsByClassName("hov");
           const plusPiu = document.getElementsByClassName("plusPiu");
