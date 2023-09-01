@@ -83,10 +83,14 @@ window.onload = async event => {
         const tracce = document.getElementsByClassName("tracce");
         for (let i = 0; i < obj.tracks.data.length; i++) {
           const titolo = obj.tracks.data[i].title;
+          localStorage.setItem(titolo, obj.tracks.data[i].id);
           const durata = obj.tracks.data[i].duration;
           const durataConvertita = (Math.round((durata / 60) * 100) / 100).toString().replace(".", ":");
           //Gestione Separata per risultati con durata che termina con 0 e non
           if (durataConvertita.length === 3) {
+            console.log("durataconvertita", titolo);
+            console.log("durataconvertita", obj.tracks.data[i].id);
+            console.log("i if", i);
             const convertito = durataConvertita + "0";
             const row = document.createElement("div");
             row.classList.add("row", "g-3", "my-2", "hov");
@@ -121,12 +125,10 @@ window.onload = async event => {
           }
           //Fine if else
           //i play e le tracce riproducono traccia selezionata
+
           const traccePlay = document.getElementsByClassName("rip");
           traccePlay[i].addEventListener("click", event => {
-            const canzone = document.querySelector(".canzone");
-            img[2].src = `${obj.tracks.data[i].album.cover}`;
-            canzone.innerHTML = `${event.target.innerHTML}`;
-            playTrack(obj.tracks.data[i].id);
+            playTrack(localStorage.getItem(event.target.innerHTML));
           });
           const tracceSel = document.getElementsByClassName("hov");
           const plusPiu = document.getElementsByClassName("plusPiu");
