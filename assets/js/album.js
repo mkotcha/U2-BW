@@ -74,9 +74,9 @@ window.onload = async event => {
         anno[1].innerHTML = `${obj.release_date.slice(0, 4)} `;
         dtracce[0].innerHTML = `${(Math.floor((obj.duration / 60) * 100) / 100).toString().replace(".", " min ")} sec.`;
         const media = document.getElementsByClassName("media");
-        media[0].style.background = "linear-gradient(to bottom, #090909 0%, #2e2e2e 100%)";
-        media[1].style.background = "linear-gradient(to bottom, #2e2e2e 0%, #4e4e4e 100%)";
-        media[2].style.background = "linear-gradient(to bottom, #4e4e4e 0%, #535353 100%)";
+        media[0].style.background = "linear-gradient(to bottom, #090909 0%, #0f0f0f 100%)";
+        media[1].style.background = "linear-gradient(to bottom, #0f0f0f 0%, #1f1f1f 100%)";
+        media[2].style.background = "linear-gradient(to bottom, #1f1f1f 0%, #0f0f0f 100%)";
 
         console.log(media);
         //CREAZIONE TRACCE e relati eventi e dettagli(cuore e pallini)
