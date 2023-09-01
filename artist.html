@@ -101,22 +101,29 @@
                   <h3 class="fw-bold text-white">Selezione dell'artista</h3>
                   <div class="d-flex">
                     <a id="artist-album-link" href="#">
-                      <img id="artist-album-image" src="./assets/imgs/main/image-1.jpg" class="me-3" width="88" />
+                      <img
+                        id="artist-album-image"
+                        class="rounded-3 me-3"
+                        src="./assets/imgs/main/image-1.jpg"
+                        width="100"
+                      />
                     </a>
                     <div>
-                      <div class="mb-2">
+                      <div class="mb-2 text-truncate">
                         <img
                           id="artist-icon"
                           src="./assets/imgs/main/image-1.jpg"
                           class="rounded-circle me-2"
                           width="24"
                         />
-                        <span>Pubblicato da <span id="artist-name">Artista</span></span>
+                        <span class="">Pubblicato da <span id="artist-name">Artista</span></span>
                       </div>
                       <div>
-                        <a id="artist-album-title" href="#" class="fs-5 text-white fw-bold text-decoration-none"
-                          >Nome Album</a
-                        >
+                        <p>
+                          <a id="artist-album-title" href="#" class="fs-5 text-white fw-bold text-decoration-none"
+                            >Nome Album</a
+                          >
+                        </p>
                       </div>
                       <div>Playlist</div>
                     </div>
@@ -144,27 +151,16 @@
                   <input type="radio" class="btn-check" name="options-outlined" id="singoli-ed-ep" autocomplete="off" />
                   <label class="btn btn-dark border-0 me-2" for="singoli-ed-ep">Singoli ed EP</label>
                 </div>
-                <div class="row row-cols-4 g-4 recent-list row-list">
+                <div id="card-append" class="row row-cols-4 g-4 recent-list row-list">
                   <!-- ! JS -->
                 </div>
               </div>
-              <div class="hero-test">
-                <div class="d-flex mt-5 mb-4 align-items-center justify-content-between">
-                  <h3 class="fw-bold text-white">Con <span id="artist-name">Nome Artista</span></h3>
-                  <div class="fw-bold fs-6"><a href="#" class="text-decoration-none">Mostra tutto</a></div>
-                </div>
 
-                <div class="hero-test">
-                  <div class="row row-cols-4 g-4 show-list row-list">
-                    <!-- ! JS -->
-                  </div>
-                </div>
-              </div>
-
-              <!-- <footer>
-                  <div class="d-flex mt-5">
-                    <div class="d-flex border-bottom flex-grow-1">
-                      <div class="px-5">
+              <footer>
+                <div class="d-flex mt-5">
+                  <div class="d-flex border-bottom flex-grow-1">
+                    <div class="d-flex flex-wrap">
+                      <div class="pe-5 mb-3">
                         <h5 class="fs-6">Azienda</h5>
                         <ul class="p-0 list-unstyled">
                           <li class="mt-2">
@@ -179,7 +175,7 @@
                         </ul>
                       </div>
 
-                      <div class="ms-3 pe-5 me-5">
+                      <div class="pe-5 me-5 mb-3">
                         <h5 class="fs-6">Community</h5>
                         <ul class="p-0 list-unstyled">
                           <li class="mt-2">
@@ -199,7 +195,7 @@
                           </li>
                         </ul>
                       </div>
-                      <div class="px-5 ms-5">
+                      <div class="pe-5 me-5 mb-3">
                         <h5 class="fs-6">Link utili</h5>
                         <ul class="p-0 list-unstyled">
                           <li class="mt-2">
@@ -213,31 +209,32 @@
                           </li>
                         </ul>
                       </div>
-                      <div class="flex-grow-1 text-end me-3 d-flex justify-content-end">
-                        <div class="box bg-dark d-flex justify-content-center align-items-center">
-                          <i class="bi bi-instagram d-block"></i>
-                        </div>
-                        <div class="box bg-dark d-flex justify-content-center align-items-center mx-3">
-                          <i class="bi bi-twitter d-block"></i>
-                        </div>
-                        <div class="box bg-dark d-flex justify-content-center align-items-center">
-                          <i class="bi bi-facebook d-block"></i>
-                        </div>
+                    </div>
+                    <div class="flex-grow-1 text-end me-3 d-flex justify-content-end">
+                      <div class="box bg-dark d-flex justify-content-center align-items-center">
+                        <i class="bi bi-instagram d-block"></i>
+                      </div>
+                      <div class="box bg-dark d-flex justify-content-center align-items-center mx-3">
+                        <i class="bi bi-twitter d-block"></i>
+                      </div>
+                      <div class="box bg-dark d-flex justify-content-center align-items-center">
+                        <i class="bi bi-facebook d-block"></i>
                       </div>
                     </div>
                   </div>
-                  <div class="d-flex justify-content-between my-5 mx-3">
-                    <div class="d-flex flex-wrap w-75">
-                      <a href="" class="text-decoration-none">Informazioni legali</a>
-                      <a href="" class="text-decoration-none mx-2">Centro sulla privacy</a>
-                      <a href="" class="text-decoration-none mx-2">Informativa sulla privacy</a>
-                      <a href="" class="text-decoration-none mx-2">Impostazioni cookie</a>
-                      <a href="" class="text-decoration-none ms-2">Info annunci</a>
-                      <a href="" class="text-decoration-none">Accessibilità</a>
-                    </div>
-                    <a href="" class="text-decoration-none text-white">© 2023 Spotify AB</a>
+                </div>
+                <div class="d-flex justify-content-between my-5 mx-3">
+                  <div class="d-flex flex-wrap w-75">
+                    <a href="" class="text-decoration-none">Informazioni legali</a>
+                    <a href="" class="text-decoration-none mx-2">Centro sulla privacy</a>
+                    <a href="" class="text-decoration-none mx-2">Informativa sulla privacy</a>
+                    <a href="" class="text-decoration-none mx-2">Impostazioni cookie</a>
+                    <a href="" class="text-decoration-none ms-2">Info annunci</a>
+                    <a href="" class="text-decoration-none ms-2">Accessibilità</a>
                   </div>
-                </footer> -->
+                  <a href="" class="text-decoration-none">© 2023 Spotify AB</a>
+                </div>
+              </footer>
             </div>
           </div>
         </main>
@@ -257,7 +254,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="assets/js/script.js"></script>
-    <script src="./assets/js/artist.js"></script>
     <script src="./assets/js/index.js"></script>
+    <script src="./assets/js/artist.js"></script>
   </body>
 </html>
