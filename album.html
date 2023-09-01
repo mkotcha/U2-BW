@@ -26,7 +26,7 @@
             class="home-hero-container overflow-y-scroll overflow-x-hidden h-100 rounded-4 position-relative"
             id="scrollo">
             <!-- BARRA STICKY -->
-            <div class="home-hero-nav sticky-top bg-primary w-100">
+            <div class="home-hero-nav sticky-top media w-100">
               <div class="d-flex gap-2">
                 <div class="box bg-dark d-flex justify-content-center align-items-center">
                   <i class="bi bi-chevron-left"></i>
@@ -34,22 +34,29 @@
                 <div class="box bg-dark d-flex justify-content-center align-items-center mx-3">
                   <i class="bi bi-chevron-right"></i>
                 </div>
-                <!-- bottone play da fare apparire -->
+                <!-- bottone play appare -->
                 <div
-                  class="play-background d-flex justify-content-center align-items-center appare"
+                  class="play-background d-flex justify-content-center rip align-items-center appare"
                   style="opacity: 0">
                   <i class="bi bi-play-fill text-black fs-3"></i>
                 </div>
                 <!--  -->
                 <div class="flex-grow-1"></div>
-                <button class="btn btn-dark btn-head">Iscriviti</button>
-                <button class="btn btn-dark btn-head">Accedi</button>
+                <button class="btn btn-dark btn-head">Esplora premium</button>
+                <button class="btn btn-dark btn-head">Installa app</button>
+                <img
+                  src="https://images.unsplash.com/photo-1692592333941-14791e29fea5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+                  alt=""
+                  width="50px"
+                  class="pro" />
               </div>
             </div>
             <!-- fine barrasticky -->
 
             <!-- Inizio dettaglio Album -->
-            <div class="d-flex align-items-end px-4 py-2">
+            <div
+              class="d-flex align-items-end media px-4 pb-5"
+              style="height: 380px">
               <!-- classe img-album per largh. image 200px -->
               <img
                 src=""
@@ -57,37 +64,35 @@
                 alt="" />
               <div class="d-inline-block m-4">
                 <span>Album</span>
-                <h1 class="titolo-album">Nome Album</h1>
+                <h1 class="titolo-album"></h1>
                 <div class="d-flex align-items-center gap-2">
                   <!-- classe per mini thumbnail -->
                   <img
                     alt=""
                     class="rounded-circle img-album"
                     style="height: 20px; width: 20px" />
-
-                  <span class="artist">artista/</span><span class="year">data/</span>
-                  <span class="ntracks">n brani/</span>
-                  <span class="dtracks">durata</span>
+                  <span class="artist"></span><span class="year"></span>
+                  <span class="ntracks"></span>
+                  <span class="dtracks"></span>
                 </div>
               </div>
             </div>
             <!-- fine dettaglio album -->
-            <div>
-              <div class="d-flex align-items-center gap-4 px-4 my-4">
-                <!-- bottoni -->
+            <div class="">
+              <div class="d-flex align-items-center media gap-4 px-4">
+                <!-- play button heart e dot -->
                 <div
-                  class="play-background d-flex justify-content-center align-items-center scompare"
+                  class="play-background d-flex justify-content-center rip z-1 mb-3 align-items-center scompare"
                   style="top: 50px">
                   <i class="bi bi-play-fill text-black fs-3"></i>
                 </div>
-                <!-- fine da fare scomparire -->
-                <i class="bi bi-heart fs-4"></i>
-                <i class="bi bi-three-dots fs-4"></i>
+                <i class="bi bi-heart fs-4 cuori"></i>
+                <i class="bi bi-three-dots fs-4 punti"></i>
               </div>
-              <!-- Creazione elementi traccia xjs il pirmo è quello di riferimento-->
-              <div class="d-flex flex-column bg-primary px-5 tracce">
+              <!-- Creazione elementi traccia xjs il primo è quello di riferimento-->
+              <div class="d-flex flex-column px-5 bg-primary tracce">
                 <div
-                  class="row g-3 border-bottom bg-primary z-0 sticky-top mb-2"
+                  class="row g-3 border-bottom z-0 sticky-top bg-primary mb-2 mt-1"
                   style="top: 78px">
                   <div
                     class="col-1 p-0 ps-2"
@@ -117,9 +122,7 @@
                 <div class="col-12">
                   <span
                     class="copyright-label"
-                    style="font-size: 1em; font-weight: lighter"
-                    >©</span
-                  >
+                    style="font-size: 1em; font-weight: lighter"></span>
                 </div>
               </div>
               <!-- Altro Artista -->
@@ -127,12 +130,12 @@
                 <div class="d-flex justify-content-between">
                   <h3>Altro di <span class="artist"></span></h3>
                   <a
-                    href=""
+                    href="#"
                     class="text-decoration-none">
                     VEDI DISCOGRAFIA</a
                   >
                 </div>
-                <!-- CARDS -->
+                <!-- CARDS Album -->
                 <div
                   class="row row-cols-9 g-4 recent-list row-list"
                   id="card-append">
@@ -140,7 +143,7 @@
                 </div>
               </div>
             </div>
-            <!-- Fine dettagli album -->
+            <!-- Fine altri album -->
             <footer>
               <div class="d-flex mt-5">
                 <div class="d-flex border-bottom flex-grow-1">

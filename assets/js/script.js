@@ -58,7 +58,7 @@ async function queryTrack(id) {
   }
 }
 
-const printCard = (elm, data) => {
+async function printCard(elm, data) {
   for (let i = 0; i < maxCard; i++) {
     const col = document.createElement("div");
     col.classList = "col col-hidable";
@@ -72,9 +72,10 @@ const printCard = (elm, data) => {
     img.alt = data.tracks.data[i].album.title + " cover";
     const title = document.createElement("p");
     title.classList = "fs-6 fw-bold m-0 mb-1 text-truncate";
-    const titleLink = document.createElement("a");
-    titleLink.classList = "text-reset text-decoration-none text-truncate";
-    titleLink.href = "track.html?id=" + data.tracks.data[i].id;
+    const titleLink = document.createElement("span");
+    titleLink.classList = "play-track";
+    // titleLink.href = "track.html?id=" + data.tracks.data[i].id;
+    titleLink.addEventListener("click", event => playTrack(data.tracks.data[i].id));
     titleLink.innerText = data.tracks.data[i].title;
     const artist = document.createElement("p");
     artist.classList = "fs-6 fw-bold m-0 mb-1 text-truncate";
@@ -82,6 +83,154 @@ const printCard = (elm, data) => {
     artistLink.classList = "text-decoration-none";
     artistLink.href = "artist.html?id=" + data.tracks.data[i].artist.name;
     artistLink.innerText = data.tracks.data[i].artist.name;
+
+    albumLink.appendChild(img);
+    card.appendChild(albumLink);
+    title.appendChild(titleLink);
+    card.appendChild(title);
+    artist.appendChild(artistLink);
+    card.appendChild(artist);
+    col.appendChild(card);
+    elm.appendChild(col);
+  }
+}
+
+const printCardq = (elm, data) => {
+  for (let i = 0; i < maxCard; i++) {
+    const col = document.createElement("div");
+    col.classList = "col col-hidable";
+    const card = document.createElement("div");
+    card.classList = "home-card rounded-2 d-flex flex-column p-3 h-100";
+    const albumLink = document.createElement("a");
+    albumLink.href = "album.html?id=" + data[i].album.id;
+    const img = document.createElement("img");
+    img.classList = "rounded-2 mb-3 w-100";
+    img.src = data[i].album.cover_medium;
+    img.alt = data[i].album.title + " cover";
+    const title = document.createElement("p");
+    title.classList = "fs-6 fw-bold m-0 mb-1 text-truncate";
+    const titleLink = document.createElement("span");
+    titleLink.classList = "play-track";
+    // titleLink.href = "track.html?id=" + data.tracks.data[i].id;
+    titleLink.addEventListener("click", event => playTrack(data[i].id));
+    titleLink.innerText = data[i].title;
+    const artist = document.createElement("p");
+    artist.classList = "fs-6 fw-bold m-0 mb-1 text-truncate";
+    const artistLink = document.createElement("a");
+    artistLink.classList = "text-decoration-none";
+    artistLink.href = "artist.html?id=" + data[i].artist.name;
+    artistLink.innerText = data[i].artist.name;
+
+    albumLink.appendChild(img);
+    card.appendChild(albumLink);
+    title.appendChild(titleLink);
+    card.appendChild(title);
+    artist.appendChild(artistLink);
+    card.appendChild(artist);
+    col.appendChild(card);
+    elm.appendChild(col);
+  }
+};
+
+const printCardp = (elm, data) => {
+  for (let i = 0; i < maxCard; i++) {
+    const col = document.createElement("div");
+    col.classList = "col col-hidable";
+    const card = document.createElement("div");
+    card.classList = "home-card rounded-2 d-flex flex-column p-3 h-100";
+    const albumLink = document.createElement("a");
+    albumLink.href = "album.html?id=" + data[i].id;
+    const img = document.createElement("img");
+    img.classList = "rounded-2 mb-3 w-100";
+    img.src = data[i].picture_medium;
+    img.alt = data[i].title + " cover";
+    const title = document.createElement("p");
+    title.classList = "fs-6 fw-bold m-0 mb-1 text-truncate";
+    const titleLink = document.createElement("span");
+    titleLink.classList = "play-track";
+    // titleLink.href = "track.html?id=" + data.tracks.data[i].id;
+    // titleLink.addEventListener("click", event => playTrack(data[i].id));
+    titleLink.innerText = data[i].title;
+    const artist = document.createElement("p");
+    artist.classList = "fs-6 fw-bold m-0 mb-1 text-truncate";
+    const artistLink = document.createElement("a");
+    artistLink.classList = "text-decoration-none";
+    artistLink.href = "index.htm";
+    artistLink.innerText = "Playlist";
+
+    albumLink.appendChild(img);
+    card.appendChild(albumLink);
+    title.appendChild(titleLink);
+    card.appendChild(title);
+    artist.appendChild(artistLink);
+    card.appendChild(artist);
+    col.appendChild(card);
+    elm.appendChild(col);
+  }
+};
+
+const printCarda = (elm, data) => {
+  for (let i = 0; i < maxCard; i++) {
+    const col = document.createElement("div");
+    col.classList = "col col-hidable";
+    const card = document.createElement("div");
+    card.classList = "home-card rounded-2 d-flex flex-column p-3 h-100";
+    const albumLink = document.createElement("a");
+    albumLink.href = "album.html?id=" + data[i].id;
+    const img = document.createElement("img");
+    img.classList = "rounded-2 mb-3 w-100";
+    img.src = data[i].cover_medium;
+    img.alt = data[i].title + " cover";
+    const title = document.createElement("p");
+    title.classList = "fs-6 fw-bold m-0 mb-1 text-truncate";
+    const titleLink = document.createElement("span");
+    titleLink.classList = "play-track";
+    // titleLink.href = "track.html?id=" + data.tracks.data[i].id;
+    // titleLink.addEventListener("click", event => playTrack(data[i].id));
+    titleLink.innerText = data[i].title;
+    const artist = document.createElement("p");
+    artist.classList = "fs-6 fw-bold m-0 mb-1 text-truncate";
+    const artistLink = document.createElement("a");
+    artistLink.classList = "text-decoration-none";
+    artistLink.href = "artist.html?id=" + data[i].artist.name;
+    artistLink.innerText = data[i].artist.name;
+
+    albumLink.appendChild(img);
+    card.appendChild(albumLink);
+    title.appendChild(titleLink);
+    card.appendChild(title);
+    artist.appendChild(artistLink);
+    card.appendChild(artist);
+    col.appendChild(card);
+    elm.appendChild(col);
+  }
+};
+
+const printCardArtist = (elm, data) => {
+  for (let i = 0; i < maxCard; i++) {
+    const col = document.createElement("div");
+    col.classList = "col col-hidable";
+    const card = document.createElement("div");
+    card.classList = "home-card rounded-2 d-flex flex-column p-3 h-100";
+    const albumLink = document.createElement("a");
+    albumLink.href = "artist.htm?id=" + data[i].name;
+    const img = document.createElement("img");
+    img.classList = "rounded-2 mb-3 w-100";
+    img.src = data[i].picture_medium;
+    img.alt = data[i].name + " artist";
+    const title = document.createElement("p");
+    title.classList = "fs-6 fw-bold m-0 mb-1 text-truncate";
+    const titleLink = document.createElement("span");
+    titleLink.classList = "play-track";
+    // titleLink.href = "track.html?id=" + data.tracks.data[i].id;
+    // titleLink.addEventListener("click", event => playTrack(data[i].id));
+    // titleLink.innerText = data[i].title;
+    const artist = document.createElement("p");
+    artist.classList = "fs-6 fw-bold m-0 mb-1 text-truncate";
+    const artistLink = document.createElement("a");
+    artistLink.classList = "text-decoration-none";
+    artistLink.href = "artist.htm?id=" + data[i].name;
+    artistLink.innerText = data[i].name;
 
     albumLink.appendChild(img);
     card.appendChild(albumLink);
@@ -109,8 +258,8 @@ const printSideCard = track => {
                         <img class="" src="${track.album.cover_medium}" alt="" /></a>
                       <div class="ps-3 fs-6 flex-shrink-1 text-truncate d-none d-lg-block">
                         <p class="fw-bold m-0 text-truncate">
-                        <a href="track.html?id=${track.id}" class="text-reset text-decoration-none">
-                          ${track.title}</a></p>
+                        <span onclick="playTrack(${track.id})" class="play-track">
+                          ${track.title}</span></p>
                         <p class="text-body-secondary m-0">
                           <i class="bi bi-pin-angle text-success d-none"></i> 
                           <span class="category">
@@ -245,6 +394,58 @@ async function initAudio(data) {
     document.getElementById("elapsed-time").innerText =
       "00:" + parseInt(audioElm.currentTime).toString().padStart(2, "0");
   });
+  document.getElementById("range").oninput = function () {
+    let value = ((this.value - this.min) / (this.max - this.min)) * 100;
+    this.style.background =
+      "linear-gradient(to right, green 0%, green " + value + "%, #535353 " + value + "%, #535353 100%)";
+
+    document.getElementById("range").addEventListener("mouseleave", () => {
+      value = ((this.value - this.min) / (this.max - this.min)) * 100;
+      this.style.background =
+        "linear-gradient(to right, white 0%, white " + value + "%, #535353 " + value + "%, #535353 100%)";
+    });
+    //manipolazione volume utente
+    const player = document.querySelector("audio");
+    const volumeSlider = document.querySelector("#range");
+
+    volumeSlider.addEventListener("input", function () {
+      let dato;
+      dato = (this.value / 100).toFixed(1);
+      player.volume = dato;
+    });
+  };
+
+  document.getElementById("player-img").src = track.album.cover_medium;
+  document.getElementById("player-title").innerText = track.title;
+  document.getElementById("player-artist").innerText = track.artist.name;
+}
+
+async function playTrack(id) {
+  let nowPlaing = localStorage.getItem("nowPlaing") ? localStorage.getItem("nowPlaing") : id;
+  let history = [];
+  if (localStorage.getItem("history")) {
+    history = JSON.parse(localStorage.getItem("history"));
+  } else {
+    history.push(nowPlaing);
+  }
+  const audioElm = document.querySelector("audio");
+  const playButton = document.getElementById("play-button-player");
+  const track = await queryTrack(id);
+  audioElm.src = track.preview;
+  if (playButton.dataset.playing === "false") {
+    audioElm.play();
+    playButton.dataset.playing = "true";
+  } else {
+    audioElm.play();
+  }
+
+  document.getElementById("player-img").src = track.album.cover_medium;
+  document.getElementById("player-title").innerText = track.title;
+  document.getElementById("player-artist").innerText = track.artist.name;
+
+  history.push(nowPlaing);
+  localStorage.setItem("nowPlaing", nowPlaing);
+  localStorage.setItem("history", JSON.stringify(history));
 }
 
 function getAverageRGB(imgEl) {
@@ -272,9 +473,7 @@ function getAverageRGB(imgEl) {
   try {
     data = context.getImageData(0, 0, width, height);
   } catch (e) {
-    /* security error, img on diff domain */
-    console.log("diff domain");
-
+    console.log("dif domain?", e);
     return defaultRGB;
   }
   length = data.data.length;
@@ -293,3 +492,13 @@ function getAverageRGB(imgEl) {
 
   return rgb;
 }
+
+const setTopBg = event => {
+  let scroll = document.querySelector(".home-hero-container").scrollTop;
+  const bar = document.querySelector(".home-hero-nav");
+  if (scroll > 10) {
+    bar.classList.add("bg-primary");
+  } else {
+    bar.classList.remove("bg-primary");
+  }
+};
