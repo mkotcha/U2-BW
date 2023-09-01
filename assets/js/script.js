@@ -31,7 +31,7 @@ const url = "https://deezerdevs-deezer.p.rapidapi.com/";
 const options = {
   method: "GET",
   headers: {
-    "X-RapidAPI-Key": "e13be1f8d2msha90dfa9e08e83f5p16dc04jsn33020578052c",
+    "X-RapidAPI-Key": "4ba7a35e2emsh5b7d70d861796cbp1d1951jsnc270044357e6",
     "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
   },
 };
@@ -356,7 +356,7 @@ function compareSecondColumn(a, b) {
 async function initAudio(data) {
   document.getElementById("player").innerHTML += data;
   const audioElm = document.querySelector("audio");
-  let nowPlaing = localStorage.getItem("nowPlaing") ? localStorage.getItem("nowPlaing") : 2299840635;
+  let nowPlaing = localStorage.getItem("nowPlaing") ? localStorage.getItem("nowPlaing") : 104731108;
   const track = await queryTrack(nowPlaing);
   audioElm.src = track.preview;
   const audioContext = new AudioContext();
@@ -444,7 +444,7 @@ async function playTrack(id) {
   document.getElementById("player-artist").innerText = track.artist.name;
 
   history.push(nowPlaing);
-  localStorage.setItem("nowPlaing", nowPlaing);
+  localStorage.setItem("nowPlaing", id);
   localStorage.setItem("history", JSON.stringify(history));
 }
 
@@ -496,9 +496,13 @@ function getAverageRGB(imgEl) {
 const setTopBg = event => {
   let scroll = document.querySelector(".home-hero-container").scrollTop;
   const bar = document.querySelector(".home-hero-nav");
-  if (scroll > 10) {
+
+  if (scroll > 200) {
     bar.classList.add("bg-primary");
   } else {
     bar.classList.remove("bg-primary");
   }
 };
+
+// Aggiungi un gestore di eventi al tuo elemento di scorrimento
+document.querySelector(".home-hero-container").addEventListener("scroll", setTopBg);
