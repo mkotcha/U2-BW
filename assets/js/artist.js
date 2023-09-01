@@ -135,6 +135,23 @@ async function fetchArtistData() {
     
   `;
 
+      //FUNZIONE PER LO SFONDO DELLE CANZONI
+      function handleSongClick(songContainer) {
+        const allSongContainers = document.querySelectorAll(".artist-list-items-container");
+        allSongContainers.forEach(container => {
+          container.classList.remove("selected-song");
+        });
+
+        songContainer.classList.add("selected-song");
+      }
+
+      const allSongContainers = document.querySelectorAll(".artist-list-items-container");
+      allSongContainers.forEach(container => {
+        container.addEventListener("click", () => {
+          handleSongClick(container);
+        });
+      });
+
       //SOSTITUISCO I NUMERI CON L'ICONA PLAY
 
       const songNumberContainer = listItem.querySelector(".song-number");
