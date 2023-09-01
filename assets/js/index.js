@@ -20,4 +20,5 @@ window.onload = async function () {
   sidebarSelectorList.forEach(elm => {
     elm.addEventListener("click", sidebarSelection);
   });
+  document.querySelector(".home-hero-container").addEventListener("scroll", setTopBg);
 };

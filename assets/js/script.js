@@ -492,3 +492,13 @@ function getAverageRGB(imgEl) {
 
   return rgb;
 }
+
+const setTopBg = event => {
+  let scroll = document.querySelector(".home-hero-container").scrollTop;
+  const bar = document.querySelector(".home-hero-nav");
+  if (scroll > 10) {
+    bar.classList.add("bg-primary");
+  } else {
+    bar.classList.remove("bg-primary");
+  }
+};
