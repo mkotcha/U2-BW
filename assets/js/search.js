@@ -1,6 +1,6 @@
 const qrId = new URLSearchParams(window.location.search).get("q");
 
-const deezerUrl = "https://api.deezer.com /";
+const deezerUrl = "https://api.deezer.com/";
 const deezerOptions = {
   mode: "cors",
   headers: {
@@ -19,27 +19,27 @@ window.onload = async function () {
   if (qrId) {
     document.getElementById("search-discover").classList.add("d-none");
     document.getElementById("query-result").classList.remove("d-none");
-    // queryResp = await query("search?q=" + qrId);
-    // queryResp = queryResp.data;
-    // printResult();
+    queryResp = await query("search?q=" + qrId);
+    queryResp = queryResp.data;
+    printResult();
 
-    // const elm = document.querySelector(".track-result");
-    // printCardq(elm, queryResp);
+    const elm = document.querySelector(".track-result");
+    printCardq(elm, queryResp);
 
-    // queryRespPlay = await deezerQuery("search/playlist?q=" + qrId);
-    // queryRespPlay = queryRespPlay.data;
-    // const elmP = document.querySelector(".playlist-result");
-    // printCardp(elmP, queryRespPlay);
+    queryRespPlay = await deezerQuery("search/playlist?q=" + qrId);
+    queryRespPlay = queryRespPlay.data;
+    const elmP = document.querySelector(".playlist-result");
+    printCardp(elmP, queryRespPlay);
 
-    // queryRespAlb = await deezerQuery("search/album?q=" + qrId);
-    // queryRespAlb = queryRespAlb.data;
-    // const elmA = document.querySelector(".album-result");
-    // printCarda(elmA, queryRespAlb);
+    queryRespAlb = await deezerQuery("search/album?q=" + qrId);
+    queryRespAlb = queryRespAlb.data;
+    const elmA = document.querySelector(".album-result");
+    printCarda(elmA, queryRespAlb);
 
-    // queryRespArt = await deezerQuery("search/artist?q=" + qrId);
-    // queryRespArt = queryRespArt.data;
-    // const elmAr = document.querySelector(".artist-result");
-    // printCardArtist(elmAr, queryRespArt);
+    queryRespArt = await deezerQuery("search/artist?q=" + qrId);
+    queryRespArt = queryRespArt.data;
+    const elmAr = document.querySelector(".artist-result");
+    printCardArtist(elmAr, queryRespArt);
   } else {
     printDiscover();
   }
@@ -52,11 +52,28 @@ async function search(event) {
   document.getElementById("search-discover").classList.add("d-none");
   document.getElementById("query-result").classList.remove("d-none");
   const qrStr = event.target.query.value;
-  queryResp = await query("search?q=" + qrStr);
+  queryResp = await query("search?q=" + qrId);
   queryResp = queryResp.data;
   printResult();
+
   const elm = document.querySelector(".track-result");
   printCardq(elm, queryResp);
+
+  queryRespPlay = await deezerQuery("search/playlist?q=" + qrId);
+  queryRespPlay = queryRespPlay.data;
+  const elmP = document.querySelector(".playlist-result");
+  printCardp(elmP, queryRespPlay);
+
+  queryRespAlb = await deezerQuery("search/album?q=" + qrId);
+  queryRespAlb = queryRespAlb.data;
+  const elmA = document.querySelector(".album-result");
+  printCarda(elmA, queryRespAlb);
+
+  queryRespArt = await deezerQuery("search/artist?q=" + qrId);
+  queryRespArt = queryRespArt.data;
+  const elmAr = document.querySelector(".artist-result");
+  printCardArtist(elmAr, queryRespArt);
+  hideCard();
 }
 
 const printResult = () => {

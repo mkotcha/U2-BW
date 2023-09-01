@@ -414,6 +414,10 @@ async function initAudio(data) {
       player.volume = dato;
     });
   };
+
+  document.getElementById("player-img").src = track.album.cover_medium;
+  document.getElementById("player-title").innerText = track.title;
+  document.getElementById("player-artist").innerText = track.artist.name;
 }
 
 async function playTrack(id) {
@@ -434,6 +438,10 @@ async function playTrack(id) {
   } else {
     audioElm.play();
   }
+
+  document.getElementById("player-img").src = track.album.cover_medium;
+  document.getElementById("player-title").innerText = track.title;
+  document.getElementById("player-artist").innerText = track.artist.name;
 
   history.push(nowPlaing);
   localStorage.setItem("nowPlaing", nowPlaing);
