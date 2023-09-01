@@ -15,24 +15,34 @@
           <main class="flex-grow-1">
             <div class="d-flex flex-column bg-primary overflow-y-scroll h-100 rounded-4">
               <div class="search-hero-nav sticky-top bg-primary py-2 ps-4 pe-2">
+                <div class="mt-2 d-sm-none">
+                  <h2>Cerca</h2>
+                </div>
+
                 <div class="d-flex gap-2 align-items-center">
-                  <button class="btn btn-primary btn-sm"><i class="bi bi-chevron-left"></i></button>
-                  <button class="btn btn-primary btn-sm me-auto"><i class="bi bi-chevron-right"></i></button>
+                  <button class="btn btn-nero btn-sm d-none d-lg-block">
+                    <i class="bi bi-chevron-left"></i>
+                  </button>
+                  <button class="btn btn-nero btn-sm me-auto d-none d-lg-block">
+                    <i class="bi bi-chevron-right"></i>
+                  </button>
                   <form action="">
-                  <div class="input-group input-group-lg flex-nowrap">
-                    <span class="input-group-text search-box" id="addon-wrapping"><i class="bi bi-search"></i></span>
-                    
+                    <div class="input-group input-group-lg flex-nowrap">
+                      <span class="input-group-text search-box bg-forth" id="addon-wrapping">
+                        <i class="bi bi-search"></i>
+                      </span>
                       <input
                         type="text"
-                        class="form-control search-box"
+                        id="query"
+                        class="form-control search-box bg-forth"
                         placeholder="Cosa stai cercando?"
                         aria-label="Cosa stai cercando?"
                         aria-describedby="addon-wrapping" />
-                    </form>
-                  </div>
+                    </div>
+                  </form>
                   <div class="flex-grow-1"></div>
-                  <button class="btn btn-light btn-sm text-nowrap">Esplora Premium</button>
-                  <button class="btn btn-primary btn-sm text-nowrap">
+                  <button class="btn btn-light btn-sm text-nowrap d-none d-lg-block">Esplora Premium</button>
+                  <button class="btn btn-primary btn-sm text-nowrap d-none d-lg-block">
                     <i class="bi bi-box-arrow-down me-2"></i>Installa App
                   </button>
                   <a href="#" class="">
@@ -40,11 +50,49 @@
                   </a>
                 </div>
               </div>
+
               <div class="ps-4 pe-2 pb-0">
-                <div class="">
-                  <h3 class="mb-4 fw-bold">Sfoglia tutto</h3>
+                <div id="query-result" class="d-none">
+                  <div id="result-selector" class="my-3 d-flex gap-2 d-none d-lg-block">
+                    <button class="btn btn-light btn-sm">Tutto</button>
+                    <button class="btn btn-secondary btn-sm">Artisti</button>
+                    <button class="btn btn-secondary btn-sm">PlayList</button>
+                    <button class="btn btn-secondary btn-sm">Brani</button>
+                    <button class="btn btn-secondary btn-sm">Album</button>
+                  </div>
+
+                  <div class="d-flex">
+                    <div class="d-flex flex-column mt-4">
+                      <h3>Risultato più rilevante</h3>
+                      <div id="search-artist-box" class="d-flex flex-column p-3 rounded-2 my-3 bg-tertiary">
+                        <img src="assets/imgs/main/image-3.jpg" alt="" class="rounded-circle" />
+                        <h2 class="mt-4 fw-bold">Artist Name</h2>
+                        <div><a class="btn btn-primary btn-sm">Artista</a></div>
+                      </div>
+                    </div>
+                    <div class="flex-grow-1 d-none d-lg-block">
+                      <div id="search-artist-side-box" class="d-flex flex-column ps-4 mt-4">
+                        <h3>Brani</h3>
+                        <div class="d-flex flex-column my-3 p-2">
+                          <div class="d-flex">
+                            <img src="assets/imgs/search/image-13.jpeg" alt="" class="" />
+                            <div class="d-flex flex-column ps-2 me-auto">
+                              <p><a href="" class="text-reset text-decoration-none">Title</a></p>
+                              <p class="fs-7">
+                                <a href="" class="text-decoration-none text-sub">Artist</a>
+                              </p>
+                            </div>
+                            <p class="text-sub">duration</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="row row-cols-4 row-list search-view-container g-2"></div>
+                <div id="search-discover">
+                  <h3 class="my-4 fw-bold">Sfoglia tutto</h3>
+                  <div class="row row-cols-4 row-list search-view-container g-2"></div>
+                </div>
               </div>
             </div>
           </main>

@@ -38,7 +38,6 @@ span.search-box {
 }
 
 .home-hero-container {
-  background-color: #535353;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6) 0, #121212 30%);
 }
 
@@ -63,42 +62,21 @@ span.search-box {
 .img-album {
   width: 200px;
 }
-input {
-  // border-radius: 20px;
-  // height: 6px;
 
-  // appearance: none;
-}
-#range::-webkit-slider-thumb {
-  appearance: initial;
-  width: 6px;
+#range {
+  overflow: hidden;
+  background: linear-gradient(to right, white 0%, white 100%, $sixth 0%, $sixth 100%);
+  border: none;
+  accent-color: white;
+  border-radius: 20px;
   height: 6px;
-  background: white;
-  border-radius: 50%;
-  cursor: pointer;
-}
-#range::-webkit-slider-runnable-track {
-  // background: white;
-}
-#range::-webkit-slider-thumb:hover {
-  content: "";
-  background: green;
-  width: 15px;
-  height: 15px;
-}
-#range::before {
-  content: "";
-  background: white;
-}
-/*
-slidecontainer {
-  margin: 0 auto;
-  background-color: #afe0fc;
-  padding: 1.5em;
-  border-radius: 5px;
+
+  -webkit-appearance: none;
 }
 
-*/
+#range:hover {
+  overflow: visible;
+}
 .box {
   width: 35px;
   height: 35px;
@@ -136,11 +114,31 @@ slidecontainer {
   background-color: rgba(255, 255, 255, 0.109);
   border-radius: 20px;
 }
-
-.home-sidebar {
-  min-width: 300px;
-  width: 300px;
+.hov:hover {
+  background-color: rgba(255, 255, 255, 0.109);
+  border-radius: 20px;
 }
+.plusPiu:hover {
+  color: white;
+  font-size: 1.15em;
+}
+.plusPiuDot:hover {
+  color: white;
+  font-size: 1.15em;
+}
+.cuori:hover {
+  color: white;
+  font-size: 1.15em;
+}
+.punti:hover {
+  color: white;
+  font-size: 1.15em;
+}
+
+// .home-sidebar {
+//   min-width: 300px;
+//   width: 300px;
+// }
 
 .home-sidebar-buttons {
   position: relative;
@@ -168,22 +166,14 @@ slidecontainer {
   border-radius: 6px;
 }
 
+.home-sidebar-fix {
+  height: calc(100vh - 217px);
+}
+
 .home-hero {
-  // height: 30vh;
-
-  // background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.5)));
-  // background: linear-gradient(transparent 0, rgba(0, 0, 0, 0.5) 100%);
-
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to $primary);
   background-image: linear-gradient(rgba(0, 0, 0, 0.6) 0, $primary 100%);
-  background-color: #535353;
-  // position: absolute;
-  // top: 0;
-  // bottom: 0;
-  // left: 0;
-  // right: 0;
   margin-top: -72px;
-  // padding-bottom: 72px;
 }
 
 .home-hero-nav {
@@ -223,6 +213,27 @@ slidecontainer {
   bottom: 0;
   width: 60%;
   height: 60%;
+}
+
+.play-track {
+  cursor: pointer;
+}
+
+#search-artist-box {
+}
+
+#search-artist-box img {
+  width: 92px;
+}
+
+#search-artist-side-box img {
+  width: 40px;
+  height: 40px;
+}
+
+#search-artist-side-box p {
+  margin: 0;
+  padding: 0;
 }
 
 .song-options {

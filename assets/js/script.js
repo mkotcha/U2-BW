@@ -32,8 +32,8 @@ const options = {
   method: "GET",
   headers: {
     "X-RapidAPI-Key": "e13be1f8d2msha90dfa9e08e83f5p16dc04jsn33020578052c",
-    "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
-  },
+    "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com"
+  }
 };
 let queryStr = "";
 const maxCard = 9;
@@ -72,9 +72,10 @@ const printCard = (elm, data) => {
     img.alt = data.tracks.data[i].album.title + " cover";
     const title = document.createElement("p");
     title.classList = "fs-6 fw-bold m-0 mb-1 text-truncate";
-    const titleLink = document.createElement("a");
-    titleLink.classList = "text-reset text-decoration-none text-truncate";
-    titleLink.href = "track.html?id=" + data.tracks.data[i].id;
+    const titleLink = document.createElement("span");
+    titleLink.classList = "play-track";
+    // titleLink.href = "track.html?id=" + data.tracks.data[i].id;
+    titleLink.addEventListener("click", event => playTrack(data.tracks.data[i].id));
     titleLink.innerText = data.tracks.data[i].title;
     const artist = document.createElement("p");
     artist.classList = "fs-6 fw-bold m-0 mb-1 text-truncate";
@@ -107,10 +108,10 @@ const printSideCard = track => {
   list.innerHTML += `<div class="d-flex mb-3">
                       <a href="album.html?id=${track.album.id}">
                         <img class="" src="${track.album.cover_medium}" alt="" /></a>
-                      <div class="ps-3 fs-6 flex-shrink-1 text-truncate">
+                      <div class="ps-3 fs-6 flex-shrink-1 text-truncate d-none d-lg-block">
                         <p class="fw-bold m-0 text-truncate">
-                        <a href="track.html?id=${track.id}" class="text-reset text-decoration-none">
-                          ${track.title}</a></p>
+                        <span onclick="playTrack(${track.id})" class="play-track">
+                          ${track.title}</span></p>
                         <p class="text-body-secondary m-0">
                           <i class="bi bi-pin-angle text-success d-none"></i> 
                           <span class="category">
@@ -245,6 +246,50 @@ async function initAudio(data) {
     document.getElementById("elapsed-time").innerText =
       "00:" + parseInt(audioElm.currentTime).toString().padStart(2, "0");
   });
+  document.getElementById("range").oninput = function () {
+    let value = ((this.value - this.min) / (this.max - this.min)) * 100;
+    this.style.background =
+      "linear-gradient(to right, green 0%, green " + value + "%, #535353 " + value + "%, #535353 100%)";
+
+    document.getElementById("range").addEventListener("mouseleave", () => {
+      value = ((this.value - this.min) / (this.max - this.min)) * 100;
+      this.style.background =
+        "linear-gradient(to right, white 0%, white " + value + "%, #535353 " + value + "%, #535353 100%)";
+    });
+    //manipolazione volume utente
+    const player = document.querySelector("audio");
+    const volumeSlider = document.querySelector("#range");
+
+    volumeSlider.addEventListener("input", function () {
+      let dato;
+      dato = (this.value / 100).toFixed(1);
+      player.volume = dato;
+    });
+  };
+}
+
+async function playTrack(id) {
+  let nowPlaing = localStorage.getItem("nowPlaing") ? localStorage.getItem("nowPlaing") : id;
+  let history = [];
+  if (localStorage.getItem("history")) {
+    history = JSON.parse(localStorage.getItem("history"));
+  } else {
+    history.push(nowPlaing);
+  }
+  const audioElm = document.querySelector("audio");
+  const playButton = document.getElementById("play-button-player");
+  const track = await queryTrack(id);
+  audioElm.src = track.preview;
+  if (playButton.dataset.playing === "false") {
+    audioElm.play();
+    playButton.dataset.playing = "true";
+  } else {
+    audioElm.play();
+  }
+
+  history.push(nowPlaing);
+  localStorage.setItem("nowPlaing", nowPlaing);
+  localStorage.setItem("history", JSON.stringify(history));
 }
 
 function getAverageRGB(imgEl) {
@@ -273,7 +318,6 @@ function getAverageRGB(imgEl) {
     data = context.getImageData(0, 0, width, height);
   } catch (e) {
     /* security error, img on diff domain */
-    console.log("diff domain");
 
     return defaultRGB;
   }
