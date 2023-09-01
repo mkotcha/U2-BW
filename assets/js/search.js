@@ -76,20 +76,14 @@ async function printDiscover() {
   const discoverData = await deezerQuery("editorial/0/releases");
   const container = document.querySelector(".search-view-container");
   container.innerHTML = "";
-  discoverData.data.forEach((data, i) => {
-    //   container.innerHTML += `<div class="search-card .col">
-    //   <div class="search-card-int ratio ratio-1x1 rounded-3 overflow-hidden">
-    //     <a href="" class="text-reset text-decoration-none">
-    //       <p class="fw-bold p-3 fs-4">${data.title}</p>
-    //       <img src="${data.cover_medium}" class="" alt="" crossorigin/>
-    //     </a>
-    //   </div>
-    // </div>`;
-
+  discoverData.data.forEach(async function (data, i) {
+    let rgb = {};
     const img = document.createElement("img");
     img.src = data.cover_medium;
     img.alt = data.title;
-    img.setAttribute("crossorigin", "");
+    const myPromise = new Promise((resolve, reject) => {
+      img.setAttribute("crossorigin", "");
+    });
     const title = document.createElement("p");
     title.classList = "fw-bold p-3 fs-4";
     title.innerText = data.title;
@@ -98,7 +92,7 @@ async function printDiscover() {
     link.classList = "text-reset text-decoration-none";
     const cardInt = document.createElement("div");
     cardInt.classList = "search-card-int ratio ratio-1x1 rounded-3 overflow-hidden";
-    const rgb = getAverageRGB(img);
+    myPromise.then((rgb = getAverageRGB(img)));
     cardInt.style = `background-color: rgb(${rgb.r},${rgb.g},${rgb.b})`;
     const searchCard = document.createElement("div");
     searchCard.classList = "search-card .col";
