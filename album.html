@@ -34,9 +34,9 @@
                 <div class="box bg-dark d-flex justify-content-center align-items-center mx-3">
                   <i class="bi bi-chevron-right"></i>
                 </div>
-                <!-- bottone play da fare apparire -->
+                <!-- bottone play appare -->
                 <div
-                  class="play-background d-flex justify-content-center align-items-center appare"
+                  class="play-background d-flex justify-content-center rip align-items-center appare"
                   style="opacity: 0">
                   <i class="bi bi-play-fill text-black fs-3"></i>
                 </div>
@@ -57,34 +57,32 @@
                 alt="" />
               <div class="d-inline-block m-4">
                 <span>Album</span>
-                <h1 class="titolo-album">Nome Album</h1>
+                <h1 class="titolo-album"></h1>
                 <div class="d-flex align-items-center gap-2">
                   <!-- classe per mini thumbnail -->
                   <img
                     alt=""
                     class="rounded-circle img-album"
                     style="height: 20px; width: 20px" />
-
-                  <span class="artist">artista/</span><span class="year">data/</span>
-                  <span class="ntracks">n brani/</span>
-                  <span class="dtracks">durata</span>
+                  <span class="artist"></span><span class="year"></span>
+                  <span class="ntracks"></span>
+                  <span class="dtracks"></span>
                 </div>
               </div>
             </div>
             <!-- fine dettaglio album -->
             <div class="">
               <div class="d-flex align-items-center media gap-4 px-4">
-                <!-- bottoni -->
+                <!-- play button heart e dot -->
                 <div
-                  class="play-background d-flex justify-content-center align-items-center scompare"
+                  class="play-background d-flex justify-content-center rip z-1 align-items-center scompare"
                   style="top: 50px">
                   <i class="bi bi-play-fill text-black fs-3"></i>
                 </div>
-                <!-- fine da fare scomparire -->
                 <i class="bi bi-heart fs-4"></i>
                 <i class="bi bi-three-dots fs-4"></i>
               </div>
-              <!-- Creazione elementi traccia xjs il pirmo è quello di riferimento-->
+              <!-- Creazione elementi traccia xjs il primo è quello di riferimento-->
               <div class="d-flex flex-column px-5 bg-primary tracce">
                 <div
                   class="row g-3 border-bottom z-0 sticky-top bg-primary mb-2 mt-1"
@@ -117,9 +115,7 @@
                 <div class="col-12">
                   <span
                     class="copyright-label"
-                    style="font-size: 1em; font-weight: lighter"
-                    >©</span
-                  >
+                    style="font-size: 1em; font-weight: lighter"></span>
                 </div>
               </div>
               <!-- Altro Artista -->
@@ -127,12 +123,12 @@
                 <div class="d-flex justify-content-between">
                   <h3>Altro di <span class="artist"></span></h3>
                   <a
-                    href=""
+                    href="#"
                     class="text-decoration-none">
                     VEDI DISCOGRAFIA</a
                   >
                 </div>
-                <!-- CARDS -->
+                <!-- CARDS Album -->
                 <div
                   class="row row-cols-9 g-4 recent-list row-list"
                   id="card-append">
@@ -140,7 +136,7 @@
                 </div>
               </div>
             </div>
-            <!-- Fine dettagli album -->
+            <!-- Fine altri album -->
             <footer>
               <div class="d-flex mt-5">
                 <div class="d-flex border-bottom flex-grow-1">
