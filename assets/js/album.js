@@ -70,6 +70,9 @@ scrollo.addEventListener("scroll", event => {
 });
 //------------------------------------
 window.onload = async event => {
+  if (!id) {
+    window.location.href = "index.html";
+  }
   try {
     await fetch(urlAlbum)
       .then(rispostaServer => rispostaServer.json())
@@ -95,24 +98,29 @@ window.onload = async event => {
         anno[1].innerHTML = `${obj.release_date.slice(0, 4)} `;
         dtracce[0].innerHTML = `${(Math.floor((obj.duration / 60) * 100) / 100).toString().replace(".", " min ")} sec.`;
         //CREAZIONE TRACCE
+        const media = document.getElementsByClassName("media");
+        media[0].style.background = "linear-gradient(to bottom, #090909 0%, #2e2e2e 100%)";
+        media[1].style.background = "linear-gradient(to bottom, #2e2e2e 0%, #4e4e4e 100%)";
+        media[2].style.background = "linear-gradient(to bottom, #4e4e4e 0%, #535353 100%)";
+
+        console.log(media);
         const tracce = document.getElementsByClassName("tracce");
         for (let i = 0; i < obj.tracks.data.length; i++) {
           const titolo = obj.tracks.data[i].title;
           const durata = obj.tracks.data[i].duration;
           const durataConvertita = (Math.round((durata / 60) * 100) / 100).toString().replace(".", ":");
+          //Gestione Separata per risultati durata con 0 e non
           if (durataConvertita.length === 3) {
             const convertito = durataConvertita + "0";
-            const titoloPlayer = document.getElementsByClassName("titolo");
-            titoloPlayer[0].innerHTML = ``; //titolo canzone in riproduzione
             const row = document.createElement("div");
             row.classList.add("row", "g-3", "my-2", "hov");
             row.innerHTML = `
                   
                   <div class="col-1 p-0 ps-2 " style="font-size: 1em; font-weight: lighter; width:30px;">${i + 1}</div>
-                  <div class="col my-1 p-0" style="font-size: 1em; font-weight: lighter"><p class="rip text-decoration-none" style ="margin:0;padding:0;">${titolo}</p><p style="font-size: 0.8em;margin:0; padding:0; ">${
-              obj.artist.name
-            }</p></div>
-            <div class="col-1 p-0" style="width:55px;"><i class="plusPiu bi bi-suit-heart"></i></div>
+                  <div class="col my-1 p-0" style="font-size: 1em; font-weight: lighter">
+                  <p class="rip text-decoration-none" style ="margin:0;padding:0;">${titolo}</p>
+                  <p style="font-size: 0.8em;margin:0; padding:0; ">${obj.artist.name}</p></div>
+                  <div class="col-1 p-0" style="width:55px;"><i class="plusPiu bi bi-suit-heart"></i></div>
                   <div class="col-1 p-0" style="width:55px;font-size: 0.8em; font-weight: lighter">${convertito}</div>
                   <div class="col-1 p-0" style="width:55px;"><i class="plusPiuDot bi bi-three-dots"></i></div>
                   
@@ -124,10 +132,10 @@ window.onload = async event => {
             row.innerHTML = `
                   
                   <div class="col-1 p-0 ps-2" style="font-size: 0.8em; font-weight: lighter; width:30px;">${i + 1}</div>
-                  <div class="col my-1 p-0" style="font-size: 1em; font-weight: lighter"><p class="rip text-decoration-none" style ="margin:0;padding:0;">${titolo}</p><p style="font-size: 0.8em;margin:0; padding:0; ">${
-              obj.artist.name
-            }</p></div>
-            <div class="col-1 p-0" style="width:55px;"><i class="plusPiu bi bi-suit-heart"></i></div>
+                  <div class="col my-1 p-0" style="font-size: 1em; font-weight: lighter">
+                  <p class="rip text-decoration-none" style ="margin:0;padding:0;">${titolo}</p>
+                  <p style="font-size: 0.8em;margin:0; padding:0; ">${obj.artist.name}</p></div>
+                  <div class="col-1 p-0" style="width:55px;"><i class="plusPiu bi bi-suit-heart"></i></div>
                   <div class="col-1 p-0" style="width:55px;font-size: 0.8em; font-weight: lighter">${durataConvertita}</div>
                   <div class="col-1 p-0" style="width:55px;"><i class="plusPiuDot bi bi-three-dots"></i></div>
                   
@@ -135,36 +143,40 @@ window.onload = async event => {
                   `;
             tracce[0].appendChild(row);
           }
-          const tracceRip = document.getElementsByClassName("rip");
-          tracceRip[i].addEventListener("click", event => {
+          const traccePlay = document.getElementsByClassName("rip");
+          console.log(traccePlay);
+          traccePlay[i].addEventListener("click", event => {
             const canzone = document.querySelector(".canzone");
+            localStorage.clear();
             localStorage.setItem("nowPlaing", obj.tracks.data[i].id);
+            const song = localStorage.getItem("nowPlaing");
             img[2].src = `${obj.tracks.data[i].album.cover}`;
             canzone.innerHTML = `${event.target.innerHTML}`;
-            initAudio();
-          });
-          //Elemento volume player
-          let value;
-          document.getElementById("range").oninput = function () {
-            value = ((this.value - this.min) / (this.max - this.min)) * 100;
-            this.style.background =
-              "linear-gradient(to right, green 0%, green " + value + "%, #535353 " + value + "%, #535353 100%)";
+            initAudio(song);
 
-            document.getElementById("range").addEventListener("mouseleave", () => {
-              value = ((this.value - this.min) / (this.max - this.min)) * 100;
+            //Elemento volume player
+
+            document.getElementById("range").oninput = function () {
+              let value = ((this.value - this.min) / (this.max - this.min)) * 100;
               this.style.background =
-                "linear-gradient(to right, white 0%, white " + value + "%, #535353 " + value + "%, #535353 100%)";
-            });
-            //manipolazione volume utente
-            const player = document.querySelector("audio");
-            const volumeSlider = document.querySelector("#range");
+                "linear-gradient(to right, green 0%, green " + value + "%, #535353 " + value + "%, #535353 100%)";
 
-            volumeSlider.addEventListener("input", function () {
-              let dato;
-              dato = (this.value / 100).toFixed(1);
-              player.volume = dato;
-            });
-          };
+              document.getElementById("range").addEventListener("mouseleave", () => {
+                value = ((this.value - this.min) / (this.max - this.min)) * 100;
+                this.style.background =
+                  "linear-gradient(to right, white 0%, white " + value + "%, #535353 " + value + "%, #535353 100%)";
+              });
+              //manipolazione volume utente
+              const player = document.querySelector("audio");
+              const volumeSlider = document.querySelector("#range");
+
+              volumeSlider.addEventListener("input", function () {
+                let dato;
+                dato = (this.value / 100).toFixed(1);
+                player.volume = dato;
+              });
+            };
+          });
           const tracceSel = document.getElementsByClassName("hov");
           const plusPiu = document.getElementsByClassName("plusPiu");
           const plusPiuDot = document.getElementsByClassName("plusPiuDot");
@@ -172,9 +184,9 @@ window.onload = async event => {
           plusPiuDot[i].classList.add("opacity-0", "dropdown");
           plusPiuDot[i].setAttribute("data-bs-toggle", "dropdown");
           plusPiuDot[i].innerHTML = `  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-    <li><a class="dropdown-item" href="#">Another action</a></li>
-    <li><a class="dropdown-item" href="#">Something else here</a></li>
+    <li><a class="dropdown-item" href="#">Salva in playlist</a></li>
+    <li><a class="dropdown-item" href="#">Togli dalla playlist</a></li>
+    <li><a class="dropdown-item" href="#">Aggiungi in coda</a></li>
   </ul>`;
 
           tracceSel[i].addEventListener("mouseenter", () => {
