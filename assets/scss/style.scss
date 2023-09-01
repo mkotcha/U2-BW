@@ -241,15 +241,29 @@ span.search-box {
   padding: 0;
 }
 
-.song-options {
+.heart-icon {
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
 
-.song-options.active {
+.heart-icon.active {
   visibility: visible;
   opacity: 1;
+}
+.dots-icon {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.dots-icon.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+#heart-icon.green {
+  color: green;
 }
 
 .artist-hero {

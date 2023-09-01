@@ -81,22 +81,13 @@ async function fetchArtistData() {
     //FUNZIONE PER CREARE LE CANZONI
     popularSongs.forEach((song, index) => {
       const listItemContainer = document.createElement("div");
-      listItemContainer.className = "artist-list-items-container p-2 px-3 rounded-2 row justify-content-between";
-      listItemContainer.addEventListener("mouseenter", () => {
-        const songOptions = listItemContainer.querySelector(".song-options");
-        songOptions.classList.add("active");
-      });
-
-      listItemContainer.addEventListener("mouseleave", () => {
-        const songOptions = listItemContainer.querySelector(".song-options");
-        songOptions.classList.remove("active");
-      });
+      listItemContainer.className = "artist-list-items-container p-2 px-3 rounded-2 justify-content-between";
 
       const listItem = document.createElement("li");
       listItem.className = "row d-flex align-items-center justify-content-between p-0";
 
       listItem.innerHTML = `
-      <div class="d-flex col-6 col-md-6 col-lg-7 flex-grow-1">
+      <div class="d-flex col-6 col-md-6 col-lg-6 flex-grow-1">
       <span onclick="playTrack(${
         song.id
       })" class="align-items-center song-number justify-content-between">${songNumber}</span>
@@ -117,18 +108,20 @@ async function fetchArtistData() {
     <div id="artist-song-plays" class="d-none d-lg-block col col-lg-3">
       <div class="d-flex text-end">${song.rank.toLocaleString()}</div>
     </div>
-    <div id="artist-song-minutes" class="d-flex col-4 col-lg-2 align-items-center justify-content-between">
-      <div><i class="bi bi-heart me-3 song-options"></i></div>
-      <div>${Math.floor(song.duration / 60)}:${String(song.duration % 60).padStart(2, "0")}</div>
-        <div class="dropdown song-options">
-          <a class="btn " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="bi bi-three-dots " data-toggle="tooltip" data-placement="top" title="Altre opzioni per"></i>
+    <div id="artist-song-minutes" class="d-flex col-4 col-lg-3 align-items-center justify-content-between">
+      <i id="heart-icon" class="plusPiu bi bi-suit-heart me-3 heart-icon heart-icon-clickable flex-grow-1" style="width:20px"></i>
+      <div width="20px" class="flex-grow-1">${Math.floor(song.duration / 60)}:${String(song.duration % 60).padStart(
+        2,
+        "0"
+      )}</div>
+        <div class="dropdown dots-icon flex-grow-1">
+          <a class="btn border-0" style="width:20px" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="plusPiuDot bi bi-three-dots" data-toggle="tooltip" data-placement="top" title="Altre opzioni per"></i>
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-            <li><hr class="dropdown-divider" /></li>
+          <li><a class="dropdown-item" href="#">Salva in playlist</a></li>
+          <li><a class="dropdown-item" href="#">Togli dalla playlist</a></li>
+          <li><a class="dropdown-item" href="#">Aggiungi in coda</a></li>
           </ul>
       </div>
     </div>
@@ -145,11 +138,39 @@ async function fetchArtistData() {
         songContainer.classList.add("selected-song");
       }
 
+      function handleSongClick(songContainer) {
+        const heartIcon = songContainer.querySelector(".heart-icon-clickable");
+
+        if (heartIcon) {
+          if (!heartIcon.classList.contains("green")) {
+            heartIcon.classList.add("green");
+            heartIcon.classList.remove("heart-icon");
+          } else {
+            heartIcon.classList.remove("green");
+            heartIcon.classList.add("heart-icon");
+          }
+        }
+      }
+
       const allSongContainers = document.querySelectorAll(".artist-list-items-container");
       allSongContainers.forEach(container => {
         container.addEventListener("click", () => {
           handleSongClick(container);
         });
+      });
+
+      listItemContainer.addEventListener("mouseenter", () => {
+        const heartIcon = listItemContainer.querySelector("#heart-icon");
+        const dotsIcon = listItemContainer.querySelector(".dots-icon");
+        heartIcon.classList.add("active");
+        dotsIcon.classList.add("active");
+      });
+
+      listItemContainer.addEventListener("mouseleave", () => {
+        const heartIcon = listItemContainer.querySelector("#heart-icon");
+        const dotsIcon = listItemContainer.querySelector(".dots-icon");
+        heartIcon.classList.remove("active");
+        dotsIcon.classList.remove("active");
       });
 
       //SOSTITUISCO I NUMERI CON L'ICONA PLAY
@@ -265,3 +286,5 @@ fetch(artistCardUrl)
       rigaAltroAlbum.appendChild(div);
     }
   });
+
+hideCard();
