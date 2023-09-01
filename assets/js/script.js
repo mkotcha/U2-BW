@@ -356,7 +356,7 @@ function compareSecondColumn(a, b) {
 async function initAudio(data) {
   document.getElementById("player").innerHTML += data;
   const audioElm = document.querySelector("audio");
-  let nowPlaing = localStorage.getItem("nowPlaing") ? localStorage.getItem("nowPlaing") : 2299840635;
+  let nowPlaing = localStorage.getItem("nowPlaing") ? localStorage.getItem("nowPlaing") : 104731108;
   const track = await queryTrack(nowPlaing);
   audioElm.src = track.preview;
   const audioContext = new AudioContext();
@@ -444,7 +444,7 @@ async function playTrack(id) {
   document.getElementById("player-artist").innerText = track.artist.name;
 
   history.push(nowPlaing);
-  localStorage.setItem("nowPlaing", nowPlaing);
+  localStorage.setItem("nowPlaing", id);
   localStorage.setItem("history", JSON.stringify(history));
 }
 
