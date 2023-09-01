@@ -173,6 +173,17 @@ window.onload = async event => {
               plusPiu[i].style.color = "green";
               sempreVerde.classList.add("secondHeart", "bi-suit-heart-fill");
               sempreVerde.style.color = "green";
+              sempreVerde.addEventListener("click", () => {
+                if (!sempreVerde.classList.contains("selectedDue")) {
+                  sempreVerde.classList.remove("bi-suit-heart");
+                  sempreVerde.classList.add("selectedDue", "bi-suit-heart-fill");
+                  sempreVerde.style.color = "green";
+                } else {
+                  sempreVerde.classList.add("bi-suit-heart");
+                  sempreVerde.style.color = "white";
+                  sempreVerde.classList.remove("selectedDue", "bi-suit-heart-fill");
+                }
+              });
               plusPiu[i].classList.add("d-none");
               plusPiu[i].parentElement.appendChild(sempreVerde);
               tracceSel[i].style.backgroundColor = "rgba(255, 255, 255, 0.11)";
