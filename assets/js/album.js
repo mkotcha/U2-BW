@@ -38,6 +38,29 @@ window.onload = async event => {
         const ntracce = document.getElementsByClassName("ntracks");
         const dtracce = document.getElementsByClassName("dtracks");
         const anno = document.getElementsByClassName("year");
+        const cuori = document.getElementsByClassName("cuori");
+        cuori[0].addEventListener("click", () => {
+          if (!cuori[0].classList.contains("selectedDue")) {
+            cuori[0].classList.remove("bi-suit-heart");
+            cuori[0].classList.add("selectedDue", "bi-suit-heart-fill");
+            cuori[0].style.color = "green";
+          } else {
+            cuori[0].classList.add("bi-suit-heart");
+            cuori[0].style.color = "white";
+            cuori[0].classList.remove("selectedDue", "bi-suit-heart-fill");
+          }
+        });
+        cuori[1].addEventListener("click", () => {
+          if (!cuori[1].classList.contains("selectedDue")) {
+            cuori[1].classList.remove("bi-suit-heart");
+            cuori[1].classList.add("selectedDue", "bi-suit-heart-fill");
+            cuori[1].style.color = "green";
+          } else {
+            cuori[1].classList.add("bi-suit-heart");
+            cuori[1].style.color = "white";
+            cuori[1].classList.remove("selectedDue", "bi-suit-heart-fill");
+          }
+        });
         const copyrightLabel = document.getElementsByClassName("copyright-label");
         copyrightLabel[0].innerHTML = `©${obj.label}`;
         img[0].src = `${obj.cover}`;
