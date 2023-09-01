@@ -244,6 +244,7 @@ window.onload = async event => {
                   `;
 
           rigaAltroAlbum.appendChild(div);
+          hideCard();
         }
       });
   } catch {
