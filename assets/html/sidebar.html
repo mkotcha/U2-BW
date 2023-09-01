@@ -1,24 +1,27 @@
-<div class="d-flex flex-column home-sidebar pe-2 h-100">
-  <div class="home-sidebar-box bg-primary rounded-4 px-4 py-2 fs-4 mb-2">
-    <div class="home-sidebar-link mb-3">
-      <a id="sidebar-link-home" href="index.html" class="text-reset text-decoration-none d-flex align-items-center"
-        ><i class="bi bi-house-door-fill me-3"></i><span class="fw-bold fs-6">Home</span></a
+<div class="d-flex flex-column align-items-center align-items-lg-stretch home-sidebar pe-2 h-100 d-none d-sm-block">
+  <div class="home-sidebar-box w-100 bg-primary rounded-4 px-3 pc-lg-4 py-2 fs-4 mb-2">
+    <div class="home-sidebar-link mb-3 d-flex flex-column align-items-center align-items-lg-start">
+      <a id="sidebar-link-home" href="index.html" class="text-reset text-decoration-none d-flex"
+        ><i class="bi bi-house-door-fill"></i><span class="fw-bold fs-6 d-none d-lg-block ms-3">Home</span></a
       >
     </div>
-    <div class="home-sidebar-link">
+    <div class="home-sidebar-link d-flex flex-column align-items-center align-items-lg-start">
       <a id="sidebar-link-search" href="search.html" class="text-decoration-none d-flex align-items-center"
-        ><i class="bi bi-search me-3"></i><span class="fw-bold fs-6">Cerca</span></a
+        ><i class="bi bi-search"></i><span class="fw-bold fs-6 d-none d-lg-block ms-3">Cerca</span></a
       >
     </div>
   </div>
-  <div class="d-flex flex-column home-sidebar-box bg-primary overflow-hidden rounded-4 px-4 py-2 fs-4">
+  <div
+    class="d-flex flex-column align-items-center align-items-lg-stretch home-sidebar-box bg-primary overflow-hidden rounded-4 px-3 px-lg-4 py-2 fs-4">
     <div class="home-sidebar-link d-flex">
       <a href="index.html" class="text-decoration-none d-flex align-items-center me-auto"
-        ><i class="bi bi-collection me-3"></i><span class="fw-bold fs-6">La tua libreria</span></a
+        ><i class="bi bi-collection"></i><span class="fw-bold fs-6 d-none d-lg-block ms-3">La tua libreria</span></a
       >
-      <a href="index.html" class="text-decoration-none d-flex align-items-center"><i class="bi bi-plus fs-3"></i></a>
+      <a href="index.html" class="text-decoration-none d-flex align-items-center"
+        ><i class="bi bi-plus fs-3 d-none d-lg-block"></i
+      ></a>
     </div>
-    <div class="home-sidebar-buttons my-3">
+    <div class="home-sidebar-buttons my-3 d-none d-lg-block">
       <div class="home-sidebar-buttons-faded d-flex gap-2 position-relative">
         <a href="#" class="btn btn-sm btn-dark">Playlist</a>
         <a href="#" class="btn btn-sm btn-dark">Artist</a>
@@ -32,9 +35,9 @@
     </div>
     <div class="overflow-y-auto h100 overflow-x-hidden">
       <div class="home-sidebar-list">
-        <div class="d-flex fs-6 fw-bold mb-4">
-          <i class="bi bi-search me-auto"></i>
-          <ul class="navbar-nav">
+        <div class="d-flex fs-6 fw-bold mb-4 align-items-center align-items-lg-stretch">
+          <i class="bi bi-search ms-auto ps-1 ms-lg-0 me-auto"></i>
+          <ul class="navbar-nav d-none d-lg-block">
             <li class="dropdown">
               <span class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> Recents </span>
               <ul class="dropdown-menu dropdown-menu-dark p-3 home-sidebar-list">

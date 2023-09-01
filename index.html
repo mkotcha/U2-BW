@@ -8,59 +8,58 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <div id="home-container" class="p-2">
-      <div class="d-flex h-100">
-        <div id="sidebar"></div>
-        <main class="flex-grow-1">
-          <div class="home-hero-container overflow-y-scroll h-100 rounded-4 position-relative">
-            <div class="home-hero-nav sticky-top">
-              <div class="d-flex gap-2">
-                <button class="btn btn-primary btn-sm"><i class="bi bi-chevron-left"></i></button>
-                <button class="btn btn-primary btn-sm me-auto"><i class="bi bi-chevron-right"></i></button>
-                <div class="flex-grow-1"></div>
-                <button class="btn btn-light btn-sm">Esplora Premium</button>
-                <button class="btn btn-primary btn-sm"><i class="bi bi-box-arrow-down me-2"></i>Installa App</button>
-                <a href="#" class="">
-                  <img src="assets/imgs/user.jpg" alt="" />
-                </a>
+    <div class="vh-100 d-flex flex-column bg-black">
+      <div id="home-container" class="p-2 bg-black">
+        <div class="d-flex h-100">
+          <div id="sidebar"></div>
+          <main class="flex-grow-1">
+            <div class="home-hero-container bg-sixth overflow-y-scroll h-100 rounded-4 position-relative">
+              <div class="home-hero-nav sticky-top">
+                <div class="d-flex gap-2">
+                  <button class="btn btn-primary btn-sm"><i class="bi bi-chevron-left"></i></button>
+                  <button class="btn btn-primary btn-sm me-auto"><i class="bi bi-chevron-right"></i></button>
+                  <div class="flex-grow-1"></div>
+                  <button class="btn btn-light btn-sm">Esplora Premium</button>
+                  <button class="btn btn-primary btn-sm"><i class="bi bi-box-arrow-down me-2"></i>Installa App</button>
+                  <a href="#" class="">
+                    <img src="assets/imgs/user.jpg" alt="" />
+                  </a>
+                </div>
+              </div>
+              <div class="bg-primary" style="margin-top: -72px">
+                <div class="home-hero p-4 pb-0 bg-sisth">
+                  <h3 class="mt-5 mb-4 fw-bold">Ascoltati di recente</h3>
+                  <div class="row row-cols-4 g-4 recent-list row-list">
+                    <!-- ! JS -->
+                  </div>
+                </div>
+                <div class="hero-test px-4">
+                  <h3 class="mt-5 mb-4 fw-bold">I tuoi show</h3>
+                  <div class="row row-cols-4 g-4 show-list row-list">
+                    <!-- ! JS -->
+                  </div>
+                </div>
+                <div class="hero-test px-4">
+                  <h3 class="mt-5 mb-4 fw-bold">Creato per EPICODER</h3>
+                  <div class="row row-cols-4 g-4 user-list row-list">
+                    <!-- ! JS -->
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="bg-primary" style="margin-top: -72px">
-              <div class="home-hero p-4 pb-0">
-                <h3 class="mt-5 mb-4 fw-bold">Ascoltati di recente</h3>
-                <div class="row row-cols-4 g-4 recent-list row-list">
-                  <!-- ! JS -->
-                </div>
-              </div>
-              <div class="hero-test px-4">
-                <h3 class="mt-5 mb-4 fw-bold">I tuoi show</h3>
-                <div class="row row-cols-4 g-4 show-list row-list">
-                  <!-- ! JS -->
-                </div>
-              </div>
-              <div class="hero-test px-4">
-                <h3 class="mt-5 mb-4 fw-bold">Creato per EPICODER</h3>
-                <div class="row row-cols-4 g-4 user-list row-list">
-                  <!-- ! JS -->
-                </div>
-              </div>
-            </div>
-          </div>
-        </main>
+          </main>
+        </div>
       </div>
+      <div id="player"></div>
     </div>
-    <div id="player">player</div>
-
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
       integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/index.js"></script>
   </body>

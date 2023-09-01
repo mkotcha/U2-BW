@@ -13,10 +13,11 @@ window.onload = async function () {
   printCard(showElm, showData);
   printCard(userElm, userData);
 
+  cardWidth = 200;
   hideCard();
 
   const sidebarSelectorList = document.querySelectorAll(".home-sidebar-list a");
-  sidebarSelectorList.forEach((elm) => {
+  sidebarSelectorList.forEach(elm => {
     elm.addEventListener("click", sidebarSelection);
   });
 };

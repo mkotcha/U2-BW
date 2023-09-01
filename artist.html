@@ -8,7 +8,7 @@
     <title>Spotify</title>
   </head>
   <body>
-    <div id="home-container" class="p-2">
+    <div id="home-container" class="p-2 bg-black">
       <div class="d-flex h-100">
         <div id="sidebar"></div>
         <main class="flex-grow-1">
@@ -25,20 +25,22 @@
                 </a>
               </div>
             </div>
-            <div id="artist-image" class="artist-hero p-4 d-flex text-white">
-              <div class="d-flex align-items-end">
-                <div>
-                  <div id="artist-verified" class="d-flex align-items-center">
-                    <span><i class="bi bi-patch-check-fill fs-4" style="color: #3d91f4"></i></span>
-                    <span class="ms-1">Artista verificato</span>
+            <div class="artist-hero-container">
+              <div id="artist-image" class="artist-hero p-4 d-flex text-white">
+                <div class="d-flex align-items-end">
+                  <div class="z-1">
+                    <div id="artist-verified" class="d-flex align-items-center">
+                      <span><i class="bi bi-patch-check-fill fs-4" style="color: #3d91f4"></i></span>
+                      <span class="ms-1">Artista verificato</span>
+                    </div>
+                    <h1 id="artist-name" class="artist-name-big fw-bold mb-3 lh-1">Artist name</h1>
+                    <p class="mb-0"><span id="artist-fan-nb"> </span> ascoltatori</p>
                   </div>
-                  <h1 id="artist-name" class="artist-name-big fw-bold mb-3 lh-1">Artist name</h1>
-                  <p class="mb-0">ascoltatori mensili</p>
                 </div>
               </div>
             </div>
-            <div id="artist-main-content">
-              <div id="artist-main-buttons" class="d-flex align-items-center p-4">
+            <div id="artist-main-content" class="p-4 py-0">
+              <div id="artist-main-buttons" class="d-flex align-items-center py-4">
                 <div class="play-background d-flex justify-content-center align-items-center">
                   <i class="bi bi-play-fill text-black fs-3"></i>
                 </div>
@@ -87,184 +89,22 @@
                   </div>
                 </div>
               </div>
-              <div class="p-4 py-0">
-                <h3 class="fw-bold text-white">Popolari</h3>
-                <ol id="artist-list" class="p-0 ps-3">
-                  <div class="artist-list-items-container p-2 px-3 rounded-2 row">
-                    <li id="artist-list-items" class="row d-flex align-items-center justify-content-between">
-                      <div id="artist-song-title" class="d-flex col-4">
-                        <img src="./assets/imgs/main/image-1.jpg" class="me-3" width="40" alt="" />
-                        <div>
-                          <div class="text-white">Titolo canzone</div>
-                          <i class="bi bi-explicit-fill text-secondary"></i>
-                        </div>
-                      </div>
-                      <div id="artist-song-plays" class="d-flex col-3">111.111.111</div>
-                      <div id="artist-song-minutes" class="d-flex col-2 justify-content-between align-items-center">
-                        <div><i class="bi bi-heart"></i></div>
-                        <div>4:00</div>
-                        <div class="dropdown">
-                          <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i
-                              class="bi bi-three-dots"
-                              data-toggle="tooltip"
-                              data-placement="top"
-                              title="Altre opzioni per"
-                            ></i>
-                          </a>
-
-                          <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            <li><hr class="dropdown-divider" /></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </li>
+              <h3 class="fw-bold text-white">Popolari</h3>
+              <div class="row">
+                <div class="col-12 col-xxl-6">
+                  <ol id="artist-list" class="p-0 ps-3"></ol>
+                  <div class="fw-bold fs-6 p-3">
+                    <a id="showMoreButton" href="#" class="text-decoration-none">Visualizza altro</a>
                   </div>
-                  <div class="artist-list-items-container p-2 px-3 rounded-2 row">
-                    <li id="artist-list-items" class="row d-flex align-items-center justify-content-between">
-                      <div id="artist-song-title" class="d-flex col-4">
-                        <img src="./assets/imgs/main/image-1.jpg" class="me-3" width="40" alt="" />
-                        <div>
-                          <div class="text-white">Titolo canzone</div>
-                          <i class="bi bi-explicit-fill text-secondary"></i>
-                        </div>
-                      </div>
-                      <div id="artist-song-plays" class="d-flex col-3">111.111.111</div>
-                      <div id="artist-song-minutes" class="d-flex col-2 justify-content-between align-items-center">
-                        <div><i class="bi bi-heart"></i></div>
-                        <div>4:00</div>
-                        <div class="dropdown">
-                          <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i
-                              class="bi bi-three-dots"
-                              data-toggle="tooltip"
-                              data-placement="top"
-                              title="Altre opzioni per"
-                            ></i>
-                          </a>
-
-                          <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            <li><hr class="dropdown-divider" /></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </li>
-                  </div>
-                  <div class="artist-list-items-container p-2 px-3 rounded-2 row">
-                    <li id="artist-list-items" class="row d-flex align-items-center justify-content-between">
-                      <div id="artist-song-title" class="d-flex col-4">
-                        <img src="./assets/imgs/main/image-1.jpg" class="me-3" width="40" alt="" />
-                        <div>
-                          <div class="text-white">Titolo canzone</div>
-                          <i class="bi bi-explicit-fill text-secondary"></i>
-                        </div>
-                      </div>
-                      <div id="artist-song-plays" class="d-flex col-3">111.111.111</div>
-                      <div id="artist-song-minutes" class="d-flex col-2 justify-content-between align-items-center">
-                        <div><i class="bi bi-heart"></i></div>
-                        <div>4:00</div>
-                        <div class="dropdown">
-                          <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i
-                              class="bi bi-three-dots"
-                              data-toggle="tooltip"
-                              data-placement="top"
-                              title="Altre opzioni per"
-                            ></i>
-                          </a>
-
-                          <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            <li><hr class="dropdown-divider" /></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </li>
-                  </div>
-                  <div class="artist-list-items-container p-2 px-3 rounded-2 row">
-                    <li id="artist-list-items" class="row d-flex align-items-center justify-content-between">
-                      <div id="artist-song-title" class="d-flex col-4">
-                        <img src="./assets/imgs/main/image-1.jpg" class="me-3" width="40" alt="" />
-                        <div>
-                          <div class="text-white">Titolo canzone</div>
-                          <i class="bi bi-explicit-fill text-secondary"></i>
-                        </div>
-                      </div>
-                      <div id="artist-song-plays" class="d-flex col-3">111.111.111</div>
-                      <div id="artist-song-minutes" class="d-flex col-2 justify-content-between align-items-center">
-                        <div><i class="bi bi-heart"></i></div>
-                        <div>4:00</div>
-                        <div class="dropdown">
-                          <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i
-                              class="bi bi-three-dots"
-                              data-toggle="tooltip"
-                              data-placement="top"
-                              title="Altre opzioni per"
-                            ></i>
-                          </a>
-
-                          <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            <li><hr class="dropdown-divider" /></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </li>
-                  </div>
-                  <div class="artist-list-items-container p-2 px-3 rounded-2 row">
-                    <li id="artist-list-items" class="row d-flex align-items-center justify-content-between">
-                      <div id="artist-song-title" class="d-flex col-4">
-                        <img src="./assets/imgs/main/image-1.jpg" class="me-3" width="40" alt="" />
-                        <div>
-                          <div class="text-white">Titolo canzone</div>
-                          <i class="bi bi-explicit-fill text-secondary"></i>
-                        </div>
-                      </div>
-                      <div id="artist-song-plays" class="d-flex col-3">111.111.111</div>
-                      <div id="artist-song-minutes" class="d-flex col-2 justify-content-between align-items-center">
-                        <div><i class="bi bi-heart"></i></div>
-                        <div>4:00</div>
-                        <div class="dropdown">
-                          <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i
-                              class="bi bi-three-dots"
-                              data-toggle="tooltip"
-                              data-placement="top"
-                              title="Altre opzioni per"
-                            ></i>
-                          </a>
-
-                          <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            <li><hr class="dropdown-divider" /></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </li>
-                  </div>
-                </ol>
-                <div class="fw-bold fs-6 p-3">
-                  <a id="showMoreButton" href="#" class="text-decoration-none">Visualizza altro</a>
                 </div>
-                <div>
+                <div class="col-12 col-xxl-6">
                   <h3 class="fw-bold text-white">Selezione dell'artista</h3>
                   <div class="d-flex">
-                    <img id="artist-album-image" src="./assets/imgs/main/image-1.jpg" class="me-3" width="88" />
+                    <a id="artist-album-link" href="#">
+                      <img id="artist-album-image" src="./assets/imgs/main/image-1.jpg" class="me-3" width="88" />
+                    </a>
                     <div>
-                      <div>
+                      <div class="mb-2">
                         <img
                           id="artist-icon"
                           src="./assets/imgs/main/image-1.jpg"
@@ -282,305 +122,46 @@
                     </div>
                   </div>
                 </div>
-                <div class="hero-test px-4">
-                  <div class="d-flex mt-5 mb-4 align-items-center justify-content-between">
-                    <h3 class="fw-bold text-white">Discografia</h3>
-                    <div class="fw-bold fs-6"><a href="#" class="text-decoration-none">Mostra tutto</a></div>
-                  </div>
-                  <div class="mb-4">
-                    <input
-                      type="radio"
-                      class="btn-check"
-                      name="options-outlined"
-                      id="uscite-popolari"
-                      autocomplete="off"
-                      checked
-                    />
-                    <label class="btn btn-secondary border-0" for="uscite-popolari">Uscite popolari</label>
-
-                    <input
-                      type="radio"
-                      class="btn-check"
-                      name="options-outlined"
-                      id="artist-album"
-                      autocomplete="off"
-                    />
-                    <label class="btn btn-secondary border-0" for="artist-album">Album</label>
-                    <input
-                      type="radio"
-                      class="btn-check"
-                      name="options-outlined"
-                      id="singoli-ed-ep"
-                      autocomplete="off"
-                    />
-                    <label class="btn btn-secondary border-0" for="singoli-ed-ep">Singoli ed EP</label>
-                  </div>
-                  <div class="row row-cols-4 g-4">
-                    <div class="col">
-                      <div class="home-card rounded-2 d-flex flex-column p-3">
-                        <div class="mb-3"><img src="assets/imgs/main/image-8.jpg" class="rounded-2" alt="" /></div>
-                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
-                          <a href="" class="text-reset text-decoration-none">Title</a>
-                        </p>
-                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="home-card rounded-2 d-flex flex-column p-3">
-                        <div class="mb-3"><img src="assets/imgs/main/image-9.jpg" class="rounded-2" alt="" /></div>
-                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
-                          <a href="" class="text-reset text-decoration-none">Title</a>
-                        </p>
-                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="home-card rounded-2 d-flex flex-column p-3">
-                        <div class="mb-3"><img src="assets/imgs/main/image-7.jpg" class="rounded-2" alt="" /></div>
-                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
-                          <a href="" class="text-reset text-decoration-none">Title</a>
-                        </p>
-                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="home-card rounded-2 d-flex flex-column p-3">
-                        <div class="mb-3"><img src="assets/imgs/main/image-8.jpg" class="rounded-2" alt="" /></div>
-                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
-                          <a href="" class="text-reset text-decoration-none">Title</a>
-                        </p>
-                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
-                      </div>
-                    </div>
-                  </div>
+              </div>
+              <div class="hero-test">
+                <div class="d-flex mt-5 mb-4 align-items-center justify-content-between">
+                  <h3 class="fw-bold text-white">Discografia</h3>
+                  <div class="fw-bold fs-6"><a href="#" class="text-decoration-none">Mostra tutto</a></div>
                 </div>
-                <div class="hero-test px-4">
-                  <div class="d-flex mt-5 mb-4 align-items-center justify-content-between">
-                    <h3 class="fw-bold text-white">Con Nome Artista</h3>
-                    <div class="fw-bold fs-6"><a href="#" class="text-decoration-none">Mostra tutto</a></div>
-                  </div>
+                <div class="mb-4">
+                  <input
+                    type="radio"
+                    class="btn-check"
+                    name="options-outlined"
+                    id="uscite-popolari"
+                    autocomplete="off"
+                    checked
+                  />
+                  <label class="btn btn-dark border-0 me-2" for="uscite-popolari">Uscite popolari</label>
 
-                  <div class="row row-cols-4 g-4">
-                    <div class="col">
-                      <div class="home-card rounded-2 d-flex flex-column p-3">
-                        <div class="mb-3"><img src="assets/imgs/main/image-8.jpg" class="rounded-2" alt="" /></div>
-                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
-                          <a href="" class="text-reset text-decoration-none">Title</a>
-                        </p>
-                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="home-card rounded-2 d-flex flex-column p-3">
-                        <div class="mb-3"><img src="assets/imgs/main/image-9.jpg" class="rounded-2" alt="" /></div>
-                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
-                          <a href="" class="text-reset text-decoration-none">Title</a>
-                        </p>
-                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="home-card rounded-2 d-flex flex-column p-3">
-                        <div class="mb-3"><img src="assets/imgs/main/image-7.jpg" class="rounded-2" alt="" /></div>
-                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
-                          <a href="" class="text-reset text-decoration-none">Title</a>
-                        </p>
-                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="home-card rounded-2 d-flex flex-column p-3">
-                        <div class="mb-3"><img src="assets/imgs/main/image-8.jpg" class="rounded-2" alt="" /></div>
-                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
-                          <a href="" class="text-reset text-decoration-none">Title</a>
-                        </p>
-                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
-                      </div>
-                    </div>
-                  </div>
+                  <input type="radio" class="btn-check" name="options-outlined" id="artist-album" autocomplete="off" />
+                  <label class="btn btn-dark border-0 me-2" for="artist-album">Album</label>
+                  <input type="radio" class="btn-check" name="options-outlined" id="singoli-ed-ep" autocomplete="off" />
+                  <label class="btn btn-dark border-0 me-2" for="singoli-ed-ep">Singoli ed EP</label>
                 </div>
-                <div class="hero-test px-4">
-                  <div class="d-flex mt-5 mb-4 align-items-center justify-content-between">
-                    <h3 class="fw-bold text-white">I fan apprezzano anche</h3>
-                    <div class="fw-bold fs-6"><a href="#" class="text-decoration-none">Mostra tutto</a></div>
-                  </div>
-
-                  <div class="row row-cols-4 g-4">
-                    <div class="col">
-                      <div class="home-card rounded-2 d-flex flex-column p-3">
-                        <div class="mb-3"><img src="assets/imgs/main/image-8.jpg" class="rounded-2" alt="" /></div>
-                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
-                          <a href="" class="text-reset text-decoration-none">Title</a>
-                        </p>
-                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="home-card rounded-2 d-flex flex-column p-3">
-                        <div class="mb-3"><img src="assets/imgs/main/image-9.jpg" class="rounded-2" alt="" /></div>
-                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
-                          <a href="" class="text-reset text-decoration-none">Title</a>
-                        </p>
-                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="home-card rounded-2 d-flex flex-column p-3">
-                        <div class="mb-3"><img src="assets/imgs/main/image-7.jpg" class="rounded-2" alt="" /></div>
-                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
-                          <a href="" class="text-reset text-decoration-none">Title</a>
-                        </p>
-                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="home-card rounded-2 d-flex flex-column p-3">
-                        <div class="mb-3"><img src="assets/imgs/main/image-8.jpg" class="rounded-2" alt="" /></div>
-                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
-                          <a href="" class="text-reset text-decoration-none">Title</a>
-                        </p>
-                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
-                      </div>
-                    </div>
-                  </div>
+                <div class="row row-cols-4 g-4 recent-list row-list">
+                  <!-- ! JS -->
                 </div>
-                <div class="hero-test px-4">
-                  <div class="d-flex mt-5 mb-4 align-items-center justify-content-between">
-                    <h3 class="fw-bold text-white">Compare in</h3>
-                    <div class="fw-bold fs-6"><a href="#" class="text-decoration-none">Mostra tutto</a></div>
-                  </div>
-
-                  <div class="row row-cols-4 g-4">
-                    <div class="col">
-                      <div class="home-card rounded-2 d-flex flex-column p-3">
-                        <div class="mb-3"><img src="assets/imgs/main/image-8.jpg" class="rounded-2" alt="" /></div>
-                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
-                          <a href="" class="text-reset text-decoration-none">Title</a>
-                        </p>
-                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="home-card rounded-2 d-flex flex-column p-3">
-                        <div class="mb-3"><img src="assets/imgs/main/image-9.jpg" class="rounded-2" alt="" /></div>
-                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
-                          <a href="" class="text-reset text-decoration-none">Title</a>
-                        </p>
-                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="home-card rounded-2 d-flex flex-column p-3">
-                        <div class="mb-3"><img src="assets/imgs/main/image-7.jpg" class="rounded-2" alt="" /></div>
-                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
-                          <a href="" class="text-reset text-decoration-none">Title</a>
-                        </p>
-                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="home-card rounded-2 d-flex flex-column p-3">
-                        <div class="mb-3"><img src="assets/imgs/main/image-8.jpg" class="rounded-2" alt="" /></div>
-                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
-                          <a href="" class="text-reset text-decoration-none">Title</a>
-                        </p>
-                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="hero-test px-4">
-                  <div class="d-flex mt-5 mb-4 align-items-center justify-content-between">
-                    <h3 class="fw-bold text-white">Playlist dell'artista</h3>
-                    <div class="fw-bold fs-6"><a href="#" class="text-decoration-none">Mostra tutto</a></div>
-                  </div>
-
-                  <div class="row row-cols-4 g-4">
-                    <div class="col">
-                      <div class="home-card rounded-2 d-flex flex-column p-3">
-                        <div class="mb-3"><img src="assets/imgs/main/image-8.jpg" class="rounded-2" alt="" /></div>
-                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
-                          <a href="" class="text-reset text-decoration-none">Title</a>
-                        </p>
-                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="home-card rounded-2 d-flex flex-column p-3">
-                        <div class="mb-3"><img src="assets/imgs/main/image-9.jpg" class="rounded-2" alt="" /></div>
-                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
-                          <a href="" class="text-reset text-decoration-none">Title</a>
-                        </p>
-                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="home-card rounded-2 d-flex flex-column p-3">
-                        <div class="mb-3"><img src="assets/imgs/main/image-7.jpg" class="rounded-2" alt="" /></div>
-                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
-                          <a href="" class="text-reset text-decoration-none">Title</a>
-                        </p>
-                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="home-card rounded-2 d-flex flex-column p-3">
-                        <div class="mb-3"><img src="assets/imgs/main/image-8.jpg" class="rounded-2" alt="" /></div>
-                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
-                          <a href="" class="text-reset text-decoration-none">Title</a>
-                        </p>
-                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="hero-test px-4">
-                  <div class="d-flex mt-5 mb-4 align-items-center justify-content-between">
-                    <h3 class="fw-bold text-white">Scoperto in</h3>
-                    <div class="fw-bold fs-6"><a href="#" class="text-decoration-none">Mostra tutto</a></div>
-                  </div>
-
-                  <div class="row row-cols-4 g-4">
-                    <div class="col">
-                      <div class="home-card rounded-2 d-flex flex-column p-3">
-                        <div class="mb-3"><img src="assets/imgs/main/image-8.jpg" class="rounded-2" alt="" /></div>
-                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
-                          <a href="" class="text-reset text-decoration-none">Title</a>
-                        </p>
-                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="home-card rounded-2 d-flex flex-column p-3">
-                        <div class="mb-3"><img src="assets/imgs/main/image-9.jpg" class="rounded-2" alt="" /></div>
-                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
-                          <a href="" class="text-reset text-decoration-none">Title</a>
-                        </p>
-                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="home-card rounded-2 d-flex flex-column p-3">
-                        <div class="mb-3"><img src="assets/imgs/main/image-7.jpg" class="rounded-2" alt="" /></div>
-                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
-                          <a href="" class="text-reset text-decoration-none">Title</a>
-                        </p>
-                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="home-card rounded-2 d-flex flex-column p-3">
-                        <div class="mb-3"><img src="assets/imgs/main/image-8.jpg" class="rounded-2" alt="" /></div>
-                        <p class="fs-6 fw-bold m-0 mb-1 text-truncate">
-                          <a href="" class="text-reset text-decoration-none">Title</a>
-                        </p>
-                        <p class="fs-6 m-0"><a href="" class="text-decoration-none">Artist</a></p>
-                      </div>
-                    </div>
-                  </div>
+              </div>
+              <div class="hero-test">
+                <div class="d-flex mt-5 mb-4 align-items-center justify-content-between">
+                  <h3 class="fw-bold text-white">Con <span id="artist-name">Nome Artista</span></h3>
+                  <div class="fw-bold fs-6"><a href="#" class="text-decoration-none">Mostra tutto</a></div>
                 </div>
 
-                <footer>
+                <div class="hero-test">
+                  <div class="row row-cols-4 g-4 show-list row-list">
+                    <!-- ! JS -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- <footer>
                   <div class="d-flex mt-5">
                     <div class="d-flex border-bottom flex-grow-1">
                       <div class="px-5">
@@ -656,8 +237,7 @@
                     </div>
                     <a href="" class="text-decoration-none text-white">© 2023 Spotify AB</a>
                   </div>
-                </footer>
-              </div>
+                </footer> -->
             </div>
           </div>
         </main>
@@ -678,5 +258,6 @@
     ></script>
     <script src="assets/js/script.js"></script>
     <script src="./assets/js/artist.js"></script>
+    <script src="./assets/js/index.js"></script>
   </body>
 </html>
