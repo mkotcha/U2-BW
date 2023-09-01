@@ -32,8 +32,8 @@ const options = {
   method: "GET",
   headers: {
     "X-RapidAPI-Key": "e13be1f8d2msha90dfa9e08e83f5p16dc04jsn33020578052c",
-    "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com"
-  }
+    "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+  },
 };
 let queryStr = "";
 const maxCard = 9;
@@ -58,7 +58,7 @@ async function queryTrack(id) {
   }
 }
 
-const printCard = (elm, data) => {
+async function printCard(elm, data) {
   for (let i = 0; i < maxCard; i++) {
     const col = document.createElement("div");
     col.classList = "col col-hidable";
@@ -93,7 +93,7 @@ const printCard = (elm, data) => {
     col.appendChild(card);
     elm.appendChild(col);
   }
-};
+}
 
 const printSideCards = data => {
   const list = document.querySelector(".side-list");
